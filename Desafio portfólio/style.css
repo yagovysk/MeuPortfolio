@@ -1,0 +1,699 @@
+body {
+    background-image: url(https://i.pinimg.com/originals/36/48/7a/36487a431daf2f7813b4b1a10b11c717.jpg);
+    -webkit-font-smoothing: antialiased;
+}
+
+#fotoperfil {
+    border: solid rgb(2, 37, 2);
+    width: 14rem;
+    height: 16rem;
+    align-items: center;
+    background: rgb(108, 223, 63);
+    border-radius: 10%;
+    margin-left: 1rem;
+    display: inline-flexbox;
+    transition: 0.3s;
+}
+#fotoperfil:hover {
+    background: rgb(4, 22, 4);
+    color: rgb(32, 250, 3);
+    border: solid rgb(32, 250, 3);
+    transform: translateY(-5px);
+}
+#fotoperfil img{
+    width: 7rem;
+    height: 8rem;
+    border-radius: 49%;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    padding: 2rem;
+    padding-bottom: 0;
+    border: 3px solid rgb(2, 37, 2);
+    border-bottom: 8rem;
+}
+#fotoperfil img:hover {
+    border: solid rgb(32, 250, 3);
+    transform: translateY(-5px);
+}
+#myprojects {
+    display: inline-flexbox;
+    border: solid rgb(2, 37, 2);
+    border-radius: 5%;
+    width: 65rem;
+    height: 4rem;
+    margin-left: 16rem;
+    margin-top: -16rem;
+    background: rgb(108, 223, 63);
+    position: absolute;
+    transition: 0.4s;
+}
+#myprojects img{
+    display: inline-flexbox;
+    position: absolute;
+    padding: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 46rem;
+    margin-top: 0.5rem;
+}
+#myprojects img:hover{
+    transform: translateY(-5px);
+}
+#myprojects .projects {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    font-size: large;
+    display: inline-block;
+}
+#myprojects .button {
+    display: inline-block;
+    padding-left: 49rem;
+    color: forestgreen;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: 0.3s;
+}
+#myprojects:hover{
+    background: rgb(4, 22, 4);
+    border: solid rgb(32, 250, 3);
+    color: forestgreen;
+    transform: translateY(-5px);
+}
+#myprojects .button:hover {
+    color: rgb(32, 250, 3);
+    transform: translateY(-5px);
+}
+html {
+    scroll-behavior: smooth;
+}
+.Name {
+    font-size: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+#topics {
+    display: flexbox;
+    border: solid rgb(2, 37, 2);
+    border-radius: 10%;
+    background: rgb(108, 223, 63);
+    margin-top: 1rem;
+    margin-left: 1rem;
+    padding: 2rem;
+    width: 10rem;
+    height: 20rem;
+    margin-top: -3.5rem;
+    transition: 0.3s;
+}
+#topics .loc {
+    display: inline-flex;
+    font-size: medium;
+    color: greenyellow;
+    width: 10rem;
+    margin-left: -500rem;
+    margin-top: -3rem;
+    margin-left: -0.1rem;
+    margin-bottom: -2rem;
+    transition: 0.3s;
+}
+#topics .loc:hover {
+    color: forestgreen;
+    transform: translateY(-5px);
+}
+#topics:hover {
+    background: rgb(4, 22, 4);
+    border: solid rgb(32, 250, 3);
+    transform: translateY(-5px);
+}
+#pastas {
+    border: solid rgb(2, 37, 2);
+    border-radius: 10%;
+    background: rgb(108, 223, 63);
+    display: inline-flexbox;
+    position: absolute;
+    width: 30rem;
+    height: 15rem;
+    margin-left: 17rem;
+    margin-top: -10.8rem;
+    transition: 0.3s;
+}
+#pastas:hover {
+    background: rgb(4, 22, 4);
+    color: rgb(71, 245, 71);
+    border: solid rgb(32, 250, 3);
+    transform: translateY(-5px);
+}
+#pastas2 {
+    display: flex;
+    border: solid rgb(2, 37, 2);
+    border-radius: 10%;
+    background: rgb(108, 223, 63);
+    width: 33.8rem;
+    height: 14.8rem;
+    margin-top: -10.5rem;
+    margin-left: 48rem;
+    transition: 0.3s;
+}
+#pastas2:hover {
+    background: rgb(4, 22, 4);
+    border: solid rgb(32, 250, 3);
+    color: rgb(32, 250, 3);
+    transform: translateY(-5px);
+}
+#corpo {
+    display: flexbox;
+    width: 63rem;
+    height: 45rem;
+    border: solid rgb(2, 37, 2);
+    background: rgb(108, 223, 63);
+    border-radius: 10%;
+    margin-top: -41rem;
+    margin-left: 18rem;
+    transition: 0.3s;
+}
+#corpo:hover {
+    background: rgb(4, 22, 4);
+    border: solid rgb(32, 250, 3);
+    transform: translateY(-5px);
+}
+#topics .locf {
+    width: 1rem;
+    height: 1rem;
+    padding-right: 0.5rem;
+}
+#topics .imgsch {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    padding-right: 1rem;
+}
+#topics .school {
+    color: white;
+    display: inline-flex;
+    font-size: medium;
+    transition: 0.3s;
+}
+#topics .school:hover {
+    color: rgb(89, 168, 89);
+    transform: translateY(-5px);
+}
+#topics .linked {
+    display: inline-flex;
+    font-size: medium;
+    color: rgb(50, 142, 247);
+    text-decoration: none;
+    padding-left: 0.5rem;
+    transition: 0.3s;
+    padding: 1rem;
+}
+#topics .linked:hover {
+    color: rgb(4, 225, 233);
+    transform: translateY(-5px);
+}
+#topics .ftlink {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+}
+#topics .email {
+    display: inline-flex;
+    color: rgb(117, 20, 20);
+    font-size: small;
+    width: 16rem;
+    transition: 0.3s;
+}
+#topics .email:hover {
+    color: rgb(211, 63, 63);
+    transform: translateY(-5px);
+}
+#topics .gmail {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    padding-right: 0.5rem;
+}
+#topics .wppi {
+    width: 1rem;
+    height: 1rem;
+}
+#topics .wpp {
+    display: inline-flex;
+    text-decoration: none;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: small;
+    margin-bottom: 0.2rem;
+    transition: 0.3s;
+    padding: 1rem;
+}
+#topics .wpp:hover {
+    color: green;
+    transform: translateY(-5px);
+}
+#competencias {
+    display: inline-flex;
+    border: solid rgb(2, 37, 2);
+    border-radius: 10%;
+    background: rgb(108, 223, 63);
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 14rem;
+    height: 20rem;
+    transition: 0.3s;
+}
+#competencias:hover {
+    background: rgb(4, 22, 4);
+    border: solid rgb(32, 250, 3);
+    transform: translateY(-5px);
+}
+#competencias .comp1 {
+    display: inline-flex;
+    color: rgb(79, 11, 105);
+    padding-bottom: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-left: 0.2rem;
+    transition: 0.3s;
+}
+#competencias .comp1:hover {
+    color: rgb(189, 192, 189);
+    transform: translateY(-5px);
+}
+#competencias .htmli {
+    display: inline-flex;
+    padding-top: 1rem;
+    padding-left: 3rem;
+    width: 2rem;
+    height: 2rem;
+}
+#competencias .comp2 {
+    display: inline-flex;
+    color: rgb(12, 77, 131);
+    padding-top: 3rem;
+    padding-left: 0.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#competencias .comp2:hover {
+    color: rgb(32, 163, 238);
+    transform: translateY(-5px);
+}
+#competencias .cssi {
+    display: inline-flex;
+    padding-top: 3.5rem;
+    margin-left: -5rem;
+    width: 2rem;
+    height: 2rem;
+}
+#competencias .jsicon {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    margin-top: 6rem;
+    margin-left: -4rem;
+}
+#competencias .comp3 {
+    display: inline-flex;
+    margin-top: 6.5rem;
+    padding-left: 0.5rem;
+    color: rgb(150, 147, 5);
+    transition: 0.3s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#competencias .comp3:hover {
+    color: rgb(240, 209, 35);
+    transform: translateY(-5px);
+}
+#competencias .reacti {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 8.5rem;
+    margin-left: -7rem;
+}
+#competencias .comp4 {
+    display: inline-flex;
+    margin-top: 9rem;
+    padding-left: 0.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(4, 71, 102);
+    transition: 0.3s;
+}
+#competencias .comp4:hover {
+    color: rgb(28, 181, 241);
+    transform: translateY(-5px);
+}
+#competencias .nativei {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    margin-top: 11rem;
+    margin-left: -5.5rem;
+}
+#competencias .comp5 {
+    display: inline-flex;
+    margin-top: 11.5rem;
+    padding-left: 0.3rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(3, 85, 85);
+}
+#competencias .comp5:hover {
+    color: rgb(3, 141, 141);
+    transform: translateY(-5px);
+}
+#competencias .ci {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 14rem;
+    margin-left: -7.7rem;
+}
+#competencias .comp6 {
+    display: inline-flex;
+    margin-top: 14.2rem;
+    padding-left: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(248, 248, 248);
+    transition: 0.3s;
+}
+#competencias .comp6:hover {
+    color: rgb(15, 94, 173);
+    transform: translateY(-5px);
+}
+#competencias .nodei {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 16.5rem;
+    margin-left: -4.5rem;
+}
+#competencias .comp7 {
+    display: inline-flex;
+    margin-top: 16.8rem;
+    padding-left: 0.4rem;
+    color: rgb(50, 66, 49);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#competencias .comp7:hover {
+    color: rgb(71, 245, 71);
+    transform: translateY(-5px);
+}
+#pastas .obji {
+    display: inline-flex;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 100%;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+#pastas .objetivo {
+    display: inline-flex;
+    margin-top: -0.5rem;
+    padding-left: 0.3rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: 0.3s;
+}
+#pastas .objp {
+    display: inline-flex;
+    padding-left: 1rem;
+    margin-top: -2rem;
+    width: 30rem;
+    transition: 0.3s;
+}
+#corpo .grafic1 {
+    display: inline-flex;
+    width: 43rem;
+    height: 3rem;
+    margin-top: 5rem;
+    background: forestgreen;
+    margin-left: 2rem;
+    transition: 0.3s;
+}
+#corpo .grafic11 {
+    height: 5rem;
+    width: 5rem;
+    margin-left: 5rem;
+}
+#corpo .pulo {
+    transition: 0.3s;
+}
+#corpo .pulo:hover {
+    transform: translateY(-10px);
+}
+#corpo .grafic1:hover {
+    background: rgb(108, 223, 63);
+}
+#corpo .grafic01 {
+    display: inline-flex;
+    width: 2rem;
+    height: 3rem;
+}
+#pastas2 .imgp {
+    display: inline-flex;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 2rem;
+    margin-top: 0.3rem;
+}
+#pastas2 .certification {
+    display: inline-flex;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-left: 0.3rem;
+    margin-top: -0.2rem;
+}
+#pastas2 .c1 {
+    display: inline-flex;
+    margin-top: 3.5rem;
+    margin-left: -10rem;
+}
+#pastas2 .c2 {
+    display: inline-flex;
+    margin-top: 5rem;
+    margin-left: -24.8rem;
+}
+#pastas2 .c3 {
+    margin-top: 6.5rem;
+    margin-left: -13rem;
+}
+#pastas2 .c4 {
+    margin-top: 8rem;
+    margin-left: -16.2rem;
+}
+#pastas2 .c5 {
+    margin-top: 9.5rem;
+    margin-left: -12.2rem;
+}
+#corpo .grafic12 {
+    display: inline-flex;
+    width: 4rem;
+    height: 4rem;
+    margin-left: 5.5rem;
+    margin-bottom: -4.5rem;
+}
+#corpo .grafic2 {
+    display: inline-flex;
+    width: 43rem;
+    height: 3rem;
+    margin-top: 1rem;
+    margin-left: 12.2rem;
+    background: forestgreen;
+    transition: 0.3s;
+}
+#corpo .grafic2:hover{
+    background: rgb(108, 223, 63);
+}
+#corpo .pulo2 {
+    transition: 0.3s;
+}
+#corpo .pulo2:hover{
+    transform: translateY(-10px);
+}
+#corpo .grafic02 {
+    display: inline-flex;
+    width: 2rem;
+    height: 3rem;
+}
+#corpo .grafic3 {
+    display: inline-flex;
+    background: forestgreen;
+    margin-top: 2rem;
+    width: 25rem;
+    height: 3rem;
+    margin-left: 0.8rem;
+    transition: 0.3s;
+}
+#corpo .grafic3:hover {
+    background: rgb(108, 223, 63);;
+}
+#corpo .grafic03 {
+    display: inline-flex;
+    width: 20rem;
+    height: 3rem;
+}
+#corpo .pulo3 {
+    transition: 0.3s;
+}
+#corpo .pulo3:hover {
+    transform: translateY(-10px);
+}
+#corpo .grafic13 {
+    display: inline-flex;
+    border-radius: 50%;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 6rem;
+}
+#corpo .grafic4 {
+    display: inline-flex;
+    background: forestgreen;
+    width: 10rem;
+    height: 3rem;
+    margin-top: 2rem;
+    transition: 0.3s;
+}
+#corpo .grafic04 {
+    display: inline-flex;
+    width: 35rem;
+    height: 3rem;
+}
+#corpo .grafic14 {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-left: 6.5rem;
+    margin-bottom: 1rem;
+    padding-right: 3.5rem;
+}
+#corpo .grafic4:hover {
+    background: rgb(108, 223, 63);
+}
+#corpo .pulo4 {
+    transition: 0.3s;
+}
+#corpo .pulo4:hover {
+    transform: translateY(-10px);
+}
+#corpo .grafic15 {
+    display: inline-flex;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    margin-left: 6.2rem;
+}
+#corpo .grafic5 {
+    display: inline-flex;
+    width: 12rem;
+    height: 3rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    background: forestgreen;
+}
+#corpo .grafic05 {
+    display: inline-flex;
+    width: 33rem;
+    height: 3rem;
+    transition: 0.3s;
+}
+#corpo .grafic5:hover {
+    background: rgb(108, 223, 63);;
+}
+#corpo .pulo5 {
+    transition: 0.3s;
+}
+#corpo .pulo5:hover {
+    transform: translateY(-10px);
+}
+#corpo .grafic16 {
+    display: inline-flex;
+    margin-left: 6rem;
+    margin-bottom: 0.5rem;
+}
+#corpo .grafic6 {
+    display: inline-flex;
+    width: 45.2rem;
+    height: 3rem;
+    margin-top: 2rem;
+    margin-left: 2.6rem;
+    background: forestgreen;
+    transition: 0.3s;
+}
+#corpo .grafic6:hover {
+    background: rgb(108, 223, 63);;
+}
+#corpo .pulo6 {
+    transition: 0.3s;
+}
+#corpo .pulo6:hover {
+    transform: translateY(-10px);
+}
+#corpo .grafic17 {
+    display: inline-flex;
+    margin-left: 6.2rem;
+    margin-bottom: 0.5rem;
+}
+#corpo .grafic7 {
+    display: inline-flex;
+    background: forestgreen;
+    width: 10rem;
+    height: 3rem;
+    margin-left: 2.4rem;
+    margin-top: 2rem;
+    transition: 0.3s;
+}
+#corpo .grafic07 {
+    display: inline-flex;
+    width: 35rem;
+    height: 3rem;
+}
+#corpo .grafic7:hover {
+    background: rgb(108, 223, 63);;
+}
+#corpo .pulo7 {
+    transition: 0.3s;
+}
+#corpo .pulo7:hover {
+    transform: translateY(-10px);
+}
+#final {
+    display: inline-flex;
+    margin-top: 1rem;
+    width: 80rem;
+    height: 5rem;
+    border: solid rgb(2, 37, 2);
+    background: rgb(108, 223, 63);
+    border-radius: 5%; 
+    transition: 0.3s;
+    margin-left: 1rem; 
+}
+#final .finalp {
+    padding-left: 1rem;
+    color: white;       
+}
+#final:hover {
+    background: rgb(4, 22, 4);
+    border: solid rgb(32, 250, 3);
+    transform: translateY(-5px);
+}
+#final .f1 {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    margin-left: 55rem;
+    margin-top: 3.3rem;
+    transition: 0.3s;
+    margin-right: 0.8rem;
+}
+#final .f1:hover {
+    transform: translateY(-8px);
+}
+#final .f2 {
+    border-radius: 100%;
+    margin-top: 3.3rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: 0.3s;
+}
+#final .f2:hover {
+    transform: translateY(-8px);
+}
