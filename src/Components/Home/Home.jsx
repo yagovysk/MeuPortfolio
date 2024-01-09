@@ -11,7 +11,7 @@ import { Testimonials } from '../Testimonials/Testimonials';
 import { Contato } from '../../Pages/Contato/Contato';
 import React, { useState, useEffect } from 'react';
 import { Footer } from '../Footer/Footer';
-import { Helmet } from 'react-helmet';
+
 
 export function Home() {
   // Estado para controlar a visibilidade do botão
@@ -63,7 +63,6 @@ export function Home() {
             </div>
           </div>
           <div className="home-content">
-            <Helmet>
               <div className="home-data">
                 <h1 className="home-name">Yago Cerqueira Regis</h1>
                 <meta
@@ -96,7 +95,6 @@ export function Home() {
                   Baixar Currículo
                 </a>
               </div>
-            </Helmet>
           </div>
         </div>
       </section>
