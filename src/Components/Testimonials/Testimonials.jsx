@@ -19,7 +19,7 @@ export function Testimonials() {
 
   const CustomArrowPrev = ({ onClick }) => (
     <div
-      style={{ ...customArrowStyles, left: '110px' }}
+      style={{ ...customArrowStyles, left: '40px' }}
       onClick={onClick}
       title="Previous">
       <MdOutlineArrowBackIosNew className="icon-left" />
@@ -28,7 +28,7 @@ export function Testimonials() {
 
   const CustomArrowNext = ({ onClick }) => (
     <div
-      style={{ ...customArrowStyles, right: '110px' }}
+      style={{ ...customArrowStyles, right: '40px' }}
       onClick={onClick}
       title="Next">
       <MdArrowForwardIos className="icon-right" />

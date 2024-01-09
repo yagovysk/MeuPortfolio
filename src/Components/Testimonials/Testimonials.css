@@ -30,7 +30,7 @@
 }
 .container-carousel {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
-  padding: 1rem 0;
+  padding: 1rem;
 }
 .carousel .dot {
   background-color: #7a0e0e !important;
@@ -64,5 +64,14 @@
 @media screen and (min-width: 1150px) {
   .testimonial-container {
     width: 60% !important;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .testimonial-swiper {
+    display: flex;
+    justify-content: center;
+  }
+  .container-carousel {
+    width: 19.5rem !important;
   }
 }
