@@ -1,0 +1,110 @@
+.nav-container {
+  position: relative;
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background: rgb(90, 5, 5);
+}
+.logo {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: color 0.4s;
+  text-decoration: none;
+}
+.nav-toggle,
+.menu-close {
+  display: inline-flex;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.nav-toggle {
+  color: #fff;
+  transition: color 0.4s;
+}
+@media screen and (max-width: 1150px) {
+  .nav-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 12px 24px rgba(87, 85, 85, 0.404);
+    padding-block: 5rem 4rem;
+    transition: top 0.4s;
+    z-index: 2;
+  }
+}
+.container-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  text-align: center;
+}
+.item-list .link {
+  text-decoration: none;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: color 0.4s ease;
+}
+.item-list .link:hover {
+  color: rgb(122, 9, 9);
+}
+.menu-close {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
+}
+.show-menu {
+  top: 0;
+}
+.button-list {
+  display: inline-block;
+  text-decoration: none;
+  background-color: rgb(122, 9, 9);
+  border-radius: 5px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  transition: background-color 0.4s, box-shadow, 0.4s;
+}
+.button-list:hover {
+  background-color: rgb(160, 11, 11);
+  box-shadow: 0 0 20px 10px rgba(243, 0, 0, 0.973);
+}
+.moon-icon {
+  color: #fff;
+  cursor: pointer;
+}
+@media screen and (min-width: 1150px) {
+  .nav-actions {
+    display: none !important;
+  }
+  .menu-close {
+    display: none !important;
+  }
+  .nav-container {
+    padding: 1.5rem 1rem !important;
+  }
+  .container-list {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center !important;
+    gap: 2rem;
+  }
+  .item-list .link {
+    color: #fff;
+    display: flex;
+    transition: 0.4s ease !important;
+  }
+  .item-list .link:hover {
+    color: rgb(182, 11, 11);
+    transform: translateY(-4px);
+  }
+}

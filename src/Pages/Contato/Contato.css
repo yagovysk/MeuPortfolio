@@ -1,0 +1,21 @@
+.contact-section {
+  padding: 3rem 0;
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.contato-button {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  background: #580808;
+  text-decoration: none;
+  transition: 0.4s ease;
+  padding: 1rem;
+}
+.contato-button:hover {
+  background: #8b1212;
+}

@@ -1,0 +1,118 @@
+.container-form {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4rem 1rem;
+  padding-bottom: 12rem;
+  gap: 2rem;
+}
+.container-article-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.message-modal {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  padding: 1rem;
+  position: absolute;
+  margin-top: 18rem;
+  margin-left: -1rem;
+  align-items: center;
+  gap: 1rem;
+  background: #580808;
+}
+.paragraph-message {
+  font-family: 'Monteserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #fff;
+}
+.message-modal button {
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 0.1rem 0.2rem;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.container-article-form h1 {
+  font-family: 'Open sans', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input,
+textarea {
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #161515; /* Adiciona a borda inferior */
+  outline: none; /* Remove a borda de foco padrão */
+}
+input {
+  width: 100%;
+}
+.form-button {
+  cursor: pointer;
+  background: #580808;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 40px;
+  border: none;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 10px #3e3f3eda, 0 0 20px #3e3f3ed7, 0 0 30px #3e3f3ed8;
+  transition: 0.4s ease;
+}
+.form-button:hover {
+  box-shadow: 0 0 20px 10px #b40e0ecc;
+  background: #991010;
+  transform: scale(1.05);
+}
+.container-form-button {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.container-inputs {
+  display: flex;
+  gap: 1rem;
+}
+.input-1 {
+  display: flex;
+  flex-direction: column;
+}
+.input-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+.input-tel {
+  width: 100% !important;
+}
+.message-modal button {
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 0.1rem 0.2rem;
+  cursor: pointer;
+  transition: 0.4s ease;
+}

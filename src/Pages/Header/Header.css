@@ -1,0 +1,12 @@
+.container-header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgb(90, 5, 5);
+
+  transition: background-color 0.4s, box-shadow 0.4s;
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+}
