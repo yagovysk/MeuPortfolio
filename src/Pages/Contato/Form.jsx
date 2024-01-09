@@ -12,7 +12,6 @@ export function Form() {
   );
 
   const [name, setName] = useState('');
-  const [empresa, setEmpresa] = useState('');
   const [email, setEmail] = useState('');
   const [tel, setTel] = useState('');
   const [message, setMessage] = useState('');
@@ -28,15 +27,12 @@ export function Form() {
     }
     if (name === '' || email === '' || tel === '' || message === '') {
       setShowMessage(true);
-      setMessageContent(
-        'Por favor, preencha todos os campos, o de Empresa é opcional.',
-      );
+      setMessageContent('Por favor, preencha todos os campos.');
       return;
     }
 
     const templateParams = {
       from_name: name,
-      empresa: empresa,
       email: email,
       tel: tel,
       message: message,
@@ -53,7 +49,6 @@ export function Form() {
         (response) => {
           console.log('EMAIL ENVIADO', response.status, response.text);
           setName('');
-          setEmpresa('');
           setEmail('');
           setTel('');
           setMessage('');
