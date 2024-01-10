@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  padding: 2rem 0;
 }
 .work-section-title {
   font-family: 'Open sans', sans-serif;
