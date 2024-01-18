@@ -34,7 +34,7 @@ export function Services() {
       <div className="services-container">
         <article className="services-card">
           <FaCode className="services-icon" />
-          <h2 className="services-title">Desenvolvedor Web</h2>
+          <h2 className="services-title">Desenvolvedor Front-end</h2>
           <p className="services-description">
             Designs bonitos e responsivos com uma interface intuitiva, eficiente
             e prazerosa ao usuário.
@@ -73,10 +73,10 @@ export function Services() {
         </article>
         <article className="services-card">
           <FaPenNib className="services-icon" />
-          <h2 className="services-title">Web Design</h2>
+          <h2 className="services-title">Desenvolvimento Back-end</h2>
           <p className="services-description">
-            Designs bonitos e responsivos com uma interface intuitiva, eficiente
-            e prazerosa ao usuário.
+            Criação de softwares profissionais, com qualidade e foco nas
+            necessidades dos clientes.
           </p>
           <button
             className="services-button"
@@ -90,20 +90,17 @@ export function Services() {
                   className="modal-close"
                   onClick={() => closeModal('developerWeb1')}
                 />
-                <h2 className="modal-title">Web Design</h2>
+                <h2 className="modal-title">Back-end</h2>
                 <ul className="services-modal-list">
                   <li className="modal-item">
-                    Criação de websites profissionais, com qualidade e foco nas
-                    necessidades dos clientes.
+                    Softwares com linguagens de alto nível, que atendem bem as necessidades dos clientes.
                   </li>
-                  <li className="modal-item">Design Responsivo para mobile.</li>
+                  <li className="modal-item">Testes no código e garantia de qualidade.</li>
                   <li className="modal-item">
-                    Eu posiciono seu website com SEO avançado, ajuda os
-                    mecanismos de busca a encontrar, sem a necessidade do
-                    tráfego pago.
+                    Melhores métodos para aplicação e análise de requisitos.
                   </li>
                   <li className="modal-item">
-                    Eu resolvo problemas em páginas da web.
+                    Eu resolvo problemas em qualquer código.
                   </li>
                 </ul>
               </div>
@@ -112,10 +109,10 @@ export function Services() {
         </article>
         <article className="services-card">
           <FiLayout className="services-icon" />
-          <h2 className="services-title">Interfaces UI/UX</h2>
+          <h2 className="services-title">Manipulação de B.D.</h2>
           <p className="services-description">
-            Designs bonitos e responsivos com uma interface intuitiva, eficiente
-            e prazerosa ao usuário.
+           gerenciamento e otimização de bancos de dados, oferecendo soluções personalizadas 
+           para atender às necessidades específicas dos Clientes.
           </p>
           <button
             className="services-button"
@@ -129,20 +126,17 @@ export function Services() {
                   className="modal-close"
                   onClick={() => closeModal('developerWeb2')}
                 />
-                <h2 className="modal-title">Interfaces UI/UX</h2>
+                <h2 className="modal-title">MySQL</h2>
                 <ul className="services-modal-list">
                   <li className="modal-item">
-                    Criação de websites profissionais, com qualidade e foco nas
-                    necessidades dos clientes.
+                    Implemento estratégias para otimizar o desempenho do MySQL, ajustando índices, consultas e configurações do servidor.
                   </li>
-                  <li className="modal-item">Design Responsivo para mobile.</li>
+                  <li className="modal-item">Identifico e resolvo problemas de desempenho, garantindo tempos de resposta mais rápidos e maior escalabilidade.</li>
                   <li className="modal-item">
-                    Eu posiciono seu website com SEO avançado, ajuda os
-                    mecanismos de busca a encontrar, sem a necessidade do
-                    tráfego pago.
+                    Melhoro a eficiência operacional, reduzindo tempos de resposta e aumentando a eficiência do banco de dados.
                   </li>
                   <li className="modal-item">
-                    Eu resolvo problemas em páginas da web.
+                    Desenvolvo soluções escaláveis para apoiar o crescimento contínuo da sua empresa.
                   </li>
                 </ul>
               </div>
