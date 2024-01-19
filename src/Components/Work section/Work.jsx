@@ -18,9 +18,9 @@ export function Work() {
             <img
               src={site1}
               alt="Imagem de capa do meu trabalho"
-              className="work-img"
+              className="work-img-gas"
             />
-            <FaRegArrowAltCircleRight className="work-icon" />
+            <FaRegArrowAltCircleRight className="work-icon-gas" />
           </a>
           <h2 className="work-title">
             Website TeleGás Monte Verde - Betim (MG)
@@ -35,7 +35,7 @@ export function Work() {
             <img
               src={togyro}
               alt="Imagem de capa do meu trabalho"
-              className="work-img"
+              className="work-img-togyro"
             />
             <FaRegArrowAltCircleRight className="work-icon" />
           </a>
@@ -52,7 +52,7 @@ export function Work() {
               alt="Imagem de capa do meu trabalho"
               className="work-img"
             />
-            <FaRegArrowAltCircleRight className="work-icon" />
+            <FaRegArrowAltCircleRight className="work-icon-2" />
           </a>
           <h2 className="work-title">Website 4LessCarbon</h2>
           <span className="work-subtitle">Landing Page</span>
@@ -67,7 +67,7 @@ export function Work() {
               alt="Imagem de capa do meu trabalho"
               className="work-img"
             />
-            <FaRegArrowAltCircleRight className="work-icon" />
+            <FaRegArrowAltCircleRight className="work-icon-2" />
           </a>
           <h2 className="work-title">Website Projeto EcoSempre</h2>
           <span className="work-subtitle">Landing Page</span>

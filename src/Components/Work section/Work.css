@@ -24,25 +24,32 @@
   color: rgb(184, 180, 180);
 }
 .work-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  padding: 1rem;
   justify-self: center;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 .work-card {
-  display: flex;
-  flex-direction: column;
-
+  display: grid;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 0.4rem;
 }
 .work-img {
-  width: 90%;
-
+  width: 60%;
+  filter: grayscale(1);
+  transition: filter 0.5s, transform 0.5s ease;
+}
+.work-img-gas {
+  width: 60%;
+  filter: grayscale(1);
+  transition: filter 0.5s, transform 0.5s ease;
+}
+.work-img-togyro {
+  width: 100%;
   filter: grayscale(1);
   transition: filter 0.5s, transform 0.5s ease;
 }
@@ -51,6 +58,22 @@
   position: absolute;
   top: 1.25rem;
   right: 3rem;
+  font-size: 2rem;
+  transition: transform 0.4s;
+}
+.work-icon-2 {
+  color: #580808;
+  position: absolute;
+  top: 1.25rem;
+  right: 14rem;
+  font-size: 2rem;
+  transition: transform 0.4s;
+}
+.work-icon-gas {
+  color: #580808;
+  position: absolute;
+  top: 1.25rem;
+  right: 14rem;
   font-size: 2rem;
   transition: transform 0.4s;
 }
@@ -68,7 +91,21 @@
   transform: scale(1.05);
   filter: none;
 }
+.work-link:hover .work-img-gas {
+  transform: scale(1.05);
+  filter: none;
+}
+.work-link:hover .work-img-togyro {
+  transform: scale(1.05);
+  filter: none;
+}
 .work-link:hover .work-icon {
+  transform: translateX(8px);
+}
+.work-link:hover .work-icon-2 {
+  transform: translateX(8px);
+}
+.work-link:hover .work-icon-gas {
   transform: translateX(8px);
 }
 @media screen and (min-width: 1150px) {
@@ -76,5 +113,30 @@
     display: grid !important;
     grid-template-rows: auto auto;
     grid-template-columns: auto auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  .work-img-togyro {
+    width: 65%;
+  }
+  .work-icon {
+    color: #580808;
+    position: absolute;
+    top: 1rem;
+    right: 5rem;
+    font-size: 1.5rem;
+    transition: transform 0.4s;
+  }
+  .work-icon-2 {
+    top: 1rem !important;
+    right: 5rem !important;
+    font-size: 2rem;
+    font-size: 1.5rem !important;
+  }
+  .work-icon-gas {
+    top: 1rem;
+    right: 5rem;
+    font-size: 1.5rem;
+    transition: transform 0.4s;
   }
 }
