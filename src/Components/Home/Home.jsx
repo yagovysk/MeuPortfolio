@@ -2,7 +2,7 @@ import './Home.css';
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { IoMdGlobe } from 'react-icons/io';
-import pdfFile from '../../assets/Curriculo Yago Cerqueira.pdf';
+import pdfFile from '../../assets/Meu Curriculo Atualizado 2024.pdf';
 import { FaArrowUp } from 'react-icons/fa';
 import foto from '../../assets/minha-foto.png';
 import { Services } from '../Services/Services';
@@ -40,7 +40,7 @@ export function Home() {
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = pdfFile;
-    link.download = 'seu-arquivo.pdf'; // Nome do arquivo que será baixado
+    link.download = 'Currículo Yago'; // Nome do arquivo que será baixado
     link.click();
   };
 

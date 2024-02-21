@@ -4,6 +4,8 @@ import site1 from '../../assets/fundo-gas.png';
 import togyro from '../../assets/togyro-fundo.png';
 import carbon from '../../assets/4less.png';
 import eco from '../../assets/ecosempre-fundo.png';
+import black from '../../assets/fundo-black.png';
+import pagedev from '../../assets/pagedev.png';
 
 export function Work() {
   return (
@@ -17,7 +19,7 @@ export function Work() {
             className="work-link">
             <img
               src={site1}
-              alt="Imagem de capa do meu trabalho"
+              alt="Imagem de capa do peojeto de gás, um homem carregando um gás e está sorrindo"
               className="work-img-gas"
             />
             <FaRegArrowAltCircleRight className="work-icon-gas" />
@@ -34,7 +36,7 @@ export function Work() {
             className="work-link">
             <img
               src={togyro}
-              alt="Imagem de capa do meu trabalho"
+              alt="Imagem de capa do projeto Togyro, Capa com um Astronauta em um mar do espaço, com várias estrelas atrás dele."
               className="work-img-togyro"
             />
             <FaRegArrowAltCircleRight className="work-icon" />
@@ -49,7 +51,7 @@ export function Work() {
             className="work-link">
             <img
               src={carbon}
-              alt="Imagem de capa do meu trabalho"
+              alt="Imagem de capa do projeto 4less, capa co folhas verdes e letras de título brancas."
               className="work-img"
             />
             <FaRegArrowAltCircleRight className="work-icon-2" />
@@ -64,13 +66,39 @@ export function Work() {
             className="work-link">
             <img
               src={eco}
-              alt="Imagem de capa do meu trabalho"
+              alt="Imagem de capa do projeto EcoSempre, ecologia e sustentabilidade, descarte de lixos eletrônicos."
               className="work-img"
             />
             <FaRegArrowAltCircleRight className="work-icon-2" />
           </a>
           <h2 className="work-title">Website Projeto EcoSempre</h2>
           <span className="work-subtitle">Landing Page</span>
+        </article>
+        <article className="work-card">
+          <a
+            href="https://teamblack.netlify.app/"
+            target="blank"
+            className="work-link">
+            <img
+              src={black}
+              alt="Imagem de Capa do projeto Team Black, Capa contém o professor Black olhando para cima e do lado esquerdo contém título e botão para entrar em contato."
+              className="work-img"
+            />
+            <FaRegArrowAltCircleRight className="work-icon-3" />
+          </a>
+          <h2 className="work-title">Website Projeto TeamBlack</h2>
+          <span className="work-subtitle">Landing Page</span>
+        </article>
+        <article className="work-card">
+          <a href="#" className="work-link">
+            <img
+              src={pagedev}
+              alt="Capa de Em Breve hávera novos projetos."
+              className="work-img-dev"
+            />
+          </a>
+          <h2 className="work-title">Em Breve...</h2>
+          <span className="work-subtitle">Em desenvolvimento</span>
         </article>
       </div>
     </section>

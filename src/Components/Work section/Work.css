@@ -43,6 +43,12 @@
   filter: grayscale(1);
   transition: filter 0.5s, transform 0.5s ease;
 }
+.work-img-dev {
+  width: 90%;
+  filter: grayscale(1);
+  transition: filter 0.5s, transform 0.5s ease;
+  cursor: zoom-in;
+}
 .work-img-gas {
   width: 60%;
   filter: grayscale(1);
@@ -69,6 +75,14 @@
   font-size: 2rem;
   transition: transform 0.4s;
 }
+.work-icon-3 {
+  color: #580808;
+  position: absolute;
+  top: 5.25rem;
+  right: 14rem;
+  font-size: 2rem;
+  transition: transform 0.4s;
+}
 .work-icon-gas {
   color: #580808;
   position: absolute;
@@ -91,6 +105,10 @@
   transform: scale(1.05);
   filter: none;
 }
+.work-link:hover .work-img-dev {
+  transform: scale(1.05);
+  filter: none;
+}
 .work-link:hover .work-img-gas {
   transform: scale(1.05);
   filter: none;
@@ -105,6 +123,9 @@
 .work-link:hover .work-icon-2 {
   transform: translateX(8px);
 }
+.work-link:hover .work-icon-3 {
+  transform: translateX(8px);
+}
 .work-link:hover .work-icon-gas {
   transform: translateX(8px);
 }
@@ -116,8 +137,18 @@
   }
 }
 @media screen and (max-width: 767px) {
+  .work-img {
+    filter: none;
+  }
+  .work-img-gas {
+    filter: none;
+  }
   .work-img-togyro {
     width: 65%;
+    filter: none;
+  }
+  .work-img-dev {
+    filter: none;
   }
   .work-icon {
     color: #580808;
@@ -129,6 +160,12 @@
   }
   .work-icon-2 {
     top: 1rem !important;
+    right: 5rem !important;
+    font-size: 2rem;
+    font-size: 1.5rem !important;
+  }
+  .work-icon-3 {
+    top: 1.8rem !important;
     right: 5rem !important;
     font-size: 2rem;
     font-size: 1.5rem !important;
