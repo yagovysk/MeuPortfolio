@@ -5,6 +5,7 @@ import carbon from '../../assets/4less.png';
 import eco from '../../assets/ecosempre-fundo.png';
 import black from '../../assets/fundo-black.png';
 import pagedev from '../../assets/pagedev.png';
+import print from '../../assets/print-list.png';
 
 export function Work() {
   return (
@@ -18,7 +19,7 @@ export function Work() {
             className="work-link">
             <img
               src={site1}
-              alt="Imagem de capa do peojeto de gás, um homem carregando um gás e está sorrindo"
+              alt="Imagem de capa do projeto de gás, um homem carregando um gás e está sorrindo"
               className="work-img-gas"
             />
           </a>
@@ -81,6 +82,20 @@ export function Work() {
             />
           </a>
           <h2 className="work-title">Website Projeto TeamBlack</h2>
+          <span className="work-subtitle">Landing Page</span>
+        </article>
+        <article className="work-card">
+          <a
+            href="https://yagolist.netlify.app/"
+            target="blank"
+            className="work-link">
+            <img
+              src={print}
+              alt="Imagem de capa do projeto Lista de Tarefas, o wallpaper são planetas no espaço."
+              className="work-img"
+            />
+          </a>
+          <h2 className="work-title">Website Lista de Tarefas</h2>
           <span className="work-subtitle">Landing Page</span>
         </article>
         <article className="work-card">

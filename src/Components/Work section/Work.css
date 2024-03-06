@@ -85,18 +85,6 @@
   transform: scale(1.05);
   filter: none;
 }
-.work-link:hover .work-icon {
-  transform: translateX(8px);
-}
-.work-link:hover .work-icon-2 {
-  transform: translateX(8px);
-}
-.work-link:hover .work-icon-3 {
-  transform: translateX(8px);
-}
-.work-link:hover .work-icon-gas {
-  transform: translateX(8px);
-}
 @media screen and (min-width: 1150px) {
   .work-container {
     display: grid !important;
