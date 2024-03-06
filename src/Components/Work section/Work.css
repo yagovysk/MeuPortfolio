@@ -59,38 +59,6 @@
   filter: grayscale(1);
   transition: filter 0.5s, transform 0.5s ease;
 }
-.work-icon {
-  color: #580808;
-  position: absolute;
-  top: 1.25rem;
-  right: 3rem;
-  font-size: 2rem;
-  transition: transform 0.4s;
-}
-.work-icon-2 {
-  color: #580808;
-  position: absolute;
-  top: 1.25rem;
-  right: 14rem;
-  font-size: 2rem;
-  transition: transform 0.4s;
-}
-.work-icon-3 {
-  color: #580808;
-  position: absolute;
-  top: 5.25rem;
-  right: 14rem;
-  font-size: 2rem;
-  transition: transform 0.4s;
-}
-.work-icon-gas {
-  color: #580808;
-  position: absolute;
-  top: 1.25rem;
-  right: 14rem;
-  font-size: 2rem;
-  transition: transform 0.4s;
-}
 .work-link {
   display: flex;
   justify-content: center;
@@ -149,31 +117,5 @@
   }
   .work-img-dev {
     filter: none;
-  }
-  .work-icon {
-    color: #580808;
-    position: absolute;
-    top: 1rem;
-    right: 5rem;
-    font-size: 1.5rem;
-    transition: transform 0.4s;
-  }
-  .work-icon-2 {
-    top: 1rem !important;
-    right: 5rem !important;
-    font-size: 2rem;
-    font-size: 1.5rem !important;
-  }
-  .work-icon-3 {
-    top: 1.8rem !important;
-    right: 5rem !important;
-    font-size: 2rem;
-    font-size: 1.5rem !important;
-  }
-  .work-icon-gas {
-    top: 1rem;
-    right: 5rem;
-    font-size: 1.5rem;
-    transition: transform 0.4s;
   }
 }

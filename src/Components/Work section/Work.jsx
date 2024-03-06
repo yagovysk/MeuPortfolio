@@ -1,5 +1,4 @@
 import './Work.css';
-import { FaRegArrowAltCircleRight } from 'react-icons/fa';
 import site1 from '../../assets/fundo-gas.png';
 import togyro from '../../assets/togyro-fundo.png';
 import carbon from '../../assets/4less.png';
@@ -22,7 +21,6 @@ export function Work() {
               alt="Imagem de capa do peojeto de gás, um homem carregando um gás e está sorrindo"
               className="work-img-gas"
             />
-            <FaRegArrowAltCircleRight className="work-icon-gas" />
           </a>
           <h2 className="work-title">
             Website TeleGás Monte Verde - Betim (MG)
@@ -39,7 +37,6 @@ export function Work() {
               alt="Imagem de capa do projeto Togyro, Capa com um Astronauta em um mar do espaço, com várias estrelas atrás dele."
               className="work-img-togyro"
             />
-            <FaRegArrowAltCircleRight className="work-icon" />
           </a>
           <h2 className="work-title">Website Togyro Group Victory</h2>
           <span className="work-subtitle">Landing Page</span>
@@ -54,7 +51,6 @@ export function Work() {
               alt="Imagem de capa do projeto 4less, capa co folhas verdes e letras de título brancas."
               className="work-img"
             />
-            <FaRegArrowAltCircleRight className="work-icon-2" />
           </a>
           <h2 className="work-title">Website 4LessCarbon</h2>
           <span className="work-subtitle">Landing Page</span>
@@ -69,7 +65,6 @@ export function Work() {
               alt="Imagem de capa do projeto EcoSempre, ecologia e sustentabilidade, descarte de lixos eletrônicos."
               className="work-img"
             />
-            <FaRegArrowAltCircleRight className="work-icon-2" />
           </a>
           <h2 className="work-title">Website Projeto EcoSempre</h2>
           <span className="work-subtitle">Landing Page</span>
@@ -84,7 +79,6 @@ export function Work() {
               alt="Imagem de Capa do projeto Team Black, Capa contém o professor Black olhando para cima e do lado esquerdo contém título e botão para entrar em contato."
               className="work-img"
             />
-            <FaRegArrowAltCircleRight className="work-icon-3" />
           </a>
           <h2 className="work-title">Website Projeto TeamBlack</h2>
           <span className="work-subtitle">Landing Page</span>
