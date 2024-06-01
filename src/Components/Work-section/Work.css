@@ -6,7 +6,7 @@
   gap: 2rem;
   padding: 2rem 0;
 }
-.carousel {
+.carousel-projects {
   display: flex;
   justify-content: center;
   padding: 0 2rem;
@@ -40,6 +40,7 @@
   gap: 0rem;
 }
 .work-img {
+  height: 15rem;
   filter: grayscale(1);
   transition: filter 0.5s, transform 0.5s ease;
 }
@@ -124,9 +125,12 @@
   }
 }
 @media screen and (max-width: 767px) {
-  .carousel {
+  .carousel-projects {
     width: 100% !important;
     align-items: center;
+    height: 100%;
+  }
+  .work-img {
     height: 100%;
   }
   .work-img-black {

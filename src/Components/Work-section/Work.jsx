@@ -82,7 +82,7 @@ export function Work() {
     <section className="work-section">
       <h2 className="work-section-title">Meus Trabalhos Recentes</h2>
       <Carousel
-        className="carousel"
+        className="carousel-projects"
         autoPlay
         interval={6000}
         infiniteLoop
