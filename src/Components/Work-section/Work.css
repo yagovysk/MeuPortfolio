@@ -1,0 +1,147 @@
+.work-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+.carousel {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  width: 60% !important;
+  height: 30rem;
+}
+.work-section-title {
+  font-family: "Open sans", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+}
+.work-title {
+  font-family: "Montserrat", serif;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+.work-subtitle {
+  font-family: "Roboto", sans-serif;
+  color: rgb(184, 180, 180);
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0rem;
+}
+.work-img {
+  filter: grayscale(1);
+  transition: filter 0.5s, transform 0.5s ease;
+}
+.work-img-black {
+  height: 15rem;
+  filter: grayscale(1);
+  transition: filter 0.5s, transform 0.5s ease;
+  cursor: zoom-in;
+}
+.work-img-dev {
+  height: 15rem;
+  filter: grayscale(1);
+  transition: filter 0.5s, transform 0.5s ease;
+  cursor: zoom-in;
+}
+.work-img-gas {
+  height: 15rem;
+  filter: grayscale(1);
+  transition: filter 0.5s, transform 0.5s ease;
+}
+.work-img-togyro {
+  height: 15rem;
+  filter: grayscale(1);
+  transition: filter 0.5s, transform 0.5s ease;
+}
+
+.work-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+
+  gap: 0.2rem;
+}
+.work-link:hover .work-img {
+  transform: scale(1.05);
+  filter: none;
+}
+.work-link:hover .work-img-black {
+  transform: scale(1.05);
+  filter: none;
+}
+.work-link:hover .work-img-dev {
+  transform: scale(1.05);
+  filter: none;
+}
+.work-link:hover .work-img-gas {
+  transform: scale(1.05);
+  filter: none;
+}
+.work-link:hover .work-img-togyro {
+  transform: scale(1.05);
+  filter: none;
+}
+.arrow {
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  border: none;
+  border-radius: 100%; /* Fundo redondo */
+  color: white;
+  cursor: pointer;
+  padding: 15px 17px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.arrow-prev {
+  left: 15px;
+}
+
+.arrow-next {
+  right: 15px;
+}
+@media screen and (min-width: 1150px) {
+  .work-container {
+    display: grid !important;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  .carousel {
+    width: 100% !important;
+    align-items: center;
+    height: 100%;
+  }
+  .work-img-black {
+    filter: none;
+    height: 10rem;
+  }
+  .work-img-gas {
+    filter: none;
+    height: 10rem;
+  }
+  .work-img-togyro {
+    height: 10rem;
+    filter: none;
+  }
+  .work-img-dev {
+    filter: none;
+  }
+}

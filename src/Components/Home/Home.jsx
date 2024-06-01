@@ -1,16 +1,16 @@
-import './Home.css';
-import { FaGithub } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
-import { IoMdGlobe } from 'react-icons/io';
-import pdfFile from '../../assets/Meu Curriculo Atualizado 2024.pdf';
-import { FaArrowUp } from 'react-icons/fa';
-import foto from '../../assets/minha-foto.png';
-import { Services } from '../Services/Services';
-import { Work } from '../Work section/Work';
-import { Testimonials } from '../Testimonials/Testimonials';
-import { Contato } from '../../Pages/Contato/Contato';
-import React, { useState, useEffect } from 'react';
-import { Footer } from '../Footer/Footer';
+import "./Home.css";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { IoMdGlobe } from "react-icons/io";
+import pdfFile from "../../assets/Meu Curriculo Atualizado 2024.pdf";
+import { FaArrowUp } from "react-icons/fa";
+import foto from "../../assets/minha-foto.png";
+import { Services } from "../Services/Services";
+import { Work } from "../Work-section/Work";
+import { Testimonials } from "../Testimonials/Testimonials";
+import { Contato } from "../../Pages/Contato/Contato";
+import React, { useState, useEffect } from "react";
+import { Footer } from "../Footer/Footer";
 
 export function Home() {
   // Estado para controlar a visibilidade do botão
@@ -30,17 +30,17 @@ export function Home() {
 
   // Adicione um ouvinte de evento de scroll quando o componente for montado
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Remova o ouvinte de evento quando o componente for desmontado
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   const handleDownload = () => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = pdfFile;
-    link.download = 'Currículo Yago'; // Nome do arquivo que será baixado
+    link.download = "Currículo Yago"; // Nome do arquivo que será baixado
     link.click();
   };
 
@@ -52,7 +52,8 @@ export function Home() {
           {showButton && (
             <button
               className="scroll-button"
-              onClick={() => window.scrollTo(0, 0)}>
+              onClick={() => window.scrollTo(0, 0)}
+            >
               <FaArrowUp className="scrolltotop-icon" />
             </button>
           )}
@@ -73,20 +74,23 @@ export function Home() {
                 <a
                   href="https://github.com/yagovysk"
                   target="blank"
-                  className="home-social-link">
+                  className="home-social-link"
+                >
                   <FaGithub className="git-icon" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/yago-cerqueira-regis/"
                   target="blank"
-                  className="home-social-link">
+                  className="home-social-link"
+                >
                   <FaLinkedin className="linkedin-icon" />
                 </a>
                 <a
                   href="https://togyrogroupvictory.com/"
                   target="blank"
-                  className="home-social-link">
-                  {' '}
+                  className="home-social-link"
+                >
+                  {" "}
                   <IoMdGlobe className="home-social-globe" />
                 </a>
               </div>
