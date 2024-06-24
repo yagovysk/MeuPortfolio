@@ -11,6 +11,7 @@ import eco from "../../assets/ecosempre-fundo.png";
 import black from "../../assets/fundo-black.png";
 import pagedev from "../../assets/pagedev.png";
 import guto from "../../assets/projeto-guto.svg";
+import paulo from "../../assets/projeto-paulo.svg";
 import print from "../../assets/print-list.png";
 
 const projects = [
@@ -74,7 +75,15 @@ const projects = [
       "Imagem de capa do projeto Personal Trainer Gutenberg, o wallpaper é um homem de costas com camisa regata vermelha, pegando alteres em cada mão.",
     title: "Website GT Personal Trainer",
     subtitle: "Landing Page",
-    link: "https://gutopersonal.netlify.app/",
+    link: "https://garotinhasfitness.com.br/",
+    imgClass: "work-img",
+  },
+  {
+    imgSrc: paulo,
+    altText:
+      "Imagem de capa do website Ph Bytes, wallpaper de um notebook com uma mão nas teclas junto aos titulos do site.",
+    title: "Website Ph - Bytes",
+    link: "https://phso.com.br/",
     imgClass: "work-img",
   },
   {
