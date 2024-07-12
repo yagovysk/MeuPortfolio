@@ -1,5 +1,6 @@
 .contact-section {
   padding: 3rem 0;
+  background: linear-gradient(to top, #000000, #490f0f, #690303);
 }
 .contact-container {
   display: flex;
@@ -9,7 +10,7 @@
   align-items: center;
 }
 .contato-button {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #fff;
   background: #580808;
   text-decoration: none;

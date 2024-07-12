@@ -1,14 +1,16 @@
 .section-about {
   text-align: center;
-  padding: 1rem 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
   gap: 1rem;
+  padding: 1rem 0;
+  background: linear-gradient(to top, #000000, #490f0f, #690303);
 }
 .section-about h2 {
   font-family: "Montserrat", serif;
-  color: rgb(90, 5, 5);
+  color: rgb(255, 255, 255);
 }
 .container-about {
   display: flex;
@@ -21,7 +23,7 @@
   width: 250px;
   height: 250px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.836);
-  background: linear-gradient(#c42e2e, #8f1717, #580808);
+  background: linear-gradient(#110b0b, #201010, #580808);
   border: solid 8px rgb(253, 247, 247);
   border-radius: 50%;
   display: grid;
@@ -38,7 +40,7 @@
 }
 .about-name {
   font-family: "Open sans", sans-serif;
-  color: rgb(90, 5, 5);
+  color: rgb(255, 254, 254);
   line-height: 1rem;
 }
 .about-profession {
@@ -49,7 +51,7 @@
   text-align: center;
   width: 80%;
   font-family: "Roboto", sans-serif;
-  color: rgb(90, 5, 5);
+  color: rgb(247, 245, 245);
   font-weight: 400;
   letter-spacing: 0.2rem;
 }

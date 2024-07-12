@@ -5,14 +5,16 @@
   align-items: center;
   gap: 1rem;
   padding: 5rem 0;
+  background: linear-gradient(to bottom, #000000, #490f0f, #690303);
 }
 .section-title {
-  font-family: 'Open sans', sans-serif;
+  font-family: "Open sans", sans-serif;
   font-size: 2rem;
+  color: #fff;
   text-align: center;
 }
 .services-title {
-  font-family: 'Montserrat', serif;
+  font-family: "Montserrat", serif;
   font-size: 1.5rem;
   text-align: center;
 }
@@ -21,7 +23,7 @@
   color: #580808;
 }
 .services-description {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: 0.2rem;
   text-align: left;
 }
@@ -39,9 +41,10 @@
   border-radius: 10px;
   padding: 2rem;
   gap: 2rem;
+  background: #fff;
 }
 .services-button {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   background: #580808;
   color: #fff;
@@ -93,12 +96,12 @@
   background-color: #474343;
 }
 .modal-title {
-  font-family: 'Open sans', sans-serif;
+  font-family: "Open sans", sans-serif;
   z-index: 1;
   color: #000000;
 }
 .modal-item {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   list-style: square;
   text-align: initial;
   color: #000000;

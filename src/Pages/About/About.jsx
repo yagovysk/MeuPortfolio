@@ -1,16 +1,16 @@
-import './About.css';
-import foto from '../../assets/minha-foto.png';
-import { Menu } from '../../Components/Menu/Menu';
-import { Link } from 'react-router-dom';
-import html from '../../assets/html-icon.svg';
-import css from '../../assets/css-icon.svg';
-import javascript from '../../assets/javascript-icon.svg';
-import react from '../../assets/react-icon.svg';
-import typescript from '../../assets/typescript-icon.svg';
-import node from '../../assets/node-icon.svg';
-import angular from '../../assets/angular-icon.svg';
-import vue from '../../assets/vue-icon.svg';
-import { Footer } from '../../Components/Footer/Footer';
+import "./About.css";
+import foto from "../../assets/minha-foto.png";
+import { Menu } from "../../Components/Menu/Menu";
+import { Link } from "react-router-dom";
+import html from "../../assets/html-icon.svg";
+import css from "../../assets/css-icon.svg";
+import javascript from "../../assets/javascript-icon.svg";
+import react from "../../assets/react-icon.svg";
+import typescript from "../../assets/typescript-icon.svg";
+import node from "../../assets/node-icon.svg";
+import angular from "../../assets/angular-icon.svg";
+import vue from "../../assets/vue-icon.svg";
+import { Footer } from "../../Components/Footer/Footer";
 
 export function About() {
   return (
@@ -30,7 +30,7 @@ export function About() {
                 <h1 className="about-name">Yago Cerqueira Regis</h1>
                 <h2 className="about-profession">Desenvolvedor Web</h2>
                 <p className="about-description">
-                  Desenvolvo <b>Páginas da Web</b> com ênfase em {''}
+                  Desenvolvo <b>Páginas da Web</b> com ênfase em {""}
                   <b>UI/UX (User Interface/ User Experience)</b>. Possuo anos de
                   experiência não apenas em design, mas também em programação,
                   utilizando tecnologias como React, entre outras, nos meus
@@ -88,8 +88,8 @@ export function About() {
             </div>
           </div>
         </div>
-        <Footer />
       </section>
+      <Footer />
     </div>
   );
 }
