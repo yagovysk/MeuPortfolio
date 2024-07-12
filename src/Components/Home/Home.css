@@ -3,12 +3,20 @@
 }
 .home-section {
   position: relative;
-  border-bottom: solid 16px rgb(90, 5, 5);
+  border-bottom: solid 16px rgb(0, 0, 0);
 }
 .home-rectangle {
   width: 100%;
   height: 220px;
-  background-color: rgb(90, 5, 5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden; /* Para garantir que o vídeo se ajuste ao container */
+}
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para garantir que o vídeo cubra todo o espaço */
   position: absolute;
   top: 0;
   left: 0;
@@ -19,6 +27,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: linear-gradient(to top, #000000, #490f0f, #690303);
 }
 .home-data {
   padding: 0 1rem;
@@ -31,7 +40,6 @@
   justify-content: center;
   align-items: center;
   margin: 0;
-
   width: 200px;
   height: 200px;
   border-radius: 100%;
@@ -46,19 +54,19 @@
   z-index: 1;
 }
 .home-name {
-  font-family: 'Montserrat', serif;
-  color: rgb(90, 5, 5);
+  font-family: "Montserrat", serif;
+  color: rgb(246, 246, 246);
   font-style: normal;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .home-profession {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: rgb(90, 5, 5);
+  color: rgb(251, 250, 250);
 }
 .home-social {
   display: flex;
@@ -66,7 +74,7 @@
   gap: 1rem;
 }
 .home-social-link {
-  color: rgb(90, 5, 5);
+  color: rgb(251, 251, 251);
   font-size: 1.4rem;
   transition: 0.4s ease;
 }
@@ -78,7 +86,7 @@
   width: 250px;
   height: 250px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.836);
-  background: linear-gradient(#c42e2e, #8f1717, #580808);
+  background: linear-gradient(#2c1e1e, #000000, #580808);
   border: solid 8px rgb(253, 247, 247);
   border-radius: 50%;
   display: grid;
@@ -88,15 +96,16 @@
 }
 .home-button {
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-  background: #580808;
-  color: #fff;
+  font-family: "Roboto", sans-serif;
+  background: #fffefe;
+  color: #430c0c;
   padding: 1rem;
   justify-self: center;
   transition: 0.4s ease;
 }
 .home-button:hover {
   background: #f54d4d;
+  color: #fff;
 }
 .scroll-button {
   position: fixed;
@@ -111,7 +120,6 @@
   cursor: pointer;
   z-index: 999;
 }
-
 .scroll-button:hover {
   background-color: #971f1f;
   transform: translateY(-5px);

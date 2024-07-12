@@ -2,7 +2,7 @@ import "./Home.css";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdGlobe } from "react-icons/io";
-import pdfFile from "../../assets/Meu Currículo Yago-1.pdf";
+import pdfFile from "../../assets/Currículo Yago-1.pdf";
 import { FaArrowUp } from "react-icons/fa";
 import foto from "../../assets/minha-foto.png";
 import { Services } from "../Services/Services";
@@ -11,43 +11,39 @@ import { Testimonials } from "../Testimonials/Testimonials";
 import { Contato } from "../../Pages/Contato/Contato";
 import React, { useState, useEffect } from "react";
 import { Footer } from "../Footer/Footer";
+import backgroundVideo from "../../assets/background-video.mp4";
 
 export function Home() {
-  // Estado para controlar a visibilidade do botão
   const [showButton, setShowButton] = useState(false);
 
-  // Função para manipular o evento de scroll
   const handleScroll = () => {
-    // Calcule a posição do meio da página
     const middleOfPage = window.innerHeight / 2;
-
-    // Verifique se a posição do scroll é maior que o meio da página
     const isPastMiddle = window.scrollY > middleOfPage;
-
-    // Atualize o estado com base na condição
     setShowButton(isPastMiddle);
   };
 
-  // Adicione um ouvinte de evento de scroll quando o componente for montado
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
-    // Remova o ouvinte de evento quando o componente for desmontado
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = pdfFile;
-    link.download = "Currículo Yago Cerqueira Regis"; // Nome do arquivo que será baixado
+    link.download = "Currículo Yago Cerqueira Regis";
     link.click();
   };
 
   return (
     <main className="main">
       <section className="home-section">
-        <div className="home-rectangle"></div>
+        <div className="home-rectangle">
+          <video autoPlay loop muted className="background-video">
+            <source src={backgroundVideo} type="video/mp4" />
+          </video>
+        </div>
         <div className="home-container">
           {showButton && (
             <button
