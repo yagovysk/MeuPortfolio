@@ -83,6 +83,7 @@ const projects = [
     altText:
       "Imagem de capa do website Ph Bytes, wallpaper de um notebook com uma mão nas teclas junto aos titulos do site.",
     title: "Website Ph - Bytes",
+    subtitle: "landing page",
     link: "https://phso.com.br/",
     imgClass: "work-img",
   },
