@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { MdArrowBackIosNew, MdOutlineArrowForwardIos } from "react-icons/md";
 import "./Work.css";
-
+import nutri from "../../assets/nutri.png";
 import site1 from "../../assets/fundo-gas.png";
 import togyro from "../../assets/togyro-fundo.png";
 import carbon from "../../assets/4less.png";
@@ -85,6 +85,14 @@ const projects = [
     title: "Website Ph - Bytes",
     subtitle: "landing page",
     link: "https://phso.com.br/",
+    imgClass: "work-img",
+  },
+  {
+    imgSrc: nutri,
+    altText: "Capa do site de marmitas Nutri e Leve Bsb",
+    title: "Website Nutri e Leve",
+    subtitle: "Website",
+    link: "https://nutrielevebsb.com.br/",
     imgClass: "work-img",
   },
   {
