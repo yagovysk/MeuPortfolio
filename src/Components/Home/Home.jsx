@@ -2,7 +2,7 @@ import "./Home.css";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdGlobe } from "react-icons/io";
-import pdfFile from "../../assets/Currículo Yago-1.pdf";
+import pdfFile from "../../assets/Curriculo.pdf";
 import { FaArrowUp } from "react-icons/fa";
 import foto from "../../assets/minha-foto.png";
 import { Services } from "../Services/Services";
