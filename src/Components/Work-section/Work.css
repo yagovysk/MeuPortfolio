@@ -108,7 +108,7 @@
   cursor: pointer;
   padding: 15px 17px;
   position: absolute;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
   z-index: 2;
 }
@@ -151,5 +151,16 @@
   }
   .work-img-dev {
     filter: none;
+  }
+  .arrow {
+    padding: 0.5rem;
+    top: 70%;
+    background: none;
+  }
+  .arrow-prev {
+    left: 0px;
+  }
+  .arrow-next {
+    right: 0px;
   }
 }
