@@ -29,13 +29,13 @@
   background: #580808;
 }
 .paragraph-message {
-  font-family: 'Monteserrat', sans-serif;
+  font-family: "Monteserrat", sans-serif;
   font-weight: 600;
   font-size: 0.8rem;
   color: #fff;
 }
 .message-modal button {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   border: none;
   border-radius: 5px;
   padding: 0.1rem 0.2rem;
@@ -44,7 +44,7 @@
 }
 
 .container-article-form h1 {
-  font-family: 'Open sans', sans-serif;
+  font-family: "Open sans", sans-serif;
   font-size: 2rem;
   letter-spacing: 0.1rem;
 }
@@ -55,7 +55,7 @@ form {
 input,
 textarea {
   background: transparent;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
 
   padding: 8px;
@@ -70,8 +70,8 @@ input {
 }
 .form-button {
   cursor: pointer;
-  background: #580808;
-  font-family: 'Roboto', sans-serif;
+  background: #054683;
+  font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
   color: #fff;
@@ -82,8 +82,8 @@ input {
   transition: 0.4s ease;
 }
 .form-button:hover {
-  box-shadow: 0 0 20px 10px #b40e0ecc;
-  background: #991010;
+  box-shadow: 0 0 20px 10px #278cea;
+  background: #278cea;
   transform: scale(1.05);
 }
 .container-form-button {
@@ -109,7 +109,7 @@ input {
   width: 100% !important;
 }
 .message-modal button {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   border: none;
   border-radius: 5px;
   padding: 0.1rem 0.2rem;

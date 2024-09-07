@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  background: linear-gradient(to bottom, #000000, #490f0f, #690303);
+  background: linear-gradient(to bottom, #000000, #09509c, #124658);
 }
 .logo {
   color: #fff;
@@ -52,7 +52,7 @@
   transition: color 0.4s ease;
 }
 .item-list .link:hover {
-  color: rgb(122, 9, 9);
+  color: #278cea;
 }
 .menu-close {
   position: absolute;
@@ -65,7 +65,7 @@
 .button-list {
   display: inline-block;
   text-decoration: none;
-  background-color: rgb(122, 9, 9);
+  background-color: rgb(10, 131, 172);
   border-radius: 5px;
   color: #fff;
   font-family: "Roboto", sans-serif;
@@ -74,8 +74,8 @@
   transition: background-color 0.4s, box-shadow, 0.4s;
 }
 .button-list:hover {
-  background-color: rgb(160, 11, 11);
-  box-shadow: 0 0 20px 10px rgba(243, 0, 0, 0.973);
+  background-color: rgb(7, 166, 245);
+  box-shadow: 0 0 20px 10px rgba(6, 224, 249, 0.973);
 }
 .moon-icon {
   color: #fff;
@@ -104,7 +104,7 @@
     transition: 0.4s ease !important;
   }
   .item-list .link:hover {
-    color: rgb(182, 11, 11);
+    color: #278cea;
     transform: translateY(-4px);
   }
 }

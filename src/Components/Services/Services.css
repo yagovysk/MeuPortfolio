@@ -5,7 +5,7 @@
   align-items: center;
   gap: 1rem;
   padding: 5rem 0;
-  background: linear-gradient(to bottom, #000000, #490f0f, #690303);
+  background: linear-gradient(to bottom, #000000, #124658, #007bff);
 }
 .section-title {
   font-family: "Open sans", sans-serif;
@@ -20,7 +20,7 @@
 }
 .services-icon {
   font-size: 2rem;
-  color: #580808;
+  color: #07437c;
 }
 .services-description {
   font-family: "Roboto", sans-serif;
@@ -46,7 +46,7 @@
 .services-button {
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
-  background: #580808;
+  background: #07437c;
   color: #fff;
   padding: 1rem;
   justify-self: center;
@@ -55,12 +55,12 @@
   cursor: pointer;
 }
 .services-button:hover {
-  background: #a01b1b;
+  background: #1281b9;
 }
 .services-modal {
   position: fixed;
   inset: 0;
-  background: #580808;
+  background: #052d5b;
   display: grid;
   place-items: center;
   padding: 2rem 1.5rem;
@@ -82,7 +82,7 @@
   max-height: 420px;
   background: #fff;
   padding: 3.5rem 1.5rem;
-  border-bottom: 8px solid #580808;
+  border-bottom: 8px solid #0a78bc;
   overflow: auto;
   border-radius: 10px;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
@@ -108,7 +108,7 @@
   letter-spacing: 0.1rem;
 }
 .modal-close {
-  color: #580808;
+  color: #07437c;
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;

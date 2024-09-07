@@ -5,7 +5,7 @@
   align-items: center;
   padding: 2rem 0;
   gap: 2rem;
-  background: linear-gradient(to bottom, #000000, #490f0f, #690303);
+  background: linear-gradient(to bottom, #000000, #124658, #007bff);
 }
 
 .testimonial-container {
@@ -37,7 +37,7 @@
   padding: 1rem;
 }
 .carousel .dot {
-  background-color: #7a0e0e !important;
+  background-color: #278cea !important;
 }
 .testimonial-name {
   font-family: "Open sans", sans-serif;
@@ -57,7 +57,7 @@
   transition: filter 0.4s;
 }
 .testimonial-border {
-  border: 6px solid #7e0e0e;
+  border: 6px solid #278cea;
   overflow: hidden;
   border-radius: 50%;
   margin: 0 auto 1rem;

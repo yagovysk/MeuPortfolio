@@ -27,7 +27,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(to top, #000000, #490f0f, #690303);
+  background: linear-gradient(to top, #000000, #124658, #007bff);
 }
 .home-data {
   padding: 0 1rem;
@@ -78,14 +78,14 @@
   transition: 0.4s ease;
 }
 .home-social-link:hover {
-  color: rgb(165, 43, 43);
+  color: #07afd5;
 }
 .home-perfil {
   position: relative;
   width: 250px;
   height: 250px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.836);
-  background: linear-gradient(#2c1e1e, #000000, #580808);
+  background: linear-gradient(#000000, #16776c, #007bff);
   border: solid 8px rgb(253, 247, 247);
   border-radius: 50%;
   display: grid;
@@ -103,7 +103,7 @@
   transition: 0.4s ease;
 }
 .home-button:hover {
-  background: #f54d4d;
+  background: #07afd5;
   color: #fff;
 }
 .scroll-button {
@@ -120,6 +120,6 @@
   z-index: 999;
 }
 .scroll-button:hover {
-  background-color: #971f1f;
+  background-color: #07afd5;
   transform: translateY(-5px);
 }

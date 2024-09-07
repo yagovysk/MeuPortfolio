@@ -6,7 +6,7 @@
   overflow-x: hidden;
   gap: 1rem;
   padding: 1rem 0;
-  background: linear-gradient(to top, #000000, #490f0f, #690303);
+  background: linear-gradient(to top, #000000, #124658, #007bff);
 }
 .section-about h2 {
   font-family: "Montserrat", serif;
@@ -23,7 +23,7 @@
   width: 250px;
   height: 250px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.836);
-  background: linear-gradient(#110b0b, #201010, #580808);
+  background: linear-gradient(#110b0b, #107781, #007bff);
   border: solid 8px rgb(253, 247, 247);
   border-radius: 50%;
   display: grid;
@@ -65,7 +65,7 @@
 .about-button {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
-  background: #580808;
+  background: #063e76;
   color: #fff;
   padding: 1rem;
   justify-self: center;
@@ -73,7 +73,7 @@
   transition: 0.4s ease;
 }
 .about-button:hover {
-  background: #f54d4d;
+  background: #085eb5;
 }
 .about-content {
   display: flex;
@@ -87,7 +87,7 @@
 }
 .about-skills-title {
   font-family: "Open-sans", sans-serif;
-  color: rgb(90, 5, 5);
+  color: #fff;
   font-size: 1.7rem;
   text-align: center;
   line-height: 0;

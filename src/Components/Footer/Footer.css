@@ -1,6 +1,6 @@
 .footer {
-  background-color: #580808;
-  box-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 40px #ff073a;
+  background-color: #0e5fb5;
+  box-shadow: 0 0 10px #0985d8, 0 0 20px #0985d8, 0 0 40px #0985d8;
 }
 .footer-container {
   display: grid;
@@ -10,7 +10,7 @@
 }
 .footer-logo {
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #fff;
   font-size: 1.5rem;
   transition: 0.4s ease;
@@ -34,7 +34,7 @@
   text-decoration: none;
   display: flex;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 32px;
   transition: 0.4s ease;
 }
@@ -57,7 +57,7 @@
   transform: translateY(-5px);
 }
 .footer-copy {
-  font-family: 'Open sans', sans-serif;
+  font-family: "Open sans", sans-serif;
   font-size: 0.9rem;
   color: #fff;
   z-index: 999;
