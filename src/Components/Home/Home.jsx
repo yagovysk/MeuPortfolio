@@ -78,7 +78,7 @@ export function Home() {
                 content="Yago Cerqueira Regis, Desenvolvedor Web."
               />
               <h2 className="home-profession" data-aos="fade-up">
-                Desenvolvedor Web
+                Desenvolvedor
               </h2>
               <div className="home-social" data-aos="fade-up">
                 <a

@@ -43,10 +43,10 @@ export function About() {
                   Yago Cerqueira Regis
                 </h1>
                 <h2 className="about-profession" data-aos="fade-up">
-                  Desenvolvedor Web
+                  Desenvolvedor
                 </h2>
                 <p className="about-description">
-                  Desenvolvo <b>Páginas da Web</b> com ênfase em {""}
+                  Desenvolvo <b>Páginas da Web</b> com ênfase em
                   <b>UI/UX (User Interface/ User Experience)</b>. Possuo anos de
                   experiência não apenas em design, mas também em programação,
                   utilizando tecnologias como React, entre outras, nos meus
