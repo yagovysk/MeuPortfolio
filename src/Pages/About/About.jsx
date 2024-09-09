@@ -11,24 +11,40 @@ import node from "../../assets/node-icon.svg";
 import angular from "../../assets/angular-icon.svg";
 import vue from "../../assets/vue-icon.svg";
 import { Footer } from "../../Components/Footer/Footer";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export function About() {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
   return (
     <div>
       <Menu />
       <section className="section-about">
-        <h2>Minha Informação Pessoal</h2>
-        <div className="container-about">
-          <div className="about-perfil">
-            <div className="perfil-content">
-              <img src={foto} alt="image" className="perfil-img" />
+        <h2 data-aos="fade-up">Minha Informação Pessoal</h2>
+        <div className="container-about" data-aos="fade-up">
+          <div className="about-perfil" data-aos="fade-up">
+            <div className="perfil-content" data-aos="fade-up">
+              <img
+                src={foto}
+                alt="image"
+                className="perfil-img"
+                data-aos="fade-up"
+              />
             </div>
           </div>
-          <div className="about-content">
+          <div className="about-content" data-aos="fade-up">
             <div className="about-data">
-              <div className="about-info">
-                <h1 className="about-name">Yago Cerqueira Regis</h1>
-                <h2 className="about-profession">Desenvolvedor Web</h2>
+              <div className="about-info" data-aos="fade-up">
+                <h1 className="about-name" data-aos="fade-up">
+                  Yago Cerqueira Regis
+                </h1>
+                <h2 className="about-profession" data-aos="fade-up">
+                  Desenvolvedor Web
+                </h2>
                 <p className="about-description">
                   Desenvolvo <b>Páginas da Web</b> com ênfase em {""}
                   <b>UI/UX (User Interface/ User Experience)</b>. Possuo anos de

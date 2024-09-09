@@ -12,6 +12,8 @@ import { Contato } from "../../Pages/Contato/Contato";
 import React, { useState, useEffect } from "react";
 import { Footer } from "../Footer/Footer";
 import backgroundVideo from "../../assets/background-video.mp4";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -35,6 +37,9 @@ export function Home() {
     link.download = "Currículo Yago Cerqueira Regis";
     link.click();
   };
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
 
   return (
     <main className="main">
@@ -53,20 +58,29 @@ export function Home() {
               <FaArrowUp className="scrolltotop-icon" />
             </button>
           )}
-          <div className="home-perfil">
-            <div className="perfil-content">
-              <img className="perfil-img" src={foto} alt="" />
+          <div className="home-perfil" data-aos="fade-up">
+            <div className="perfil-content" data-aos="fade-up">
+              <img
+                className="perfil-img"
+                src={foto}
+                alt=""
+                data-aos="fade-up"
+              />
             </div>
           </div>
-          <div className="home-content">
-            <div className="home-data">
-              <h1 className="home-name">Yago Cerqueira Regis</h1>
+          <div className="home-content" data-aos="fade-up">
+            <div className="home-data" data-aos="fade-up">
+              <h1 className="home-name" data-aos="fade-up">
+                Yago Cerqueira Regis
+              </h1>
               <meta
                 name="description"
                 content="Yago Cerqueira Regis, Desenvolvedor Web."
               />
-              <h2 className="home-profession">Desenvolvedor Web</h2>
-              <div className="home-social">
+              <h2 className="home-profession" data-aos="fade-up">
+                Desenvolvedor Web
+              </h2>
+              <div className="home-social" data-aos="fade-up">
                 <a
                   href="https://github.com/yagovysk"
                   target="blank"
@@ -86,11 +100,15 @@ export function Home() {
                   target="blank"
                   className="home-social-link"
                 >
-                  {" "}
                   <IoMdGlobe className="home-social-globe" />
                 </a>
               </div>
-              <a href="#" className="home-button" onClick={handleDownload}>
+              <a
+                href="#"
+                className="home-button"
+                onClick={handleDownload}
+                data-aos="fade-up"
+              >
                 Baixar Currículo
               </a>
             </div>

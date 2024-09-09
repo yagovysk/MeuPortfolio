@@ -13,6 +13,9 @@ import pagedev from "../../assets/pagedev.png";
 import guto from "../../assets/projeto-guto.svg";
 import paulo from "../../assets/projeto-paulo.svg";
 import print from "../../assets/print-list.png";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const projects = [
   {
@@ -106,9 +109,15 @@ const projects = [
 ];
 
 export function Work() {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
   return (
     <section className="work-section">
-      <h2 className="work-section-title">Meus Trabalhos Recentes</h2>
+      <h2 className="work-section-title" data-aos="fade-up">
+        Meus Trabalhos Recentes
+      </h2>
       <Carousel
         className="carousel-projects"
         autoPlay
@@ -150,15 +159,21 @@ export function Work() {
               target="_blank"
               rel="noopener noreferrer"
               className="work-link"
+              data-aos="fade-up"
             >
               <img
                 src={project.imgSrc}
                 alt={project.altText}
                 className={project.imgClass}
+                data-aos="fade-up"
               />
             </a>
-            <h2 className="work-title">{project.title}</h2>
-            <span className="work-subtitle">{project.subtitle}</span>
+            <h2 className="work-title" data-aos="fade-up">
+              {project.title}
+            </h2>
+            <span className="work-subtitle" data-aos="fade-up">
+              {project.subtitle}
+            </span>
           </div>
         ))}
       </Carousel>

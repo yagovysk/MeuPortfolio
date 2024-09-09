@@ -6,8 +6,15 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export function Testimonials() {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
   const customArrowStyles = {
     position: "absolute",
     top: "50%",
@@ -38,12 +45,12 @@ export function Testimonials() {
   );
   return (
     <section className="testimonial-section">
-      <h2 className="section-title">
+      <h2 className="section-title" data-aos="fade-up">
         O que dizem <br />
         Sobre mim?
       </h2>
-      <div className="testimonial-container">
-        <div className="testimonial-swiper">
+      <div className="testimonial-container" data-aos="fade-up">
+        <div className="testimonial-swiper" data-aos="fade-up">
           <div>
             <Carousel
               className="container-carousel"
