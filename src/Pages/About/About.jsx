@@ -30,7 +30,7 @@ export function About() {
             <div className="perfil-content" data-aos="fade-up">
               <img
                 src={foto}
-                alt="image"
+                alt="imagem de perfil"
                 className="perfil-img"
                 data-aos="fade-up"
               />
