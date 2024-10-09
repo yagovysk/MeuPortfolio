@@ -13,6 +13,8 @@ import pagedev from "../../assets/pagedev.png";
 import guto from "../../assets/projeto-guto.svg";
 import paulo from "../../assets/projeto-paulo.svg";
 import print from "../../assets/print-list.png";
+import lacos from "../../assets/lacos-site.png";
+import raha from "../../assets/raha-project.png";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -96,6 +98,23 @@ const projects = [
     title: "Website Nutri e Leve",
     subtitle: "Website",
     link: "https://nutrielevebsb.com.br/",
+    imgClass: "work-img",
+  },
+  {
+    imgSrc: lacos,
+    altText:
+      "Capa do site da empresa de doces Laços e Confeitos Ateliê Culinário",
+    title: "Website Laços e Confeitos",
+    subtitle: "Website",
+    link: "https://lacoseconfeitos.netlify.app/",
+    imgClass: "work-img",
+  },
+  {
+    imgSrc: raha,
+    altText: "Capa do site da Cliníca de saúde e estética Raha",
+    title: "Website Raha Saúde e Estética",
+    subtitle: "Website",
+    link: "https://raha-saude-estetica.netlify.app/",
     imgClass: "work-img",
   },
   {
