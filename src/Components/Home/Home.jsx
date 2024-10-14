@@ -103,12 +103,7 @@ export function Home() {
                   <IoMdGlobe className="home-social-globe" />
                 </a>
               </div>
-              <a
-                href="#"
-                className="home-button"
-                onClick={handleDownload}
-                data-aos="fade-up"
-              >
+              <a href="#" className="home-button" onClick={handleDownload}>
                 Baixar Currículo
               </a>
             </div>

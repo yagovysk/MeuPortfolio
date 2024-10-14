@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
-import { FaTimes } from 'react-icons/fa';
-import { RiApps2Line } from 'react-icons/ri';
-import './Menu.css';
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { FaTimes } from "react-icons/fa";
+import { RiApps2Line } from "react-icons/ri";
+import "./Menu.css";
 
 export function Menu() {
   const [showMenu, setShowMenu] = useState(false);
@@ -21,8 +21,9 @@ export function Menu() {
         </div>
       </div>
       <nav
-        className={`nav-menu ${showMenu ? 'show-menu' : ''}`}
-        aria-label="Menu de Navegação">
+        className={`nav-menu ${showMenu ? "show-menu" : ""}`}
+        aria-label="Menu de Navegação"
+      >
         <ul className="container-list">
           <li className="item-list">
             <Link to="/" href="" className="link">
