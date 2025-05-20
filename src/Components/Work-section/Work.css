@@ -133,6 +133,9 @@
     align-items: center;
     height: 100%;
   }
+  .work-card {
+    padding: 1rem;
+  }
   .work-img {
     height: 10rem;
     filter: none;
