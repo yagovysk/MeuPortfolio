@@ -7,9 +7,12 @@ export function AnimatedSection({
   className = "",
   delay = 0,
   variant = "fadeUp",
+  as = "div",
+  ...props
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const MotionComponent = motion[as];
 
   const variants = {
     fadeUp: {
@@ -87,14 +90,15 @@ export function AnimatedSection({
   };
 
   return (
-    <motion.div
+    <MotionComponent
       ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={variants[variant]}
       className={className}
+      {...props}
     >
       {children}
-    </motion.div>
+    </MotionComponent>
   );
 }

@@ -1,16 +1,9 @@
 import { Menu } from "../../Components/Menu/Menu";
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
 import "./Form.css";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { AnimatedSection } from "../../Components/AnimatedSection/AnimatedSection";
 
 export function Form() {
-  useEffect(() => {
-    AOS.init({ duration: 2000 });
-  }, []);
-
   const MessageModal = ({ message, onClose }) => (
     <div className="message-modal">
       <p className="paragraph-message">{message}</p>
@@ -25,52 +18,62 @@ export function Form() {
   const [showMessage, setShowMessage] = useState(false);
   const [messageContent, setMessageContent] = useState("");
 
-  function sendEmail(e) {
+  function sendToWhatsApp(e) {
     e.preventDefault();
+
+    // Validações
     const telRegex = /^[0-9]*$/;
-    if (!telRegex.test(tel)) {
-      alert("Telefone deve conter apenas números");
-      return;
-    }
-    if (name === "" || email === "" || tel === "" || message === "") {
+    if (tel && !telRegex.test(tel)) {
       setShowMessage(true);
-      setMessageContent("Por favor, preencha todos os campos.");
+      setMessageContent("Telefone deve conter apenas números");
       return;
     }
 
-    const templateParams = {
-      from_name: name,
-      email: email,
-      tel: tel,
-      message: message,
-    };
-
-    emailjs
-      .send(
-        "service_k6lnqtk",
-        "template_2g8t0zw",
-        templateParams,
-        "Ah8GFwcxJ5iWDpoot"
-      )
-      .then(
-        (response) => {
-          console.log("EMAIL ENVIADO", response.status, response.text);
-          setName("");
-          setEmail("");
-          setTel("");
-          setMessage("");
-          setShowMessage(true);
-          setMessageContent("Mensagem enviada com sucesso!");
-        },
-        (err) => {
-          console.log("ERRO", err);
-          setShowMessage(true);
-          setMessageContent(
-            "Erro ao enviar mensagem. Por favor, tente novamente."
-          );
-        }
+    if (name === "" || email === "" || message === "") {
+      setShowMessage(true);
+      setMessageContent(
+        "Por favor, preencha todos os campos obrigatórios (Nome, Email e Mensagem)."
       );
+      return;
+    }
+
+    // Montar mensagem do WhatsApp
+    const whatsappMessage = `
+*Nova mensagem do Portfólio*
+
+*Nome:* ${name}
+*Email:* ${email}
+${tel ? `*Telefone:* ${tel}` : ""}
+
+*Mensagem:*
+${message}
+    `.trim();
+
+    // Seu número do WhatsApp (mesmo do botão)
+    const phoneNumber = "5561981774548";
+
+    // Criar URL do WhatsApp
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    // Abrir WhatsApp
+    window.open(whatsappURL, "_blank");
+
+    // Limpar formulário e mostrar mensagem de sucesso
+    setName("");
+    setEmail("");
+    setTel("");
+    setMessage("");
+    setShowMessage(true);
+    setMessageContent("Redirecionando para o WhatsApp...");
+
+    // Fechar modal automaticamente após 2 segundos
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 2000);
   }
+
   const closeMessage = () => {
     setShowMessage(false);
     setMessageContent("");
@@ -78,13 +81,22 @@ export function Form() {
   return (
     <>
       <Menu />
-      <div className="container-form" data-aos="fade-up">
-        <article className="container-article-form" data-aos="fade-up">
+      <AnimatedSection className="container-form" variant="fadeUp">
+        <AnimatedSection
+          className="container-article-form"
+          variant="fadeDown"
+          delay={0.2}
+        >
           <h1>
             Vamos Conversar <br /> Sobre seu Projeto
           </h1>
-        </article>
-        <form onSubmit={sendEmail} data-aos="fade-up">
+        </AnimatedSection>
+        <AnimatedSection
+          as="form"
+          onSubmit={sendToWhatsApp}
+          variant="fadeUp"
+          delay={0.3}
+        >
           {showMessage && (
             <MessageModal message={messageContent} onClose={closeMessage} />
           )}
@@ -127,11 +139,11 @@ export function Form() {
           ></textarea>
           <div id="contacts" className="container-form-button">
             <button className="form-button" type="submit">
-              Enviar Mensagem
+              Enviar via WhatsApp
             </button>
           </div>
-        </form>
-      </div>
+        </AnimatedSection>
+      </AnimatedSection>
     </>
   );
 }
