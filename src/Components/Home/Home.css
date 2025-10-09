@@ -93,33 +93,242 @@
   justify-self: center;
   transition: background-color 0.4s;
 }
-.home-button {
-  text-decoration: none;
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.home-button,
+.home-button-whatsapp {
   font-family: "Roboto", sans-serif;
-  background: #fffefe;
-  color: #430c0c;
-  padding: 1rem;
-  justify-self: center;
-  transition: 0.4s ease;
+  font-weight: 600;
+  padding: 1rem 1.75rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
 }
+
+.home-button::before,
+.home-button-whatsapp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.home-button:hover::before,
+.home-button-whatsapp:hover::before {
+  left: 100%;
+}
+
+.home-button {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  color: #124658;
+  box-shadow: 0 4px 15px rgba(18, 70, 88, 0.2);
+  border: 2px solid transparent;
+}
+
 .home-button:hover {
-  background: #07afd5;
-  color: #fff;
+  background: linear-gradient(135deg, #00d4ff 0%, #00ffb3 100%);
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
 }
+
+.home-button-whatsapp {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.home-button-whatsapp:hover {
+  background: linear-gradient(135deg, #128c7e 0%, #0a6d5e 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(18, 140, 126, 0.6);
+}
+
+.whatsapp-icon {
+  font-size: 1.25rem;
+}
+
 .scroll-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  background-color: #020000;
-  color: #fff;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: linear-gradient(135deg, #00d4ff 0%, #00ffb3 100%);
+  color: #000;
   border: none;
-  padding: 0.3rem;
-  transition: 0.4s ease;
+  border-radius: 50%;
+  width: 3.25rem;
+  height: 3.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   z-index: 999;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+  font-size: 1.25rem;
+  font-weight: bold;
 }
+
 .scroll-button:hover {
-  background-color: #07afd5;
-  transform: translateY(-5px);
+  background: linear-gradient(135deg, #00ffb3 0%, #00d4ff 100%);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 255, 179, 0.6);
+}
+
+@media screen and (max-width: 768px) {
+  .home-container {
+    padding-block: 1rem 2rem;
+  }
+
+  .home-data {
+    padding: 0 1.5rem;
+    gap: 1rem;
+  }
+
+  .home-name {
+    font-size: 1.5rem;
+  }
+
+  .home-profession {
+    font-size: 1rem;
+  }
+
+  .home-social-link {
+    font-size: 1.3rem;
+  }
+
+  .scroll-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-rectangle {
+    height: 180px;
+  }
+
+  .home-container {
+    padding-block: 1rem 1.5rem;
+  }
+
+  .home-perfil {
+    width: 200px;
+    height: 200px;
+  }
+
+  .perfil-content {
+    width: 150px;
+    height: 150px;
+  }
+
+  .perfil-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .home-data {
+    padding: 0 1rem;
+    gap: 0.75rem;
+  }
+
+  .home-name {
+    font-size: 1.25rem;
+  }
+
+  .home-profession {
+    font-size: 0.9rem;
+  }
+
+  .home-social {
+    gap: 0.75rem;
+  }
+
+  .home-social-link {
+    font-size: 1.2rem;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .home-button,
+  .home-button-whatsapp {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .scroll-button {
+    width: 2.25rem;
+    height: 2.25rem;
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .home-rectangle {
+    height: 150px;
+  }
+
+  .home-perfil {
+    width: 180px;
+    height: 180px;
+  }
+
+  .perfil-content {
+    width: 130px;
+    height: 130px;
+  }
+
+  .perfil-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .home-name {
+    font-size: 1.1rem;
+  }
+
+  .home-profession {
+    font-size: 0.85rem;
+  }
+
+  .home-button,
+  .home-button-whatsapp {
+    max-width: 280px;
+    padding: 0.625rem 1rem;
+    font-size: 0.9rem;
+  }
 }

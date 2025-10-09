@@ -1,14 +1,11 @@
 import "./Home.css";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaArrowUp, FaWhatsapp } from "react-icons/fa";
 import { IoMdGlobe } from "react-icons/io";
 import pdfFile from "../../assets/Curriculo.pdf";
-import { FaArrowUp } from "react-icons/fa";
 import foto from "../../assets/minha-foto.png";
 import { Services } from "../Services/Services";
 import { Work } from "../Work-section/Work";
 import { Testimonials } from "../Testimonials/Testimonials";
-import { Contato } from "../../Pages/Contato/Contato";
 import React, { useState, useEffect } from "react";
 import { Footer } from "../Footer/Footer";
 import backgroundVideo from "../../assets/background-video.mp4";
@@ -38,14 +35,23 @@ export function Home() {
     link.click();
   };
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration: 1200 });
   }, []);
+
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "5531000000000"; // Substitua pelo seu número com DDI + DDD
+    const message = "Olá! Gostaria de conversar sobre um projeto.";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
 
   return (
     <main className="main">
       <section className="home-section">
         <div className="home-rectangle">
-          <video autoPlay loop muted className="background-video">
+          <video autoPlay loop muted playsInline className="background-video">
             <source src={backgroundVideo} type="video/mp4" />
           </video>
         </div>
@@ -53,59 +59,70 @@ export function Home() {
           {showButton && (
             <button
               className="scroll-button"
-              onClick={() => window.scrollTo(0, 0)}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              aria-label="Voltar ao topo"
             >
               <FaArrowUp className="scrolltotop-icon" />
             </button>
           )}
           <div className="home-perfil" data-aos="fade-up">
-            <div className="perfil-content" data-aos="fade-up">
+            <div className="perfil-content">
               <img
                 className="perfil-img"
                 src={foto}
-                alt=""
-                data-aos="fade-up"
+                alt="Foto de perfil de Yago Cerqueira Regis"
               />
             </div>
           </div>
           <div className="home-content" data-aos="fade-up">
-            <div className="home-data" data-aos="fade-up">
+            <div className="home-data">
               <h1 className="home-name" data-aos="fade-up">
                 Yago Cerqueira Regis
               </h1>
-              <meta
-                name="description"
-                content="Yago Cerqueira Regis, Desenvolvedor Web."
-              />
               <h2 className="home-profession" data-aos="fade-up">
-                Desenvolvedor
+                Desenvolvedor Full Stack
               </h2>
               <div className="home-social" data-aos="fade-up">
                 <a
                   href="https://github.com/yagovysk"
-                  target="blank"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="home-social-link"
+                  aria-label="GitHub de Yago Cerqueira"
                 >
                   <FaGithub className="git-icon" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/yago-cerqueira-regis/"
-                  target="blank"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="home-social-link"
+                  aria-label="LinkedIn de Yago Cerqueira"
                 >
                   <FaLinkedin className="linkedin-icon" />
                 </a>
                 <a
                   href="https://togyrogroupvictory.com/"
-                  target="blank"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="home-social-link"
+                  aria-label="Website Togyro Group"
                 >
                   <IoMdGlobe className="home-social-globe" />
                 </a>
               </div>
-              <a href="#" className="home-button" onClick={handleDownload}>
-                Baixar Currículo
-              </a>
+              <div className="home-buttons" data-aos="fade-up">
+                <button className="home-button" onClick={handleDownload}>
+                  Baixar Currículo
+                </button>
+                <button
+                  className="home-button-whatsapp"
+                  onClick={handleWhatsAppClick}
+                >
+                  <FaWhatsapp className="whatsapp-icon" />
+                  WhatsApp
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -113,7 +130,6 @@ export function Home() {
       <Services />
       <Work />
       <Testimonials />
-      <Contato />
       <Footer />
     </main>
   );

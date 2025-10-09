@@ -11,6 +11,7 @@ import node from "../../assets/node-icon.svg";
 import angular from "../../assets/angular-icon.svg";
 import vue from "../../assets/vue-icon.svg";
 import { Footer } from "../../Components/Footer/Footer";
+import Accessibility from "../../Components/Accessibility/Accessibility";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -106,6 +107,7 @@ export function About() {
         </div>
       </section>
       <Footer />
+      <Accessibility />
     </div>
   );
 }

@@ -1,0 +1,565 @@
+/* ===== BOTÃO FLUTUANTE DE ACESSIBILIDADE ===== */
+
+.accessibility-toggle {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.25rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6c63ff 0%, #5a52d5 100%) !important;
+  color: #fff !important;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9998 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.accessibility-toggle:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 25px rgba(108, 99, 255, 0.6);
+  background: linear-gradient(135deg, #5a52d5 0%, #4a44b5 100%);
+}
+
+.accessibility-toggle:active {
+  transform: translateY(-1px) scale(1);
+}
+
+/* ===== MENU DE ACESSIBILIDADE ===== */
+
+.accessibility-menu {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 9rem;
+  width: 320px;
+  background: #fff !important;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+  z-index: 9999 !important;
+  animation: slideInRight 0.3s ease-out;
+  overflow: hidden;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== HEADER DO MENU ===== */
+
+.accessibility-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #6c63ff 0%, #5a52d5 100%);
+  color: #fff;
+}
+
+.accessibility-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.accessibility-title svg {
+  font-size: 1.3rem;
+}
+
+.accessibility-close {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.accessibility-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* ===== CONTEÚDO DO MENU ===== */
+
+.accessibility-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.accessibility-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.accessibility-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.accessibility-label svg {
+  color: #6c63ff;
+  font-size: 1.1rem;
+}
+
+/* ===== CONTROLES ===== */
+
+.accessibility-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.control-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  background: #f0f0f0;
+  border: 2px solid #e0e0e0;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.control-btn:hover:not(:disabled) {
+  background: #6c63ff;
+  color: #fff;
+  border-color: #6c63ff;
+  transform: translateY(-2px);
+}
+
+.control-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.control-btn.reset-btn {
+  background: #ff6b6b;
+  border-color: #ff6b6b;
+  color: #fff;
+}
+
+.control-btn.reset-btn:hover {
+  background: #ee5a52;
+  border-color: #ee5a52;
+}
+
+.control-value {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #6c63ff;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* ===== BOTÕES DE AÇÃO ===== */
+
+.accessibility-btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accessibility-btn:hover {
+  background: #e9ecef;
+  border-color: #6c63ff;
+  transform: translateY(-2px);
+}
+
+.accessibility-btn.active {
+  background: linear-gradient(135deg, #6c63ff 0%, #5a52d5 100%);
+  border-color: #6c63ff;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+}
+
+/* ===== BOTÃO RESETAR ===== */
+
+.accessibility-reset {
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  border: none;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  margin-top: 0.5rem;
+}
+
+.accessibility-reset:hover {
+  background: linear-gradient(135deg, #ee5a52 0%, #dc4e44 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* ===== OVERLAY ===== */
+
+.accessibility-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4) !important;
+  z-index: 9997 !important;
+  animation: fadeIn 0.3s ease-out;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== TEMAS E CONTRASTES ===== */
+
+/* Alto Contraste - Aplicado exceto no menu de acessibilidade e botões fixos */
+body.contrast-high
+  *:not(.accessibility-toggle):not(.accessibility-menu):not(
+    .accessibility-menu *
+  ):not(.accessibility-overlay):not(.scroll-button):not(.scroll-button *) {
+  filter: contrast(1.2);
+}
+
+body.contrast-high {
+  background: #000 !important;
+}
+
+/* Garantir que elementos fixos não sejam afetados pelo contraste */
+body.contrast-high .accessibility-toggle,
+body.contrast-high .accessibility-menu,
+body.contrast-high .accessibility-menu *,
+body.contrast-high .scroll-button,
+body.contrast-high .scroll-button * {
+  filter: none !important;
+}
+
+/* Forçar que apenas os containers principais mantenham posição fixa */
+body.contrast-high .accessibility-toggle {
+  position: fixed !important;
+  bottom: 5rem !important;
+  right: 1.25rem !important;
+  z-index: 9998 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.contrast-high .accessibility-menu {
+  position: fixed !important;
+  right: 1.25rem !important;
+  bottom: 9rem !important;
+  z-index: 9999 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.contrast-high .accessibility-overlay {
+  position: fixed !important;
+  z-index: 9997 !important;
+}
+
+/* Garantir que o botão scroll to top fique visível */
+body.contrast-high .scroll-button {
+  position: fixed !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 9996 !important;
+}
+
+/* Tema Escuro */
+body.theme-dark {
+  background: #1a1a1a !important;
+  color: #f0f0f0 !important;
+}
+
+body.theme-dark .accessibility-menu {
+  background: #2d2d2d !important;
+  color: #f0f0f0 !important;
+}
+
+body.theme-dark .accessibility-label {
+  color: #f0f0f0 !important;
+}
+
+body.theme-dark .control-btn {
+  background: #3a3a3a !important;
+  border-color: #4a4a4a !important;
+  color: #f0f0f0 !important;
+}
+
+body.theme-dark .accessibility-btn {
+  background: #3a3a3a;
+  border-color: #4a4a4a;
+  color: #f0f0f0;
+}
+
+body.theme-dark .accessibility-btn:hover {
+  background: #4a4a4a;
+}
+
+/* Estilos do Tema Escuro para todo o site */
+body.theme-dark * {
+  border-color: #444 !important;
+}
+
+body.theme-dark section {
+  background: #1a1a1a !important;
+}
+
+body.theme-dark .container {
+  background: #1a1a1a !important;
+}
+
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4,
+body.theme-dark h5,
+body.theme-dark h6,
+body.theme-dark p,
+body.theme-dark span,
+body.theme-dark li,
+body.theme-dark a {
+  color: #f0f0f0 !important;
+}
+
+body.theme-dark .card,
+body.theme-dark .work-card,
+body.theme-dark .services-card,
+body.theme-dark .about-card,
+body.theme-dark .testimonial-card {
+  background: #2d2d2d !important;
+  color: #f0f0f0 !important;
+}
+
+body.theme-dark .testimonial-name,
+body.theme-dark .testimonial-description {
+  color: #f0f0f0 !important;
+}
+
+body.theme-dark .testimonial-border {
+  border-color: #4a4a4a !important;
+}
+
+body.theme-dark .carousel .dot {
+  background: #4a4a4a !important;
+}
+
+body.theme-dark .carousel .dot.selected {
+  background: #6c63ff !important;
+}
+
+body.theme-dark .nav,
+body.theme-dark .menu,
+body.theme-dark header {
+  background: #2d2d2d !important;
+}
+
+body.theme-dark .footer {
+  background: #1a1a1a !important;
+}
+
+body.theme-dark input,
+body.theme-dark textarea,
+body.theme-dark select {
+  background: #2d2d2d !important;
+  color: #f0f0f0 !important;
+  border-color: #4a4a4a !important;
+}
+
+body.theme-dark .modal,
+body.theme-dark .modal-content {
+  background: #2d2d2d !important;
+  color: #f0f0f0 !important;
+}
+
+/* Swiper no tema escuro */
+body.theme-dark .swiper {
+  background: transparent !important;
+}
+
+body.theme-dark .swiper-slide {
+  background: transparent !important;
+}
+
+body.theme-dark .swiper-pagination-bullet {
+  background: #f0f0f0 !important;
+}
+
+body.theme-dark .swiper-button-prev,
+body.theme-dark .swiper-button-next {
+  color: #f0f0f0 !important;
+}
+
+/* Preservar menu de acessibilidade */
+body.theme-dark .accessibility-toggle,
+body.theme-dark .accessibility-menu,
+body.theme-dark .accessibility-menu *,
+body.theme-dark .accessibility-overlay {
+  filter: none !important;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media screen and (max-width: 768px) {
+  .accessibility-toggle {
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 1.4rem;
+    bottom: 4.5rem;
+    right: 1rem;
+  }
+
+  .accessibility-menu {
+    width: calc(100% - 2rem);
+    right: 1rem;
+    bottom: 8.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .accessibility-toggle {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    bottom: 4rem;
+    right: 0.75rem;
+  }
+
+  .accessibility-menu {
+    width: calc(100% - 1.5rem);
+    right: 0.75rem;
+    bottom: 7.5rem;
+  }
+
+  .accessibility-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .accessibility-title {
+    font-size: 1rem;
+  }
+
+  .accessibility-content {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .control-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 0.85rem;
+  }
+
+  .accessibility-btn {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .accessibility-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.2rem;
+    bottom: 3.75rem;
+  }
+
+  .accessibility-menu {
+    width: calc(100% - 1rem);
+    right: 0.5rem;
+    bottom: 7rem;
+  }
+
+  .accessibility-content {
+    padding: 1rem;
+  }
+
+  .control-btn {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* ===== ACESSIBILIDADE ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .accessibility-menu,
+  .accessibility-overlay {
+    animation: none;
+  }
+
+  .accessibility-toggle,
+  .control-btn,
+  .accessibility-btn {
+    transition: none;
+  }
+}
+
+/* Foco visível para navegação por teclado */
+.accessibility-toggle:focus-visible,
+.accessibility-close:focus-visible,
+.control-btn:focus-visible,
+.accessibility-btn:focus-visible,
+.accessibility-reset:focus-visible {
+  outline: 3px solid #6c63ff;
+  outline-offset: 2px;
+}

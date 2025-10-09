@@ -17,6 +17,8 @@
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
   border-radius: 10px;
+  min-height: 200px;
+  min-width: 280px;
 }
 
 .testimonial-swiper div {
@@ -32,6 +34,8 @@
   gap: 1rem;
   padding-bottom: 2rem;
   background-color: #fff;
+  min-height: 180px;
+  width: 100%;
 }
 .container-carousel {
   padding: 1rem;
@@ -65,17 +69,202 @@
 .testimonial-card:hover .testimonial-img {
   filter: none;
 }
-@media screen and (min-width: 1150px) {
+@media screen and (max-width: 768px) {
+  .testimonial-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    padding: 0 1rem;
+  }
+
   .testimonial-container {
-    width: 35% !important;
+    padding: 1rem 0.75rem;
+    margin: 0 1rem;
+  }
+
+  .testimonial-description {
+    width: 80%;
+    font-size: 0.95rem;
+    letter-spacing: 0.08rem;
+  }
+
+  .testimonial-img {
+    width: 70px !important;
+    height: 70px;
+  }
+
+  .testimonial-border {
+    border: 5px solid #278cea;
   }
 }
-@media only screen and (max-width: 480px) {
+
+@media screen and (max-width: 480px) {
+  .testimonial-section {
+    padding: 2rem 0.25rem;
+    gap: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    padding: 0 0.75rem;
+  }
+
+  .testimonial-container {
+    padding: 0.875rem 0.5rem;
+    margin: 0 0.5rem;
+    width: calc(100% - 1rem);
+  }
+
   .testimonial-swiper {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
+
   .container-carousel {
-    width: 19.5rem !important;
+    width: 100%;
+    max-width: 19.5rem;
+    min-width: 280px;
+    margin: 0 auto;
   }
+
+  .testimonial-card {
+    gap: 0.875rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .testimonial-description {
+    width: 90%;
+    font-size: 0.9rem;
+    letter-spacing: 0.06rem;
+    line-height: 1.4rem;
+  }
+
+  .testimonial-name {
+    font-size: 1rem;
+  }
+
+  .testimonial-img {
+    width: 65px !important;
+    height: 65px;
+  }
+
+  .testimonial-border {
+    border: 4px solid #278cea;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .section-title {
+    font-size: 1.35rem;
+  }
+
+  .testimonial-container {
+    padding: 0.75rem 0.5rem;
+    margin: 0 0.25rem;
+  }
+
+  .container-carousel {
+    max-width: 17rem;
+    min-width: 260px;
+  }
+
+  .testimonial-container {
+    min-width: 260px;
+  }
+
+  .testimonial-description {
+    width: 95%;
+    font-size: 0.85rem;
+    letter-spacing: 0.05rem;
+    line-height: 1.3rem;
+  }
+
+  .testimonial-name {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-img {
+    width: 60px !important;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .testimonial-container {
+    width: 35%;
+    min-width: 400px;
+  }
+}
+
+/* Garantir visibilidade com tamanhos de fonte reduzidos */
+html[style*="70%"] .testimonial-section,
+html[style*="80%"] .testimonial-section {
+  display: flex !important;
+  visibility: visible !important;
+  min-height: 500px !important;
+}
+
+html[style*="70%"] .testimonial-container,
+html[style*="80%"] .testimonial-container {
+  min-width: 350px !important;
+  min-height: 280px !important;
+  padding: 1.5rem !important;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+html[style*="70%"] .testimonial-card,
+html[style*="80%"] .testimonial-card {
+  min-height: 250px !important;
+  padding-bottom: 2rem !important;
+  display: flex !important;
+  visibility: visible !important;
+}
+
+html[style*="70%"] .container-carousel,
+html[style*="80%"] .container-carousel {
+  min-width: 350px !important;
+  width: 100% !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+html[style*="70%"] .testimonial-swiper,
+html[style*="80%"] .testimonial-swiper {
+  display: block !important;
+  visibility: visible !important;
+  min-height: 250px !important;
+}
+
+html[style*="70%"] .testimonial-description,
+html[style*="80%"] .testimonial-description {
+  font-size: 1.1rem !important;
+  line-height: 1.7rem !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+html[style*="70%"] .testimonial-name,
+html[style*="80%"] .testimonial-name {
+  font-size: 1.3rem !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+html[style*="70%"] .testimonial-img,
+html[style*="80%"] .testimonial-img {
+  width: 90px !important;
+  height: 90px !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+html[style*="70%"] .testimonial-border,
+html[style*="80%"] .testimonial-border {
+  display: block !important;
+  visibility: visible !important;
 }

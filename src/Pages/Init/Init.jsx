@@ -1,5 +1,6 @@
 import { Home } from "../../Components/Home/Home";
 import { Menu } from "../../Components/Menu/Menu";
+import Accessibility from "../../Components/Accessibility/Accessibility";
 import "./Init.css";
 
 export function Init() {
@@ -7,6 +8,7 @@ export function Init() {
     <header className="container-header">
       <Menu />
       <Home />
+      <Accessibility />
     </header>
   );
 }

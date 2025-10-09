@@ -45,17 +45,48 @@
 }
 .services-button {
   font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
-  background: #07437c;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
   color: #fff;
-  padding: 1rem;
+  padding: 0.875rem 1.75rem;
   justify-self: center;
-  transition: 0.4s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
+  border-radius: 12px;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
+
+.services-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.services-button:hover::before {
+  left: 100%;
+}
+
 .services-button:hover {
-  background: #1281b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+  background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
 }
 .services-modal {
   position: fixed;
@@ -108,12 +139,29 @@
   letter-spacing: 0.1rem;
 }
 .modal-close {
-  color: #07437c;
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #ff4757 0%, #ff6348 100%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(255, 71, 87, 0.3);
+  border: 2px solid transparent;
+}
+
+.modal-close:hover {
+  background: linear-gradient(135deg, #ff6348 0%, #ff4757 100%);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 4px 15px rgba(255, 71, 87, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 .services-modal-list {
   display: flex;
@@ -127,6 +175,152 @@
 .modal-item::marker {
   color: #580808;
 }
+@media screen and (max-width: 768px) {
+  .services-section {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    padding: 0 1rem;
+  }
+
+  .services-container {
+    padding: 1.5rem 1rem;
+    row-gap: 1.5rem;
+  }
+
+  .services-card {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .services-title {
+    font-size: 1.25rem;
+  }
+
+  .services-icon {
+    font-size: 1.75rem;
+  }
+
+  .services-description {
+    letter-spacing: 0.1rem;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .services-button {
+    font-size: 1.1rem;
+    padding: 0.875rem 1.5rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .services-modal-content {
+    padding: 3rem 1.25rem;
+    max-width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services-section {
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    padding: 0 0.75rem;
+  }
+
+  .services-container {
+    padding: 1rem 0.75rem;
+    row-gap: 1.25rem;
+  }
+
+  .services-card {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .services-title {
+    font-size: 1.15rem;
+  }
+
+  .services-icon {
+    font-size: 1.5rem;
+  }
+
+  .services-description {
+    letter-spacing: 0.05rem;
+    font-size: 0.9rem;
+  }
+
+  .services-button {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .services-modal {
+    padding: 1.5rem 1rem;
+  }
+
+  .services-modal-content {
+    padding: 2.5rem 1rem;
+    max-height: 380px;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .modal-item {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+  }
+
+  .modal-close {
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .section-title {
+    font-size: 1.35rem;
+  }
+
+  .services-container {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .services-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .services-title {
+    font-size: 1.05rem;
+  }
+
+  .services-description {
+    font-size: 0.85rem;
+  }
+
+  .services-button {
+    font-size: 0.95rem;
+    padding: 0.625rem 1rem;
+    max-width: 250px;
+  }
+
+  .services-modal-content {
+    padding: 2rem 0.75rem;
+    max-height: 350px;
+  }
+}
+
 @media screen and (min-width: 1150px) {
   .services-description {
     width: 60%;
