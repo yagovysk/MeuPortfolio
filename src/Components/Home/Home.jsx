@@ -39,7 +39,7 @@ export function Home() {
   }, []);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "5531000000000"; // Substitua pelo seu número com DDI + DDD
+    const phoneNumber = "5561981774548"; // Número com DDI (55) + DDD (61) + número
     const message = "Olá! Gostaria de conversar sobre um projeto.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
