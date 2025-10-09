@@ -149,7 +149,7 @@ const projects = [
     subtitle: "Em Desenvolvimento",
     description:
       "Estou constantemente desenvolvendo novos projetos e aprendendo novas tecnologias. Em breve, mais trabalhos incríveis estarão disponíveis aqui!",
-    technologies: "React, Node.js, TypeScript",
+    technologies: "React, Node.js, TypeScript, Ruby on Rails",
     link: "#",
   },
 ];

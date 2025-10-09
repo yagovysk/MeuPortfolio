@@ -10,6 +10,7 @@ import typescript from "../../assets/typescript-icon.svg";
 import node from "../../assets/node-icon.svg";
 import angular from "../../assets/angular-icon.svg";
 import vue from "../../assets/vue-icon.svg";
+import ruby from "../../assets/ruby-icon.png";
 import { Footer } from "../../Components/Footer/Footer";
 import Accessibility from "../../Components/Accessibility/Accessibility";
 import { useEffect } from "react";
@@ -100,6 +101,11 @@ export function About() {
                   className="about-skills-img"
                   src={vue}
                   alt="imagem ícone vue.js"
+                />
+                <img
+                  className="about-skills-img"
+                  src={ruby}
+                  alt="imagem ícone ruby on rails"
                 />
               </div>
             </div>
