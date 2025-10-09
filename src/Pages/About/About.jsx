@@ -14,40 +14,35 @@ import ruby from "../../assets/ruby-icon.png";
 import python from "../../assets/python-icon.svg";
 import { Footer } from "../../Components/Footer/Footer";
 import Accessibility from "../../Components/Accessibility/Accessibility";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { AnimatedSection } from "../../Components/AnimatedSection/AnimatedSection";
 
 export function About() {
-  useEffect(() => {
-    AOS.init({ duration: 2000 });
-  }, []);
-
   return (
     <div>
       <Menu />
       <section className="section-about">
-        <h2 data-aos="fade-up">Minha Informação Pessoal</h2>
-        <div className="container-about" data-aos="fade-up">
-          <div className="about-perfil" data-aos="fade-up">
-            <div className="perfil-content" data-aos="fade-up">
-              <img
-                src={foto}
-                alt="imagem de perfil"
-                className="perfil-img"
-                data-aos="fade-up"
-              />
+        <AnimatedSection variant="fadeDown">
+          <h2>Minha Informação Pessoal</h2>
+        </AnimatedSection>
+        <AnimatedSection
+          className="container-about"
+          variant="fadeUp"
+          delay={0.2}
+        >
+          <AnimatedSection className="about-perfil" variant="fadeLeft">
+            <div className="perfil-content">
+              <img src={foto} alt="imagem de perfil" className="perfil-img" />
             </div>
-          </div>
-          <div className="about-content" data-aos="fade-up">
+          </AnimatedSection>
+          <AnimatedSection className="about-content" variant="fadeRight">
             <div className="about-data">
-              <div className="about-info" data-aos="fade-up">
-                <h1 className="about-name" data-aos="fade-up">
-                  Yago Cerqueira Regis
-                </h1>
-                <h2 className="about-profession" data-aos="fade-up">
-                  Desenvolvedor
-                </h2>
+              <AnimatedSection className="about-info" delay={0.2}>
+                <AnimatedSection delay={0.3}>
+                  <h1 className="about-name">Yago Cerqueira Regis</h1>
+                </AnimatedSection>
+                <AnimatedSection delay={0.4}>
+                  <h2 className="about-profession">Desenvolvedor</h2>
+                </AnimatedSection>
                 <p className="about-description">
                   Desenvolvo <b>Páginas da Web</b> com ênfase em
                   <b>UI/UX (User Interface/ User Experience)</b>. Possuo anos de
@@ -55,68 +50,94 @@ export function About() {
                   utilizando tecnologias como React, entre outras, nos meus
                   projetos.
                 </p>
-              </div>
-              <Link to="/Contato" className="about-button">
-                Entre em contato
-              </Link>
+              </AnimatedSection>
+              <AnimatedSection delay={0.5}>
+                <Link to="/Contato" className="about-button">
+                  Entre em contato
+                </Link>
+              </AnimatedSection>
             </div>
-            <div className="about-skills">
+            <AnimatedSection
+              className="about-skills"
+              variant="scale"
+              delay={0.3}
+            >
               <h3 className="about-skills-title">Minhas Habilidades</h3>
               <div className="about-content-skills">
-                <img
-                  className="about-skills-img"
-                  src={html}
-                  alt="imagem ícone html"
-                />
-                <img
-                  className="about-skills-img"
-                  src={css}
-                  alt="imagem ícone css"
-                />
-                <img
-                  className="about-skills-img"
-                  src={javascript}
-                  alt="imagem ícone javascript"
-                />
-                <img
-                  className="about-skills-img"
-                  src={react}
-                  alt="imagem ícone react"
-                />
-                <img
-                  className="about-skills-img"
-                  src={typescript}
-                  alt="imagem ícone typescript"
-                />
-                <img
-                  className="about-skills-img"
-                  src={node}
-                  alt="imagem ícone node.js"
-                />
-                <img
-                  className="about-skills-img"
-                  src={angular}
-                  alt="imagem ícone angular.js"
-                />
-                <img
-                  className="about-skills-img"
-                  src={vue}
-                  alt="imagem ícone vue.js"
-                />
-                <img
-                  className="about-skills-img"
-                  src={ruby}
-                  alt="imagem ícone ruby on rails"
-                />
-                <img
-                  className="about-skills-img"
-                  src={python}
-                  alt="imagem ícone python"
-                />
+                <AnimatedSection variant="scale" delay={0.4}>
+                  <img
+                    className="about-skills-img"
+                    src={html}
+                    alt="imagem ícone html"
+                  />
+                </AnimatedSection>
+                <AnimatedSection variant="scale" delay={0.45}>
+                  <img
+                    className="about-skills-img"
+                    src={css}
+                    alt="imagem ícone css"
+                  />
+                </AnimatedSection>
+                <AnimatedSection variant="scale" delay={0.5}>
+                  <img
+                    className="about-skills-img"
+                    src={javascript}
+                    alt="imagem ícone javascript"
+                  />
+                </AnimatedSection>
+                <AnimatedSection variant="scale" delay={0.55}>
+                  <img
+                    className="about-skills-img"
+                    src={react}
+                    alt="imagem ícone react"
+                  />
+                </AnimatedSection>
+                <AnimatedSection variant="scale" delay={0.6}>
+                  <img
+                    className="about-skills-img"
+                    src={typescript}
+                    alt="imagem ícone typescript"
+                  />
+                </AnimatedSection>
+                <AnimatedSection variant="scale" delay={0.65}>
+                  <img
+                    className="about-skills-img"
+                    src={node}
+                    alt="imagem ícone node.js"
+                  />
+                </AnimatedSection>
+                <AnimatedSection variant="scale" delay={0.7}>
+                  <img
+                    className="about-skills-img"
+                    src={angular}
+                    alt="imagem ícone angular.js"
+                  />
+                </AnimatedSection>
+                <AnimatedSection variant="scale" delay={0.75}>
+                  <img
+                    className="about-skills-img"
+                    src={vue}
+                    alt="imagem ícone vue.js"
+                  />
+                </AnimatedSection>
+                <AnimatedSection variant="scale" delay={0.8}>
+                  <img
+                    className="about-skills-img"
+                    src={ruby}
+                    alt="imagem ícone ruby on rails"
+                  />
+                </AnimatedSection>
+                <AnimatedSection variant="scale" delay={0.85}>
+                  <img
+                    className="about-skills-img"
+                    src={python}
+                    alt="imagem ícone python"
+                  />
+                </AnimatedSection>
               </div>
-            </div>
-          </div>
-        </div>
+            </AnimatedSection>
+          </AnimatedSection>
+        </AnimatedSection>
       </section>
       <Footer />
       <Accessibility />

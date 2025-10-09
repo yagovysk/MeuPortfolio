@@ -4,15 +4,9 @@ import { FaPenNib } from "react-icons/fa";
 import { FiLayout } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { AnimatedSection } from "../AnimatedSection/AnimatedSection";
 
 export function Services() {
-  useEffect(() => {
-    AOS.init({ duration: 2000 });
-  }, []);
-
   const [modalOpen, setModalOpen] = useState({
     webDevelopment: false,
     developerWeb1: false,
@@ -37,27 +31,26 @@ export function Services() {
 
   return (
     <section className="services-section">
-      <h2 className="section-title">Os Serviços que eu ofereço</h2>
+      <AnimatedSection variant="fadeDown">
+        <h2 className="section-title">Os Serviços que eu ofereço</h2>
+      </AnimatedSection>
       <div className="services-container">
-        <article className="services-card">
-          <FaCode className="services-icon" data-aos="fade-up" />
-          <h2 className="services-title" data-aos="fade-up">
-            Desenvolvedor Front-end
-          </h2>
-          <p className="services-description" data-aos="fade-up">
+        <AnimatedSection className="services-card" variant="scale" delay={0.2}>
+          <FaCode className="services-icon" />
+          <h2 className="services-title">Desenvolvedor Front-end</h2>
+          <p className="services-description">
             Designs bonitos e responsivos com uma interface intuitiva, eficiente
             e prazerosa ao usuário.
           </p>
           <button
             className="services-button"
             onClick={() => openModal("webDevelopment")}
-            data-aos="fade-up"
           >
             Saiba mais
           </button>
           {modalOpen.webDevelopment && (
-            <div className="services-modal" data-aos="fade-up">
-              <div className="services-modal-content" data-aos="fade-up">
+            <div className="services-modal">
+              <div className="services-modal-content">
                 <IoMdClose
                   className="modal-close"
                   onClick={() => closeModal("webDevelopment")}
@@ -81,26 +74,23 @@ export function Services() {
               </div>
             </div>
           )}
-        </article>
-        <article className="services-card">
-          <FaPenNib className="services-icon" data-aos="fade-up" />
-          <h2 className="services-title" data-aos="fade-up">
-            Desenvolvimento Back-end
-          </h2>
-          <p className="services-description" data-aos="fade-up">
+        </AnimatedSection>
+        <AnimatedSection className="services-card" variant="scale" delay={0.4}>
+          <FaPenNib className="services-icon" />
+          <h2 className="services-title">Desenvolvimento Back-end</h2>
+          <p className="services-description">
             Criação de softwares profissionais, com qualidade e foco nas
             necessidades dos clientes.
           </p>
           <button
             className="services-button"
             onClick={() => openModal("developerWeb1")}
-            data-aos="fade-up"
           >
             Saiba mais
           </button>
           {modalOpen.developerWeb1 && (
-            <div className="services-modal" data-aos="fade-up">
-              <div className="services-modal-content" data-aos="fade-up">
+            <div className="services-modal">
+              <div className="services-modal-content">
                 <IoMdClose
                   className="modal-close"
                   onClick={() => closeModal("developerWeb1")}
@@ -124,13 +114,11 @@ export function Services() {
               </div>
             </div>
           )}
-        </article>
-        <article className="services-card">
-          <FiLayout className="services-icon" data-aos="fade-up" />
-          <h2 className="services-title" data-aos="fade-up">
-            Manipulação de B.D.
-          </h2>
-          <p className="services-description" data-aos="fade-up">
+        </AnimatedSection>
+        <AnimatedSection className="services-card" variant="scale" delay={0.6}>
+          <FiLayout className="services-icon" />
+          <h2 className="services-title">Manipulação de B.D.</h2>
+          <p className="services-description">
             gerenciamento e otimização de bancos de dados, oferecendo soluções
             personalizadas para atender às necessidades específicas dos
             Clientes.
@@ -138,13 +126,12 @@ export function Services() {
           <button
             className="services-button"
             onClick={() => openModal("developerWeb2")}
-            data-aos="fade-up"
           >
             Saiba mais
           </button>
           {modalOpen.developerWeb2 && (
-            <div className="services-modal" data-aos="fade-up">
-              <div className="services-modal-content" data-aos="fade-up">
+            <div className="services-modal">
+              <div className="services-modal-content">
                 <IoMdClose
                   className="modal-close"
                   onClick={() => closeModal("developerWeb2")}
@@ -171,7 +158,7 @@ export function Services() {
               </div>
             </div>
           )}
-        </article>
+        </AnimatedSection>
       </div>
     </section>
   );

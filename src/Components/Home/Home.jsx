@@ -9,8 +9,7 @@ import { Testimonials } from "../Testimonials/Testimonials";
 import React, { useState, useEffect } from "react";
 import { Footer } from "../Footer/Footer";
 import backgroundVideo from "../../assets/background-video.mp4";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { AnimatedSection } from "../AnimatedSection/AnimatedSection";
 
 export function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -34,9 +33,6 @@ export function Home() {
     link.download = "Currículo Yago Cerqueira Regis";
     link.click();
   };
-  useEffect(() => {
-    AOS.init({ duration: 1200 });
-  }, []);
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "5561981774548"; // Número com DDI (55) + DDD (61) + número
@@ -65,7 +61,7 @@ export function Home() {
               <FaArrowUp className="scrolltotop-icon" />
             </button>
           )}
-          <div className="home-perfil" data-aos="fade-up">
+          <AnimatedSection className="home-perfil" variant="fadeLeft">
             <div className="perfil-content">
               <img
                 className="perfil-img"
@@ -73,16 +69,20 @@ export function Home() {
                 alt="Foto de perfil de Yago Cerqueira Regis"
               />
             </div>
-          </div>
-          <div className="home-content" data-aos="fade-up">
+          </AnimatedSection>
+          <AnimatedSection className="home-content" variant="fadeRight">
             <div className="home-data">
-              <h1 className="home-name" data-aos="fade-up">
-                Yago Cerqueira Regis
-              </h1>
-              <h2 className="home-profession" data-aos="fade-up">
-                Desenvolvedor Full Stack
-              </h2>
-              <div className="home-social" data-aos="fade-up">
+              <AnimatedSection delay={0.2}>
+                <h1 className="home-name">Yago Cerqueira Regis</h1>
+              </AnimatedSection>
+              <AnimatedSection delay={0.3}>
+                <h2 className="home-profession">Desenvolvedor Full Stack</h2>
+              </AnimatedSection>
+              <AnimatedSection
+                className="home-social"
+                variant="scale"
+                delay={0.4}
+              >
                 <a
                   href="https://github.com/yagovysk"
                   target="_blank"
@@ -110,8 +110,12 @@ export function Home() {
                 >
                   <IoMdGlobe className="home-social-globe" />
                 </a>
-              </div>
-              <div className="home-buttons" data-aos="fade-up">
+              </AnimatedSection>
+              <AnimatedSection
+                className="home-buttons"
+                variant="blur"
+                delay={0.5}
+              >
                 <button className="home-button" onClick={handleDownload}>
                   Baixar Currículo
                 </button>
@@ -122,9 +126,9 @@ export function Home() {
                   <FaWhatsapp className="whatsapp-icon" />
                   WhatsApp
                 </button>
-              </div>
+              </AnimatedSection>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
       <Services />
