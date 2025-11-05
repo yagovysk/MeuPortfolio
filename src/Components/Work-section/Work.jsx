@@ -30,6 +30,7 @@ import paulo from "../../assets/projeto-paulo.svg";
 import print from "../../assets/print-list.png";
 import lacos from "../../assets/lacos-site.png";
 import raha from "../../assets/raha-project.png";
+import vivacqua from "../../assets/print-vivacqua.png";
 
 const projects = [
   {
@@ -141,6 +142,16 @@ const projects = [
       "Criei um site profissional para clínica de saúde e estética. Seções de serviços, galeria de tratamentos, agendamento online e design clean que transmite confiança e profissionalismo.",
     technologies: "React, CSS3, JavaScript",
     link: "https://www.rahaclin.com.br/",
+  },
+  {
+    imgSrc: vivacqua,
+    altText: "Website Vivacqua Engenharia",
+    title: "Vivacqua Engenharia",
+    subtitle: "Website Corporativo",
+    description:
+      "Desenvolvi um website corporativo moderno para empresa de engenharia. Implementei HTML semântico para melhor SEO, design responsivo com Tailwind CSS e funcionalidades interativas com JavaScript, priorizando acessibilidade e performance.",
+    technologies: "HTML5, Tailwind CSS, JavaScript",
+    link: "https://vivacquaondontologiadf.com.br/",
   },
   {
     imgSrc: pagedev,
