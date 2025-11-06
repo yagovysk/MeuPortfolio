@@ -115,7 +115,7 @@
 }
 
 .testimonial-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -128,8 +128,7 @@
 
 .testimonial-card:hover {
   transform: translateY(-10px);
-  box-shadow: 
-    0 20px 40px rgba(102, 126, 234, 0.2),
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2),
     0 10px 20px rgba(118, 75, 162, 0.1);
   border-color: rgba(102, 126, 234, 0.3);
 }
@@ -356,7 +355,11 @@
 
 .floating-shape {
   position: absolute;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1) 0%,
+    rgba(118, 75, 162, 0.1) 100%
+  );
   border-radius: 50%;
   animation: float 20s ease-in-out infinite;
 }
@@ -386,7 +389,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
   33% {
@@ -403,11 +407,11 @@
   .testimonials-swiper {
     display: none;
   }
-  
+
   .testimonials-grid {
     display: grid;
   }
-  
+
   .testimonials-navigation {
     display: none;
   }
@@ -419,17 +423,17 @@
     display: block;
     padding: 30px 60px 50px;
   }
-  
+
   .testimonials-grid {
     display: none;
   }
-  
+
   .nav-button {
     width: 45px;
     height: 45px;
     font-size: 16px;
   }
-  
+
   .testimonials-navigation {
     left: 5px;
     right: 5px;
@@ -440,31 +444,31 @@
   .testimonials-section {
     padding: 80px 0;
   }
-  
+
   .testimonials-header {
     margin-bottom: 60px;
   }
-  
+
   .testimonials-swiper {
     padding: 20px 60px 40px;
   }
-  
+
   .testimonial-card {
     padding: 30px 20px;
     min-height: 380px;
   }
-  
+
   .testimonials-navigation {
     left: 10px;
     right: 10px;
   }
-  
+
   .quote-icon {
     width: 50px;
     height: 50px;
     font-size: 20px;
   }
-  
+
   .client-image-container {
     width: 70px;
     height: 70px;
@@ -475,37 +479,37 @@
   .testimonials-section {
     padding: 60px 0;
   }
-  
+
   .testimonials-container {
     padding: 0 15px;
   }
-  
+
   .testimonials-swiper {
     padding: 20px 50px 40px;
   }
-  
+
   .testimonial-card {
     padding: 25px 15px;
     min-height: 350px;
   }
-  
+
   .testimonial-text {
     font-size: 1rem;
   }
-  
+
   .client-name {
     font-size: 1.1rem;
   }
-  
+
   .client-role {
     font-size: 0.9rem;
   }
-  
+
   .testimonials-navigation {
     left: 5px;
     right: 5px;
   }
-  
+
   .nav-button {
     width: 40px;
     height: 40px;

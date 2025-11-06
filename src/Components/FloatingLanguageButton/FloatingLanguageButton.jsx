@@ -49,9 +49,9 @@ const FloatingLanguageButton = () => {
         }}
         transition={{ duration: 0.3 }}
       >
-        <FlagIcon 
-          flag={currentLanguageObj.flag} 
-          fallback={currentLanguageObj.fallback} 
+        <FlagIcon
+          flag={currentLanguageObj.flag}
+          fallback={currentLanguageObj.fallback}
         />
         <motion.span
           className="language-arrow"

@@ -37,8 +37,8 @@ export default defineConfig({
         globIgnores: [
           // Exclude large files from precaching to avoid PWA limits
           "**/lacos-site.png",
-          "**/projeto-guto.svg", 
-          "**/projeto-paulo.svg"
+          "**/projeto-guto.svg",
+          "**/projeto-paulo.svg",
         ],
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024, // 3MB limit for remaining files
         runtimeCaching: [
@@ -85,17 +85,17 @@ export default defineConfig({
       output: {
         manualChunks: {
           // Split vendor libraries into separate chunks
-          'react-vendor': ['react', 'react-dom'],
-          'router-vendor': ['react-router-dom'],
-          'animation-vendor': ['framer-motion'],
-          'swiper-vendor': ['swiper'],
-          'icons-vendor': ['react-icons'],
+          "react-vendor": ["react", "react-dom"],
+          "router-vendor": ["react-router-dom"],
+          "animation-vendor": ["framer-motion"],
+          "swiper-vendor": ["swiper"],
+          "icons-vendor": ["react-icons"],
           // Split large components into separate chunks
-          'components': [
-            './src/Components/Dashboard/Dashboard.jsx',
-            './src/Components/Work-section/Work.jsx',
-            './src/Components/Testimonials/Testimonials.jsx'
-          ]
+          components: [
+            "./src/Components/Dashboard/Dashboard.jsx",
+            "./src/Components/Work-section/Work.jsx",
+            "./src/Components/Testimonials/Testimonials.jsx",
+          ],
         },
       },
     },

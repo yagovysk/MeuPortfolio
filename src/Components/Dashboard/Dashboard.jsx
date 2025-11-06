@@ -112,10 +112,15 @@ const Dashboard = () => {
       >
         <motion.div className="dashboard-header" variants={cardVariants}>
           <h2 className="dashboard-title">
-            <span className="title-gradient">{t("dashboard.title", "Meu Progresso")}</span>
+            <span className="title-gradient">
+              {t("dashboard.title", "Meu Progresso")}
+            </span>
           </h2>
           <p className="dashboard-subtitle">
-            {t("dashboard.subtitle", "Transformando ideias em realidade digital")}
+            {t(
+              "dashboard.subtitle",
+              "Transformando ideias em realidade digital"
+            )}
           </p>
         </motion.div>
 
@@ -177,7 +182,9 @@ const Dashboard = () => {
         <motion.div className="dashboard-footer" variants={cardVariants}>
           <div className="achievement-badge">
             <span className="badge-icon">🏆</span>
-            <span className="badge-text">{t("dashboard.badge", "Portfolio em constante evolução")}</span>
+            <span className="badge-text">
+              {t("dashboard.badge", "Portfolio em constante evolução")}
+            </span>
           </div>
         </motion.div>
       </motion.div>

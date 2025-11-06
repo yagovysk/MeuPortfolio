@@ -2,7 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import { FaQuoteLeft, FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
+import {
+  FaQuoteLeft,
+  FaChevronLeft,
+  FaChevronRight,
+  FaStar,
+} from "react-icons/fa";
 import { useTranslation } from "../../hooks/useTranslation";
 import "./Testimonials.css";
 import foto1 from "../../assets/perfil1.jpg";
@@ -22,11 +27,11 @@ export function Testimonials() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const testimonials = [
@@ -36,7 +41,10 @@ export function Testimonials() {
       role: t("testimonials.role1", "Empresária"),
       image: foto1,
       rating: 5,
-      text: t("testimonials.text1", "Eu solicitei uma landing page para minha empresa, o serviço foi rápido e bem feito, gostaria de parabenizar o Yago por um excelente trabalho."),
+      text: t(
+        "testimonials.text1",
+        "Eu solicitei uma landing page para minha empresa, o serviço foi rápido e bem feito, gostaria de parabenizar o Yago por um excelente trabalho."
+      ),
     },
     {
       id: 2,
@@ -44,7 +52,10 @@ export function Testimonials() {
       role: t("testimonials.role2", "Empreendedor"),
       image: foto2,
       rating: 5,
-      text: t("testimonials.text2", "Super recomendo, preços acessíveis, atendimento e esclarecimento de dúvidas ótimos. Só Sucesso!"),
+      text: t(
+        "testimonials.text2",
+        "Super recomendo, preços acessíveis, atendimento e esclarecimento de dúvidas ótimos. Só Sucesso!"
+      ),
     },
     {
       id: 3,
@@ -52,7 +63,10 @@ export function Testimonials() {
       role: t("testimonials.role3", "Diretor de Marketing"),
       image: foto3,
       rating: 5,
-      text: t("testimonials.text3", "Contrato respeitando todos os critérios, soube extrair bem a necessidade que eu tinha para melhorar a prospecção do meu negócio, recomendo demais."),
+      text: t(
+        "testimonials.text3",
+        "Contrato respeitando todos os critérios, soube extrair bem a necessidade que eu tinha para melhorar a prospecção do meu negócio, recomendo demais."
+      ),
     },
   ];
 
@@ -111,7 +125,10 @@ export function Testimonials() {
             {t("testimonials.subtitle", "Sobre mim?")}
           </h2>
           <p className="testimonials-subtitle">
-            {t("testimonials.description", "Depoimentos reais de clientes satisfeitos com meus serviços")}
+            {t(
+              "testimonials.description",
+              "Depoimentos reais de clientes satisfeitos com meus serviços"
+            )}
           </p>
         </motion.div>
 
@@ -191,9 +208,9 @@ export function Testimonials() {
             // Desktop: Static Grid
             <div className="testimonials-grid">
               {testimonials.map((testimonial, index) => (
-                <TestimonialCard 
-                  key={testimonial.id} 
-                  testimonial={testimonial} 
+                <TestimonialCard
+                  key={testimonial.id}
+                  testimonial={testimonial}
                   index={index}
                   isStatic={true}
                 />
@@ -217,13 +234,13 @@ export function Testimonials() {
 const TestimonialCard = ({ testimonial, index, isStatic = false }) => {
   return (
     <motion.div
-      className={`testimonial-card ${isStatic ? 'static-card' : ''}`}
+      className={`testimonial-card ${isStatic ? "static-card" : ""}`}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: isStatic ? index * 0.2 : index * 0.1 }}
-      whileHover={{ 
+      whileHover={{
         y: -10,
-        transition: { duration: 0.3 }
+        transition: { duration: 0.3 },
       }}
     >
       {/* Quote Icon */}
@@ -246,9 +263,7 @@ const TestimonialCard = ({ testimonial, index, isStatic = false }) => {
       </div>
 
       {/* Testimonial Text */}
-      <p className="testimonial-text">
-        "{testimonial.text}"
-      </p>
+      <p className="testimonial-text">"{testimonial.text}"</p>
 
       {/* Client Info */}
       <div className="testimonial-client">

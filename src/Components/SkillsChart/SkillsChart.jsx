@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
-import './SkillsChart.css';
-import { AnimatedSection } from '../AnimatedSection/AnimatedSection';
-import { useTranslation } from '../../hooks/useTranslation';
+import React, { useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import "./SkillsChart.css";
+import { AnimatedSection } from "../AnimatedSection/AnimatedSection";
+import { useTranslation } from "../../hooks/useTranslation";
 
 // Import dos ícones existentes
 import html from "../../assets/html-icon.svg";
@@ -29,7 +29,7 @@ export function SkillsChart() {
     const springValue = useSpring(motionValue, { duration: duration * 1000 });
 
     useEffect(() => {
-      const unsubscribe = springValue.on('change', (latest) => {
+      const unsubscribe = springValue.on("change", (latest) => {
         setDisplayValue(Math.round(latest));
       });
       return unsubscribe;
@@ -51,19 +51,19 @@ export function SkillsChart() {
   };
 
   const skills = [
-    { name: 'React', icon: react, level: 100, color: '#0066ff' },
-    { name: 'HTML', icon: html, level: 100, color: '#0066ff' },
-    { name: 'CSS', icon: css, level: 100, color: '#0066ff' },
-    { name: 'JavaScript', icon: javascript, level: 100, color: '#0066ff' },
-    { name: 'TypeScript', icon: typescript, level: 100, color: '#0066ff' },
-    { name: 'Node.js', icon: node, level: 100, color: '#0066ff' },
-    { name: 'Tailwind CSS', icon: tailwind, level: 100, color: '#0066ff' },
-    { name: 'Ruby on Rails', icon: ruby, level: 100, color: '#0066ff' },
-    { name: 'Angular', icon: angular, level: 80, color: '#0080ff' },
-    { name: 'Vue.js', icon: vue, level: 80, color: '#0080ff' },
-    { name: 'MySQL', icon: mysql, level: 80, color: '#0080ff' },
-    { name: 'PostgreSQL', icon: postgresql, level: 80, color: '#0080ff' },
-    { name: 'Python', icon: python, level: 70, color: '#4da6ff' },
+    { name: "React", icon: react, level: 100, color: "#0066ff" },
+    { name: "HTML", icon: html, level: 100, color: "#0066ff" },
+    { name: "CSS", icon: css, level: 100, color: "#0066ff" },
+    { name: "JavaScript", icon: javascript, level: 100, color: "#0066ff" },
+    { name: "TypeScript", icon: typescript, level: 100, color: "#0066ff" },
+    { name: "Node.js", icon: node, level: 100, color: "#0066ff" },
+    { name: "Tailwind CSS", icon: tailwind, level: 100, color: "#0066ff" },
+    { name: "Ruby on Rails", icon: ruby, level: 100, color: "#0066ff" },
+    { name: "Angular", icon: angular, level: 80, color: "#0080ff" },
+    { name: "Vue.js", icon: vue, level: 80, color: "#0080ff" },
+    { name: "MySQL", icon: mysql, level: 80, color: "#0080ff" },
+    { name: "PostgreSQL", icon: postgresql, level: 80, color: "#0080ff" },
+    { name: "Python", icon: python, level: 70, color: "#4da6ff" },
   ];
 
   const containerVariants = {
@@ -102,23 +102,30 @@ export function SkillsChart() {
         opacity: {
           duration: 0.3,
           delay: 0.5,
-        }
+        },
       },
     }),
   };
 
   return (
-    <AnimatedSection className="skills-chart-section" variant="fadeUp" delay={0.3}>
+    <AnimatedSection
+      className="skills-chart-section"
+      variant="fadeUp"
+      delay={0.3}
+    >
       <div className="skills-chart-header">
         <h3 className="skills-chart-title">
           {t("skills.title", "Minhas Habilidades Técnicas")}
         </h3>
         <p className="skills-chart-subtitle">
-          {t("skills.subtitle", "Tecnologias que domino e utilizo no desenvolvimento de projetos")}
+          {t(
+            "skills.subtitle",
+            "Tecnologias que domino e utilizo no desenvolvimento de projetos"
+          )}
         </p>
       </div>
 
-      <motion.div 
+      <motion.div
         className="skills-grid"
         variants={containerVariants}
         initial="hidden"
@@ -133,9 +140,9 @@ export function SkillsChart() {
           >
             <div className="skill-header">
               <div className="skill-icon-container">
-                <img 
-                  src={skill.icon} 
-                  alt={`${skill.name} icon`} 
+                <img
+                  src={skill.icon}
+                  alt={`${skill.name} icon`}
                   className="skill-icon"
                 />
               </div>
@@ -144,7 +151,7 @@ export function SkillsChart() {
                 <AnimatedCounter target={skill.level} />
               </div>
             </div>
-            
+
             <div className="skill-progress-container">
               <motion.div
                 className="skill-progress-bar"
@@ -179,7 +186,7 @@ export function SkillsChart() {
         ))}
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="skills-summary"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -188,16 +195,26 @@ export function SkillsChart() {
       >
         <div className="summary-stats">
           <div className="stat-item">
-            <span className="stat-number">{skills.filter(s => s.level === 100).length}</span>
-            <span className="stat-label">{t("skills.expertTechs", "Tecnologias Especialista")}</span>
+            <span className="stat-number">
+              {skills.filter((s) => s.level === 100).length}
+            </span>
+            <span className="stat-label">
+              {t("skills.expertTechs", "Tecnologias Especialista")}
+            </span>
           </div>
           <div className="stat-item">
-            <span className="stat-number">{skills.filter(s => s.level >= 80).length}</span>
-            <span className="stat-label">{t("skills.advancedTechs", "Tecnologias Avançado+")}</span>
+            <span className="stat-number">
+              {skills.filter((s) => s.level >= 80).length}
+            </span>
+            <span className="stat-label">
+              {t("skills.advancedTechs", "Tecnologias Avançado+")}
+            </span>
           </div>
           <div className="stat-item">
             <span className="stat-number">{skills.length}</span>
-            <span className="stat-label">{t("skills.totalTechs", "Total de Tecnologias")}</span>
+            <span className="stat-label">
+              {t("skills.totalTechs", "Total de Tecnologias")}
+            </span>
           </div>
         </div>
       </motion.div>

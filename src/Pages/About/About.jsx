@@ -15,15 +15,15 @@ export function About() {
 
   const toggleSkills = () => {
     setShowSkills(!showSkills);
-    
+
     // Scroll suave para a seção de skills quando mostrar
     if (!showSkills) {
       setTimeout(() => {
-        const skillsSection = document.getElementById('skills-section');
+        const skillsSection = document.getElementById("skills-section");
         if (skillsSection) {
-          skillsSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+          skillsSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
           });
         }
       }, 100);
@@ -65,14 +65,14 @@ export function About() {
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={0.5}>
-                <motion.button 
+                <motion.button
                   onClick={toggleSkills}
                   className="skills-toggle-button"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   {t("about.skillsButton", "Veja minhas Habilidades")}
-                  <motion.span 
+                  <motion.span
                     className="skills-arrow"
                     animate={{ rotate: showSkills ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
@@ -84,20 +84,20 @@ export function About() {
             </div>
           </AnimatedSection>
         </AnimatedSection>
-        
+
         {/* Seção de habilidades com animação */}
         <motion.div
           id="skills-section"
           initial={{ opacity: 0, height: 0, marginTop: 0 }}
-          animate={{ 
-            opacity: showSkills ? 1 : 0, 
+          animate={{
+            opacity: showSkills ? 1 : 0,
             height: showSkills ? "auto" : 0,
-            marginTop: showSkills ? "3rem" : 0
+            marginTop: showSkills ? "3rem" : 0,
           }}
-          transition={{ 
-            duration: 0.5, 
+          transition={{
+            duration: 0.5,
             ease: "easeInOut",
-            opacity: { duration: 0.3 }
+            opacity: { duration: 0.3 },
           }}
           style={{ overflow: "hidden" }}
         >
