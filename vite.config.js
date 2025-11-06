@@ -34,6 +34,13 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,jpeg}"],
+        globIgnores: [
+          // Exclude large files from precaching to avoid PWA limits
+          "**/lacos-site.png",
+          "**/projeto-guto.svg", 
+          "**/projeto-paulo.svg"
+        ],
+        maximumFileSizeToCacheInBytes: 3 * 1024 * 1024, // 3MB limit for remaining files
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\//,
@@ -53,6 +60,18 @@ export default defineConfig({
               },
             },
           },
+          // Add runtime caching for large assets
+          {
+            urlPattern: /\.(png|svg|jpg|jpeg)$/,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "images-cache",
+              expiration: {
+                maxEntries: 60,
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+              },
+            },
+          },
         ],
       },
       devOptions: {
@@ -60,4 +79,25 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    chunkSizeWarningLimit: 1000, // Increase warning limit to 1MB
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor libraries into separate chunks
+          'react-vendor': ['react', 'react-dom'],
+          'router-vendor': ['react-router-dom'],
+          'animation-vendor': ['framer-motion'],
+          'swiper-vendor': ['swiper'],
+          'icons-vendor': ['react-icons'],
+          // Split large components into separate chunks
+          'components': [
+            './src/Components/Dashboard/Dashboard.jsx',
+            './src/Components/Work-section/Work.jsx',
+            './src/Components/Testimonials/Testimonials.jsx'
+          ]
+        },
+      },
+    },
+  },
 });
