@@ -4,15 +4,19 @@ import { IoMdGlobe } from "react-icons/io";
 import pdfFile from "../../assets/Curriculo.pdf";
 import foto from "../../assets/minha-foto.png";
 import { Services } from "../Services/Services";
-import { Work } from "../Work-section/Work";
+import Dashboard from "../Dashboard/Dashboard";
+import Work from "../Work-section/Work";
 import { Testimonials } from "../Testimonials/Testimonials";
 import React, { useState, useEffect } from "react";
 import { Footer } from "../Footer/Footer";
 import backgroundVideo from "../../assets/background-video.mp4";
 import { AnimatedSection } from "../AnimatedSection/AnimatedSection";
+import PWAInstall from "../PWAInstall/PWAInstall";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export function Home() {
   const [showButton, setShowButton] = useState(false);
+  const { t } = useTranslation();
 
   const handleScroll = () => {
     const middleOfPage = window.innerHeight / 2;
@@ -76,7 +80,9 @@ export function Home() {
                 <h1 className="home-name">Yago Cerqueira Regis</h1>
               </AnimatedSection>
               <AnimatedSection delay={0.3}>
-                <h2 className="home-profession">Desenvolvedor Full Stack</h2>
+                <h2 className="home-profession">
+                  {t("hero.profession", "Desenvolvedor Full Stack")}
+                </h2>
               </AnimatedSection>
               <AnimatedSection
                 className="home-social"
@@ -117,7 +123,7 @@ export function Home() {
                 delay={0.5}
               >
                 <button className="home-button" onClick={handleDownload}>
-                  Baixar Currículo
+                  {t("hero.downloadCV", "Baixar Currículo")}
                 </button>
                 <button
                   className="home-button-whatsapp"
@@ -131,8 +137,14 @@ export function Home() {
           </AnimatedSection>
         </div>
       </section>
+      {/* Dashboard Section */}
+      <section id="dashboard" className="dashboard-section">
+        <Dashboard />
+      </section>
       <Services />
       <Work />
+      {/* PWA Install Component */}
+      <PWAInstall />
       <Testimonials />
       <Footer />
     </main>

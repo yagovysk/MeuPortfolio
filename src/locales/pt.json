@@ -1,0 +1,259 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "portfolio": "Portfólio",
+    "contact": "Contato"
+  },
+  "hero": {
+    "name": "Yago Cerqueira Regis",
+    "profession": "Desenvolvedor Full Stack",
+    "downloadCV": "Baixar Currículo",
+    "whatsapp": "WhatsApp"
+  },
+  "dashboard": {
+    "title": "Meu Progresso",
+    "subtitle": "Transformando ideias em realidade digital",
+    "projects": "Projetos Completos",
+    "clients": "Clientes Satisfeitos",
+    "years": "Anos de Experiência",
+    "technologies": "Tecnologias Dominadas",
+    "badge": "Portfolio em constante evolução"
+  },
+  "services": {
+    "title": "Os Serviços que eu ofereço",
+    "subtitle": "Soluções completas para suas necessidades digitais",
+    "frontend": {
+      "title": "Desenvolvedor Front-end",
+      "description": "Designs bonitos e responsivos com uma interface intuitiva, eficiente e prazerosa ao usuário.",
+      "modalTitle": "Desenvolvedor web",
+      "modalItems": [
+        "Criação de websites profissionais, com qualidade e foco nas necessidades dos clientes.",
+        "Design Responsivo para mobile.",
+        "Eu posiciono seu website com SEO avançado, ajuda os mecanismos de busca a encontrar sua página, sem a necessidade do tráfego pago.",
+        "Eu resolvo problemas em páginas da web."
+      ]
+    },
+    "backend": {
+      "title": "Desenvolvimento Back-end",
+      "description": "Criação de softwares profissionais, com qualidade e foco nas necessidades dos clientes.",
+      "modalTitle": "Back-end",
+      "modalItems": [
+        "Desenvolvimento de APIs RESTful robustas e escaláveis.",
+        "Integração com bancos de dados relacionais e não relacionais.",
+        "Implementação de autenticação e autorização seguras.",
+        "Otimização de performance e escalabilidade."
+      ]
+    },
+    "fullstack": {
+      "title": "Desenvolvedor Full Stack",
+      "description": "Soluções completas de ponta a ponta, desde o front-end até o back-end.",
+      "modalTitle": "Full Stack",
+      "modalItems": [
+        "Desenvolvimento completo de aplicações web.",
+        "Arquitetura de sistemas e planejamento técnico.",
+        "Integração de front-end e back-end.",
+        "Deploy e manutenção de aplicações."
+      ]
+    },
+    "web": {
+      "title": "Desenvolvimento Web",
+      "description": "Criação de sites e aplicações web modernas, responsivas e otimizadas para performance."
+    },
+    "mobile": {
+      "title": "Aplicações Mobile",
+      "description": "Desenvolvimento de apps mobile nativos e híbridos para iOS e Android."
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "description": "Lojas virtuais completas com integração de pagamentos e gestão de produtos."
+    }
+  },
+  "common": {
+    "learnMore": "Saiba mais",
+    "close": "Fechar"
+  },
+  "footer": {
+    "copyright": "&#169; Todos os Direitos Reservados a Yago C. Regis"
+  },
+  "portfolio": {
+    "title": "Portfólio",
+    "titleHighlight": "Meus Trabalhos",
+    "titleSuffix": "Recentes",
+    "subtitle": "Projetos que transformam ideias em experiências digitais incríveis",
+    "viewProject": "Ver Projeto",
+    "technologies": "Tecnologias:",
+    "projects": {
+      "telegas": {
+        "title": "TeleGás",
+        "description": "Sistema completo de delivery de gás com painel administrativo"
+      },
+      "togyro": {
+        "title": "Togyro Group",
+        "description": "Site institucional moderno com animações e design responsivo"
+      },
+      "bodegueira": {
+        "title": "Bodegueira",
+        "description": "E-commerce completo com sistema de pagamentos integrado"
+      },
+      "kypy": {
+        "title": "Kypy",
+        "description": "Aplicação web para gestão de tarefas e produtividade"
+      },
+      "ecosempre": {
+        "title": "EcoSempre",
+        "description": "Plataforma de sustentabilidade e economia circular"
+      },
+      "black": {
+        "title": "Black Tattoo",
+        "description": "Site para estúdio de tatuagem com galeria e agendamento"
+      },
+      "pagedev": {
+        "title": "PageDev",
+        "description": "Plataforma de desenvolvimento e criação de páginas web"
+      },
+      "guto": {
+        "title": "Projeto Guto",
+        "description": "Sistema personalizado de gestão empresarial"
+      },
+      "paulo": {
+        "title": "Projeto Paulo",
+        "description": "Aplicação web para controle de processos internos"
+      },
+      "tasklist": {
+        "title": "Task List",
+        "description": "Aplicativo de lista de tarefas com interface intuitiva"
+      },
+      "lacos": {
+        "title": "Laços Eternos",
+        "description": "Site para eventos e cerimonias especiais"
+      },
+      "raha": {
+        "title": "Clínica Raha",
+        "description": "Sistema de agendamento e gestão para clínica médica"
+      },
+      "vivacqua": {
+        "title": "Engenharia Vivacqua",
+        "description": "Site institucional para empresa de engenharia"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "O que dizem",
+    "subtitle": "Sobre mim?",
+    "description": "Depoimentos reais de clientes satisfeitos com meus serviços",
+    "role1": "Empresária",
+    "text1": "Eu solicitei uma landing page para minha empresa, o serviço foi rápido e bem feito, gostaria de parabenizar o Yago por um excelente trabalho.",
+    "role2": "Empreendedor",
+    "text2": "Super recomendo, preços acessíveis, atendimento e esclarecimento de dúvidas ótimos. Só Sucesso!",
+    "role3": "Diretor de Marketing",
+    "text3": "Contrato respeitando todos os critérios, soube extrair bem a necessidade que eu tinha para melhorar a prospecção do meu negócio, recomendo demais."
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Vamos conversar sobre seu próximo projeto",
+    "name": "Nome",
+    "email": "E-mail",
+    "message": "Mensagem",
+    "send": "Enviar Mensagem",
+    "whatsappMessage": "Olá! Gostaria de conversar sobre um projeto."
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "subtitle": "Desenvolvedor apaixonado por tecnologia e inovação",
+    "description": "Sou desenvolvedor Full Stack com mais de 3 anos de experiência criando soluções web modernas e eficientes. Especializado em React, Node.js e tecnologias emergentes.",
+    "skills": "Habilidades Técnicas",
+    "experience": "Experiência Profissional"
+  },
+  "accessibility": {
+    "title": "Acessibilidade",
+    "fontSize": "Tamanho da Fonte",
+    "contrast": "Contraste",
+    "theme": "Tema",
+    "normal": "Normal",
+    "high": "Alto",
+    "light": "Claro",
+    "dark": "Escuro"
+  },
+  "projects": {
+    "telegas": {
+      "alt": "Website TeleGás Monte Verde",
+      "title": "TeleGás Monte Verde",
+      "subtitle": "Landing Page Comercial",
+      "description": "Desenvolvi uma landing page moderna e responsiva para uma distribuidora de gás em Betim-MG. Implementei formulário de contato integrado, seções de serviços e otimização SEO para aumentar a visibilidade online da empresa."
+    },
+    "togyro": {
+      "alt": "Website Togyro Group Victory",
+      "title": "Togyro Group Victory",
+      "subtitle": "Portfolio Corporativo",
+      "description": "Criei um site institucional com design futurista para uma empresa de tecnologia. Utilizei animações suaves, design responsivo e uma arquitetura de código limpa e escalável."
+    },
+    "kypy": {
+      "alt": "Website Kypy-Saúde",
+      "title": "Kypy Saúde",
+      "subtitle": "Landing Page para a Clínica",
+      "description": "Desenvolvi uma plataforma focada em saúde e bem-estar para a clínica Kypy. O site inclui agendamento online, informações sobre tratamentos e uma seção de blog para dicas de saúde."
+    },
+    "ecosempre": {
+      "alt": "Website EcoSempre",
+      "title": "Projeto EcoSempre",
+      "subtitle": "Plataforma Ambiental",
+      "description": "Criei um site educacional sobre descarte correto de lixo eletrônico. Implementei seções interativas, informações sobre reciclagem e pontos de coleta, com foco em conscientização ambiental."
+    },
+    "teamblack": {
+      "alt": "Website TeamBlack",
+      "title": "TeamBlack",
+      "subtitle": "Site Educacional",
+      "description": "Desenvolvi um site institucional para um professor, com design profissional, galeria de cursos, depoimentos de alunos e integração com redes sociais."
+    },
+    "todolist": {
+      "alt": "Aplicativo Lista de Tarefas",
+      "title": "Lista de Tarefas",
+      "subtitle": "Aplicação Web",
+      "description": "Desenvolvi uma aplicação completa de gerenciamento de tarefas com funcionalidades de adicionar, editar, marcar como concluída e deletar tarefas. Design espacial único com persistência de dados no localStorage."
+    },
+    "gt": {
+      "alt": "Website GT Personal Trainer",
+      "title": "GT Personal Trainer",
+      "subtitle": "Site Fitness",
+      "description": "Criei um site profissional para personal trainer com seções de treinos, depoimentos, planos de treinamento e formulário de contato. Design motivacional focado em conversão de leads."
+    },
+    "phbytes": {
+      "alt": "Website Ph Bytes",
+      "title": "Ph Bytes",
+      "subtitle": "Portfolio Tecnologia",
+      "description": "Desenvolvi um site institucional para empresa de tecnologia com design moderno, seções de serviços, portfólio de projetos e formulário de contato integrado."
+    },
+    "bodegueira": {
+      "alt": "Bodegueira Charcutaria & Cia",
+      "title": "Bodegueira Charcutaria & Cia",
+      "subtitle": "E-commerce Alimentação",
+      "description": "Criei um site completo para delivery para a bodegueira promovendo a vendas de seus produtos em Brasília. Implementei carrinho de compras, sistema de pedidos, integração com WhatsApp e design focado em conversão."
+    },
+    "lacos": {
+      "alt": "Website Laços e Confeitos",
+      "title": "Laços e Confeitos",
+      "subtitle": "Site Confeitaria",
+      "description": "Desenvolvi um site elegante para ateliê culinário especializado em doces finos. Galeria de produtos, formulário de orçamento e design sofisticado que transmite a qualidade dos produtos."
+    },
+    "raha": {
+      "alt": "Website Raha Saúde e Estética",
+      "title": "Raha Saúde e Estética",
+      "subtitle": "Site Clínica",
+      "description": "Criei um site profissional para clínica de saúde e estética. Seções de serviços, galeria de tratamentos, agendamento online e design clean que transmite confiança e profissionalismo."
+    },
+    "vivacqua": {
+      "alt": "Website Vivacqua Engenharia",
+      "title": "Vivacqua Engenharia",
+      "subtitle": "Website Corporativo",
+      "description": "Desenvolvi um website corporativo moderno para empresa de engenharia. Implementei HTML semântico para melhor SEO, design responsivo com Tailwind CSS e funcionalidades interativas com JavaScript, priorizando acessibilidade e performance."
+    },
+    "upcoming": {
+      "alt": "Novos projetos em breve",
+      "title": "Novos Projetos",
+      "subtitle": "Em Desenvolvimento",
+      "description": "Estou constantemente desenvolvendo novos projetos e aprendendo novas tecnologias. Em breve, mais trabalhos incríveis estarão disponíveis aqui!"
+    }
+  }
+}

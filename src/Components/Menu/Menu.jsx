@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { RiApps2Line } from "react-icons/ri";
+import { useTranslation } from "../../hooks/useTranslation";
 import "./Menu.css";
 
 export function Menu() {
   const [showMenu, setShowMenu] = useState(false);
+  const { t } = useTranslation();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -27,22 +29,22 @@ export function Menu() {
         <ul className="container-list">
           <li className="item-list">
             <Link to="/" href="" className="link">
-              Home
+              {t("nav.home", "Home")}
             </Link>
           </li>
           <li className="item-list">
             <Link to="/About" href="" className="link">
-              Sobre mim
+              {t("nav.about", "Sobre mim")}
             </Link>
           </li>
           <li className="item-list">
             <Link to="/Portfolio" href="" className="link">
-              Portfolio
+              {t("nav.portfolio", "Portfolio")}
             </Link>
           </li>
           <li className="item-list">
             <Link to="/Contato" href="" className="button-list">
-              Entre em contato
+              {t("nav.contact", "Entre em contato")}
             </Link>
           </li>
         </ul>

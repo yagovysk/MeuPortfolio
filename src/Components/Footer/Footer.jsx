@@ -6,8 +6,11 @@ import { IoMdGlobe } from "react-icons/io";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export function Footer() {
+  const { t } = useTranslation();
+
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, []);
@@ -22,17 +25,17 @@ export function Footer() {
           <ul className="footer-links">
             <li>
               <Link to="/About" className="footer-link">
-                Sobre mim
+                {t("nav.about", "Sobre mim")}
               </Link>
             </li>
             <li>
               <Link to="/Portfolio" className="footer-link">
-                Portfolio
+                {t("nav.portfolio", "Portfolio")}
               </Link>
             </li>
             <li>
               <Link to="/contato" className="footer-link">
-                Contato
+                {t("nav.contact", "Contato")}
               </Link>
             </li>
           </ul>
@@ -61,7 +64,10 @@ export function Footer() {
           </div>
         </div>
         <span className="footer-copy">
-          &#169; Todos os Direitos Reservados a Yago C. Regis
+          {t(
+            "footer.copyright",
+            "&#169; Todos os Direitos Reservados a Yago C. Regis"
+          )}
         </span>
       </div>
     </footer>

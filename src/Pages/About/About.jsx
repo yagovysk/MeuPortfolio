@@ -15,14 +15,17 @@ import python from "../../assets/python-icon.svg";
 import { Footer } from "../../Components/Footer/Footer";
 import Accessibility from "../../Components/Accessibility/Accessibility";
 import { AnimatedSection } from "../../Components/AnimatedSection/AnimatedSection";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export function About() {
+  const { t } = useTranslation();
+
   return (
     <div>
       <Menu />
       <section className="section-about">
         <AnimatedSection variant="fadeDown">
-          <h2>Minha Informação Pessoal</h2>
+          <h2>{t("about.title", "Minha Informação Pessoal")}</h2>
         </AnimatedSection>
         <AnimatedSection
           className="container-about"
