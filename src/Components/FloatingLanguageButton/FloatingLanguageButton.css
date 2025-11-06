@@ -33,6 +33,33 @@
 .language-flag {
   font-size: 1.2rem;
   line-height: 1;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", sans-serif;
+  position: relative;
+}
+
+.emoji-flag {
+  display: inline-block;
+}
+
+.text-flag {
+  display: none;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.2);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Fallback para quando emojis não são suportados */
+@supports not (font-family: "Apple Color Emoji") {
+  .emoji-flag {
+    display: none;
+  }
+  .text-flag {
+    display: inline-block;
+  }
 }
 
 .language-arrow {
@@ -91,6 +118,32 @@
 .option-flag {
   font-size: 1.1rem;
   line-height: 1;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", sans-serif;
+}
+
+.option-flag .emoji-flag {
+  display: inline-block;
+}
+
+.option-flag .text-flag {
+  display: none;
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.2);
+  padding: 1px 3px;
+  border-radius: 3px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Fallback para quando emojis não são suportados nas opções */
+@supports not (font-family: "Apple Color Emoji") {
+  .option-flag .emoji-flag {
+    display: none;
+  }
+  .option-flag .text-flag {
+    display: inline-block;
+  }
 }
 
 .option-name {
@@ -188,10 +241,20 @@
 
   .language-flag {
     font-size: 1rem;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", sans-serif;
+  }
+
+  .language-flag .text-flag {
+    font-size: 0.6rem;
   }
 
   .option-flag {
     font-size: 1rem;
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", sans-serif;
+  }
+
+  .option-flag .text-flag {
+    font-size: 0.55rem;
   }
 
   .option-name {

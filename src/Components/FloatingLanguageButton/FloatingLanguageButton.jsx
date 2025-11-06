@@ -13,8 +13,8 @@ const FloatingLanguageButton = () => {
   };
 
   const languages = [
-    { code: "pt", flag: "🇧🇷", name: "Português" },
-    { code: "en", flag: "🇺🇸", name: "English" },
+    { code: "pt", flag: "🇧🇷", name: "Português", fallback: "BR" },
+    { code: "en", flag: "🇺🇸", name: "English", fallback: "EN" },
   ];
 
   // Adicionar verificação de segurança
@@ -25,6 +25,16 @@ const FloatingLanguageButton = () => {
   if (!currentLanguage) {
     return null;
   }
+
+  // Componente para renderizar bandeira com fallback
+  const FlagIcon = ({ flag, fallback }) => {
+    return (
+      <span className="language-flag">
+        <span className="emoji-flag">{flag}</span>
+        <span className="text-flag">{fallback}</span>
+      </span>
+    );
+  };
 
   return (
     <div className="floating-language-container">
@@ -39,7 +49,10 @@ const FloatingLanguageButton = () => {
         }}
         transition={{ duration: 0.3 }}
       >
-        <span className="language-flag">{currentLanguageObj.flag}</span>
+        <FlagIcon 
+          flag={currentLanguageObj.flag} 
+          fallback={currentLanguageObj.fallback} 
+        />
         <motion.span
           className="language-arrow"
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -72,7 +85,10 @@ const FloatingLanguageButton = () => {
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
               >
-                <span className="option-flag">{lang.flag}</span>
+                <span className="option-flag">
+                  <span className="emoji-flag">{lang.flag}</span>
+                  <span className="text-flag">{lang.fallback}</span>
+                </span>
                 <span className="option-name">{lang.name}</span>
               </motion.button>
             ))}

@@ -66,7 +66,7 @@ export function Footer() {
         <span className="footer-copy">
           {t(
             "footer.copyright",
-            "&#169; Todos os Direitos Reservados a Yago C. Regis"
+            "© Todos os Direitos Reservados a Yago C. Regis"
           )}
         </span>
       </div>

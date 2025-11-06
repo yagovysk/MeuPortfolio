@@ -23,6 +23,8 @@
 .nav-toggle {
   color: #fff;
   transition: color 0.4s;
+  padding: 0.25rem;
+  border-radius: 4px;
 }
 @media screen and (max-width: 1150px) {
   .nav-menu {
@@ -119,7 +121,8 @@
   }
 
   .nav-toggle {
-    font-size: 1.15rem;
+    font-size: 1.4rem;
+    padding: 0.5rem;
   }
 
   .container-list {
@@ -147,7 +150,8 @@
   }
 
   .nav-toggle {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    padding: 0.45rem;
   }
 
   .nav-menu {
@@ -184,7 +188,8 @@
   }
 
   .nav-toggle {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    padding: 0.4rem;
   }
 
   .item-list .link {
@@ -194,6 +199,14 @@
   .button-list {
     padding: 0.625rem 1.25rem;
     font-size: 0.85rem;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 320px) {
+  .nav-toggle {
+    font-size: 1.4rem;
+    padding: 0.5rem;
   }
 }
 

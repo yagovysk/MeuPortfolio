@@ -496,6 +496,7 @@
   .work-section-title {
     margin-bottom: 0.5rem;
     padding: 0 1rem;
+    line-height: 1.5;
   }
 
   .work-section-subtitle {
@@ -583,6 +584,7 @@
   .work-section-title {
     font-size: 1.75rem;
     padding: 0 0.5rem;
+    line-height: 1.6;
   }
 
   .work-section-subtitle {
@@ -695,6 +697,7 @@
 
   .work-section-title {
     font-size: 1.5rem;
+    line-height: 1.7;
   }
 
   .carousel-wrapper {
