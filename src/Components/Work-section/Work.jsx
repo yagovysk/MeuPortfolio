@@ -143,10 +143,10 @@ const Work = () => {
     },
     {
       imgSrc: vivacqua,
-      altText: t("projects.vivacqua.alt", "Website Vivacqua Engenharia"),
-      title: t("projects.vivacqua.title", "Vivacqua Engenharia"),
+      altText: t("projects.vivacqua.alt", "Website Vivacqua Odontologia"),
+      title: t("projects.vivacqua.title", "Vivacqua Odontologia"),
       subtitle: t("projects.vivacqua.subtitle", "Website Corporativo"),
-      description: t("projects.vivacqua.description", "Desenvolvi um website corporativo moderno para empresa de engenharia. Implementei HTML semântico para melhor SEO, design responsivo com Tailwind CSS e funcionalidades interativas com JavaScript, priorizando acessibilidade e performance."),
+      description: t("projects.vivacqua.description", "Desenvolvi um website corporativo moderno para clínica odontológica. Implementei HTML semântico para melhor SEO, design responsivo com Tailwind CSS e funcionalidades interativas com JavaScript, priorizando acessibilidade e performance."),
       technologies: "HTML5, Tailwind CSS, JavaScript",
       link: "https://vivacquaondontologiadf.com.br/",
     },

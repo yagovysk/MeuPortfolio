@@ -1,24 +1,34 @@
 import "./About.css";
 import foto from "../../assets/minha-foto.png";
 import { Menu } from "../../Components/Menu/Menu";
-import { Link } from "react-router-dom";
-import html from "../../assets/html-icon.svg";
-import css from "../../assets/css-icon.svg";
-import javascript from "../../assets/javascript-icon.svg";
-import react from "../../assets/react-icon.svg";
-import typescript from "../../assets/typescript-icon.svg";
-import node from "../../assets/node-icon.svg";
-import angular from "../../assets/angular-icon.svg";
-import vue from "../../assets/vue-icon.svg";
-import ruby from "../../assets/ruby-icon.png";
-import python from "../../assets/python-icon.svg";
+import { useState } from "react";
 import { Footer } from "../../Components/Footer/Footer";
 import Accessibility from "../../Components/Accessibility/Accessibility";
 import { AnimatedSection } from "../../Components/AnimatedSection/AnimatedSection";
+import { SkillsChart } from "../../Components/SkillsChart/SkillsChart";
 import { useTranslation } from "../../hooks/useTranslation";
+import { motion } from "framer-motion";
 
 export function About() {
   const { t } = useTranslation();
+  const [showSkills, setShowSkills] = useState(false);
+
+  const toggleSkills = () => {
+    setShowSkills(!showSkills);
+    
+    // Scroll suave para a seção de skills quando mostrar
+    if (!showSkills) {
+      setTimeout(() => {
+        const skillsSection = document.getElementById('skills-section');
+        if (skillsSection) {
+          skillsSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+  };
 
   return (
     <div>
@@ -55,92 +65,44 @@ export function About() {
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={0.5}>
-                <Link to="/Contato" className="about-button">
-                  Entre em contato
-                </Link>
+                <motion.button 
+                  onClick={toggleSkills}
+                  className="skills-toggle-button"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {t("about.skillsButton", "Veja minhas Habilidades")}
+                  <motion.span 
+                    className="skills-arrow"
+                    animate={{ rotate: showSkills ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    ↓
+                  </motion.span>
+                </motion.button>
               </AnimatedSection>
             </div>
-            <AnimatedSection
-              className="about-skills"
-              variant="scale"
-              delay={0.3}
-            >
-              <h3 className="about-skills-title">Minhas Habilidades</h3>
-              <div className="about-content-skills">
-                <AnimatedSection variant="scale" delay={0.4}>
-                  <img
-                    className="about-skills-img"
-                    src={html}
-                    alt="imagem ícone html"
-                  />
-                </AnimatedSection>
-                <AnimatedSection variant="scale" delay={0.45}>
-                  <img
-                    className="about-skills-img"
-                    src={css}
-                    alt="imagem ícone css"
-                  />
-                </AnimatedSection>
-                <AnimatedSection variant="scale" delay={0.5}>
-                  <img
-                    className="about-skills-img"
-                    src={javascript}
-                    alt="imagem ícone javascript"
-                  />
-                </AnimatedSection>
-                <AnimatedSection variant="scale" delay={0.55}>
-                  <img
-                    className="about-skills-img"
-                    src={react}
-                    alt="imagem ícone react"
-                  />
-                </AnimatedSection>
-                <AnimatedSection variant="scale" delay={0.6}>
-                  <img
-                    className="about-skills-img"
-                    src={typescript}
-                    alt="imagem ícone typescript"
-                  />
-                </AnimatedSection>
-                <AnimatedSection variant="scale" delay={0.65}>
-                  <img
-                    className="about-skills-img"
-                    src={node}
-                    alt="imagem ícone node.js"
-                  />
-                </AnimatedSection>
-                <AnimatedSection variant="scale" delay={0.7}>
-                  <img
-                    className="about-skills-img"
-                    src={angular}
-                    alt="imagem ícone angular.js"
-                  />
-                </AnimatedSection>
-                <AnimatedSection variant="scale" delay={0.75}>
-                  <img
-                    className="about-skills-img"
-                    src={vue}
-                    alt="imagem ícone vue.js"
-                  />
-                </AnimatedSection>
-                <AnimatedSection variant="scale" delay={0.8}>
-                  <img
-                    className="about-skills-img"
-                    src={ruby}
-                    alt="imagem ícone ruby on rails"
-                  />
-                </AnimatedSection>
-                <AnimatedSection variant="scale" delay={0.85}>
-                  <img
-                    className="about-skills-img"
-                    src={python}
-                    alt="imagem ícone python"
-                  />
-                </AnimatedSection>
-              </div>
-            </AnimatedSection>
           </AnimatedSection>
         </AnimatedSection>
+        
+        {/* Seção de habilidades com animação */}
+        <motion.div
+          id="skills-section"
+          initial={{ opacity: 0, height: 0, marginTop: 0 }}
+          animate={{ 
+            opacity: showSkills ? 1 : 0, 
+            height: showSkills ? "auto" : 0,
+            marginTop: showSkills ? "3rem" : 0
+          }}
+          transition={{ 
+            duration: 0.5, 
+            ease: "easeInOut",
+            opacity: { duration: 0.3 }
+          }}
+          style={{ overflow: "hidden" }}
+        >
+          {showSkills && <SkillsChart />}
+        </motion.div>
       </section>
       <Footer />
       <Accessibility />

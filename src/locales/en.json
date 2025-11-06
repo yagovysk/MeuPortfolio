@@ -77,6 +77,16 @@
   "footer": {
     "copyright": "© All Rights Reserved to Yago C. Regis"
   },
+  "skills": {
+    "title": "My Technical Skills",
+    "subtitle": "Technologies I master and use in project development",
+    "expert": "Expert",
+    "advanced": "Advanced",
+    "intermediate": "Intermediate",
+    "expertTechs": "Expert Technologies",
+    "advancedTechs": "Advanced+ Technologies",
+    "totalTechs": "Total Technologies"
+  },
   "portfolio": {
     "title": "Portfolio",
     "titleHighlight": "My Recent",
@@ -134,8 +144,8 @@
         "description": "Appointment scheduling and management system for medical clinic"
       },
       "vivacqua": {
-        "title": "Vivacqua Engineering",
-        "description": "Institutional website for engineering company"
+        "title": "Vivacqua Dentistry",
+        "description": "Institutional website for dental clinic"
       }
     }
   },
@@ -164,7 +174,8 @@
     "subtitle": "Developer passionate about technology and innovation",
     "description": "I'm a Full Stack developer with over 3 years of experience creating modern and efficient web solutions. Specialized in React, Node.js and emerging technologies.",
     "skills": "Technical Skills",
-    "experience": "Professional Experience"
+    "experience": "Professional Experience",
+    "skillsButton": "See my Skills"
   },
   "accessibility": {
     "title": "Accessibility",
@@ -244,10 +255,10 @@
       "description": "I created a professional website for health and aesthetics clinic. Service sections, treatment gallery, online scheduling and clean design that conveys trust and professionalism."
     },
     "vivacqua": {
-      "alt": "Vivacqua Engineering Website",
-      "title": "Vivacqua Engineering",
+      "alt": "Vivacqua Dentistry Website",
+      "title": "Vivacqua Dentistry",
       "subtitle": "Corporate Website",
-      "description": "I developed a modern corporate website for an engineering company. I implemented semantic HTML for better SEO, responsive design with Tailwind CSS and interactive features with JavaScript, prioritizing accessibility and performance."
+      "description": "I developed a modern corporate website for a dental clinic. I implemented semantic HTML for better SEO, responsive design with Tailwind CSS and interactive functionalities with JavaScript, prioritizing accessibility and performance."
     },
     "upcoming": {
       "alt": "New projects coming soon",

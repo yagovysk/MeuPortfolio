@@ -77,6 +77,16 @@
   "footer": {
     "copyright": "© Todos os Direitos Reservados a Yago C. Regis"
   },
+  "skills": {
+    "title": "Minhas Habilidades Técnicas",
+    "subtitle": "Tecnologias que domino e utilizo no desenvolvimento de projetos",
+    "expert": "Especialista",
+    "advanced": "Avançado",
+    "intermediate": "Intermediário",
+    "expertTechs": "Tecnologias Especialista",
+    "advancedTechs": "Tecnologias Avançado+",
+    "totalTechs": "Total de Tecnologias"
+  },
   "portfolio": {
     "title": "Portfólio",
     "titleHighlight": "Meus Trabalhos",
@@ -134,8 +144,8 @@
         "description": "Sistema de agendamento e gestão para clínica médica"
       },
       "vivacqua": {
-        "title": "Engenharia Vivacqua",
-        "description": "Site institucional para empresa de engenharia"
+        "title": "Vivacqua Odontologia",
+        "description": "Site institucional para clínica odontológica"
       }
     }
   },
@@ -164,7 +174,8 @@
     "subtitle": "Desenvolvedor apaixonado por tecnologia e inovação",
     "description": "Sou desenvolvedor Full Stack com mais de 3 anos de experiência criando soluções web modernas e eficientes. Especializado em React, Node.js e tecnologias emergentes.",
     "skills": "Habilidades Técnicas",
-    "experience": "Experiência Profissional"
+    "experience": "Experiência Profissional",
+    "skillsButton": "Veja minhas Habilidades"
   },
   "accessibility": {
     "title": "Acessibilidade",
@@ -244,10 +255,10 @@
       "description": "Criei um site profissional para clínica de saúde e estética. Seções de serviços, galeria de tratamentos, agendamento online e design clean que transmite confiança e profissionalismo."
     },
     "vivacqua": {
-      "alt": "Website Vivacqua Engenharia",
-      "title": "Vivacqua Engenharia",
+      "alt": "Website Vivacqua Odontologia",
+      "title": "Vivacqua Odontologia",
       "subtitle": "Website Corporativo",
-      "description": "Desenvolvi um website corporativo moderno para empresa de engenharia. Implementei HTML semântico para melhor SEO, design responsivo com Tailwind CSS e funcionalidades interativas com JavaScript, priorizando acessibilidade e performance."
+      "description": "Desenvolvi um website corporativo moderno para clínica odontológica. Implementei HTML semântico para melhor SEO, design responsivo com Tailwind CSS e funcionalidades interativas com JavaScript, priorizando acessibilidade e performance."
     },
     "upcoming": {
       "alt": "Novos projetos em breve",
