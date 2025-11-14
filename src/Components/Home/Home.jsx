@@ -1,6 +1,7 @@
 import "./Home.css";
 import { FaGithub, FaLinkedin, FaArrowUp, FaWhatsapp } from "react-icons/fa";
 import { IoMdGlobe } from "react-icons/io";
+// Import do PDF para obter URL gerada pelo bundler (fallback desktop)
 import pdfFile from "../../assets/Curriculo.pdf";
 import foto from "../../assets/minha-foto.png";
 import { Services } from "../Services/Services";
@@ -31,11 +32,26 @@ export function Home() {
     };
   }, []);
 
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
   const handleDownload = () => {
+    // iOS Safari não respeita atributo download para blobs/arquivos locais;
+    // abrir em nova aba permite ao usuário compartilhar/salvar via UI do sistema.
+    const publicPath = "/Curriculo.pdf"; // caso movido para public/ para acesso direto
+    if (isIOS) {
+      // Tenta usar caminho público; se 404 cai para versão importada.
+      const testImg = new Image();
+      testImg.onload = () => window.open(publicPath, "_blank");
+      testImg.onerror = () => window.open(pdfFile, "_blank");
+      testImg.src = publicPath + "?cache=" + Date.now();
+      return;
+    }
     const link = document.createElement("a");
     link.href = pdfFile;
-    link.download = "Currículo Yago Cerqueira Regis";
+    link.download = "Curriculo_Yago_Cerqueira_Regis.pdf";
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
 
   const handleWhatsAppClick = () => {
@@ -123,7 +139,9 @@ export function Home() {
                 delay={0.5}
               >
                 <button className="home-button" onClick={handleDownload}>
-                  {t("hero.downloadCV", "Baixar Currículo")}
+                  {isIOS
+                    ? t("hero.openCV", "Abrir Currículo")
+                    : t("hero.downloadCV", "Baixar Currículo")}
                 </button>
                 <button
                   className="home-button-whatsapp"
