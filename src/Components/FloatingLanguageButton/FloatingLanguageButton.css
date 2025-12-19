@@ -8,6 +8,7 @@
 }
 
 .floating-language-btn {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -31,11 +32,22 @@
 }
 
 .language-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.2rem;
   line-height: 1;
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
     "Android Emoji", "EmojiSymbols", sans-serif;
   position: relative;
+}
+
+.flag-img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .emoji-flag {
@@ -117,10 +129,20 @@
 }
 
 .option-flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.1rem;
   line-height: 1;
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
     "Android Emoji", "EmojiSymbols", sans-serif;
+}
+
+.option-flag .flag-img {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  box-shadow: none;
 }
 
 .option-flag .emoji-flag {
@@ -245,6 +267,11 @@
     font-size: 1rem;
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
       "Android Emoji", "EmojiSymbols", sans-serif;
+  }
+
+  .flag-img {
+    width: 20px;
+    height: 20px;
   }
 
   .language-flag .text-flag {

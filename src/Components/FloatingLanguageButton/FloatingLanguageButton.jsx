@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { useLanguage } from "../../contexts/LanguageContext";
+import brFlag from "../../assets/flags/br.svg";
+import usFlag from "../../assets/flags/us.svg";
 import "./FloatingLanguageButton.css";
 
 const FloatingLanguageButton = () => {
@@ -10,6 +13,7 @@ const FloatingLanguageButton = () => {
   const toggleButtonRef = useRef(null);
   const wasOpenRef = useRef(false);
   const dropdownId = "seletor-idioma-menu";
+  const isMobileViewport = useMediaQuery("(max-width: 768px)");
 
   const toggleLanguage = (newLang) => {
     setLanguage(newLang);
@@ -17,8 +21,20 @@ const FloatingLanguageButton = () => {
   };
 
   const languages = [
-    { code: "pt", flag: "🇧🇷", name: "Português", fallback: "BR" },
-    { code: "en", flag: "🇺🇸", name: "English", fallback: "EN" },
+    {
+      code: "pt",
+      flag: "🇧🇷",
+      name: "Português",
+      fallback: "BR",
+      icon: brFlag,
+    },
+    {
+      code: "en",
+      flag: "🇺🇸",
+      name: "English",
+      fallback: "EN",
+      icon: usFlag,
+    },
   ];
 
   // Adicionar verificação de segurança
@@ -31,10 +47,21 @@ const FloatingLanguageButton = () => {
   }
 
   // Componente para renderizar bandeira com fallback
-  const FlagIcon = ({ flag, fallback }) => {
+  const FlagIcon = ({ flag, fallback, icon, variant }) => {
+    const wrapperClass = variant === "option" ? "option-flag" : "language-flag";
+
+    if (isMobileViewport) {
+      return (
+        <span className={wrapperClass} aria-hidden="true">
+          <span className="emoji-flag">{flag}</span>
+          <span className="text-flag">{fallback}</span>
+        </span>
+      );
+    }
+
     return (
-      <span className="language-flag">
-        <span className="emoji-flag">{flag}</span>
+      <span className={wrapperClass} aria-hidden="true">
+        <img src={icon} alt="" className="flag-img" role="presentation" />
         <span className="text-flag">{fallback}</span>
       </span>
     );
@@ -107,6 +134,8 @@ const FloatingLanguageButton = () => {
         <FlagIcon
           flag={currentLanguageObj.flag}
           fallback={currentLanguageObj.fallback}
+          icon={currentLanguageObj.icon}
+          variant="button"
         />
         <motion.span
           className="language-arrow"
@@ -150,10 +179,12 @@ const FloatingLanguageButton = () => {
                   optionRefs.current[index] = ref;
                 }}
               >
-                <span className="option-flag">
-                  <span className="emoji-flag">{lang.flag}</span>
-                  <span className="text-flag">{lang.fallback}</span>
-                </span>
+                <FlagIcon
+                  flag={lang.flag}
+                  fallback={lang.fallback}
+                  icon={lang.icon}
+                  variant="option"
+                />
                 <span className="option-name">{lang.name}</span>
               </motion.button>
             ))}
