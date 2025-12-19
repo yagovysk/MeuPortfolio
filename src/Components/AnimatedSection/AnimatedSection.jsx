@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 export function AnimatedSection({
   children,
@@ -10,9 +10,21 @@ export function AnimatedSection({
   as = "div",
   ...props
 }) {
+  const prefersReducedMotion = useReducedMotion();
+  const isSmallViewport = useMediaQuery("(max-width: 768px)");
+  const shouldReduceMotion = prefersReducedMotion || isSmallViewport;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const MotionComponent = motion[as];
+  const MotionComponent = motion[as] || motion.div;
+
+  if (shouldReduceMotion) {
+    const StaticComponent = as;
+    return (
+      <StaticComponent className={className} {...props}>
+        {children}
+      </StaticComponent>
+    );
+  }
 
   const variants = {
     fadeUp: {

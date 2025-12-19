@@ -13,6 +13,9 @@
   left: 0;
   overflow: hidden; /* Para garantir que o vídeo se ajuste ao container */
 }
+.home-rectangle--static {
+  background: linear-gradient(135deg, #000000, #124658, #007bff);
+}
 .background-video {
   width: 100%;
   height: 100%;

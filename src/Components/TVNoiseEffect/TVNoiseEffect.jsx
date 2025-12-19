@@ -98,6 +98,7 @@ const TVNoiseEffect = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
+          aria-hidden="true"
         >
           {/* Background Pattern */}
           <div className="tv-background" />

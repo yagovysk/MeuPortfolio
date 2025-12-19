@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -6,7 +6,7 @@ import {
   Autoplay,
   EffectCoverflow,
 } from "swiper/modules";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   FaExternalLinkAlt,
   FaCode,
@@ -20,6 +20,7 @@ import "swiper/css/effect-coverflow";
 import "./Work.css";
 import TVNoiseEffect from "../TVNoiseEffect/TVNoiseEffect";
 import { useTranslation } from "../../hooks/useTranslation";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import bodegueira from "../../assets/print-bodegueira.png";
 import site1 from "../../assets/fundo-gas.png";
 import togyro from "../../assets/togyro-fundo.png";
@@ -40,6 +41,24 @@ const Work = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [tuningSlides, setTuningSlides] = useState(new Set());
   const { t } = useTranslation();
+  const prefersReducedMotion = useReducedMotion();
+  const isMobileViewport = useMediaQuery("(max-width: 768px)");
+  const shouldReduceMotion = prefersReducedMotion || isMobileViewport;
+  const shouldShowTvEffect = !shouldReduceMotion;
+
+  useEffect(() => {
+    if (!shouldShowTvEffect) {
+      setTuningSlides(new Set());
+    }
+  }, [shouldShowTvEffect]);
+
+  const swiperModules = useMemo(() => {
+    const baseModules = [Navigation, Pagination];
+    if (!shouldReduceMotion) {
+      baseModules.push(Autoplay, EffectCoverflow);
+    }
+    return baseModules;
+  }, [shouldReduceMotion]);
 
   const projects = [
     {
@@ -225,8 +244,8 @@ const Work = () => {
   return (
     <section className="work-section">
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={shouldReduceMotion ? undefined : { opacity: 0, y: -20 }}
+        whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
@@ -247,13 +266,13 @@ const Work = () => {
       <motion.div
         className="carousel-wrapper"
         variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial={shouldReduceMotion ? undefined : "hidden"}
+        whileInView={shouldReduceMotion ? undefined : "visible"}
         viewport={{ once: true }}
       >
         <Swiper
-          modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
-          spaceBetween={30}
+          modules={swiperModules}
+          spaceBetween={shouldReduceMotion ? 16 : 30}
           slidesPerView={1}
           navigation={{
             prevEl: prevRef.current,
@@ -264,11 +283,12 @@ const Work = () => {
             swiper.params.navigation.nextEl = nextRef.current;
           }}
           onSlideChange={(swiper) => {
-            console.log("Slide changed to:", swiper.realIndex);
             const newActiveSlide = swiper.realIndex;
 
-            // Adiciona o slide atual ao set de slides em sintonização
-            setTuningSlides((prev) => new Set([...prev, newActiveSlide]));
+            if (shouldShowTvEffect) {
+              // Adiciona o slide atual ao set de slides em sintonização
+              setTuningSlides((prev) => new Set([...prev, newActiveSlide]));
+            }
 
             setActiveSlide(newActiveSlide);
           }}
@@ -276,20 +296,28 @@ const Work = () => {
             clickable: true,
             dynamicBullets: true,
           }}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          effect="coverflow"
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: false,
-          }}
-          loop={true}
+          autoplay={
+            shouldReduceMotion
+              ? false
+              : {
+                  delay: 5000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }
+          }
+          effect={shouldReduceMotion ? "slide" : "coverflow"}
+          coverflowEffect={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: false,
+                }
+          }
+          loop={!shouldReduceMotion}
           className="projects-swiper"
         >
           {projects.map((project, index) => (
@@ -297,7 +325,7 @@ const Work = () => {
               <motion.div
                 className="work-card"
                 variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
+                whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="work-image-container">
@@ -306,27 +334,31 @@ const Work = () => {
                     alt={project.altText}
                     className="work-img"
                     loading="lazy"
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={
+                      shouldReduceMotion ? undefined : { scale: 1.05 }
+                    }
                     transition={{ duration: 0.4 }}
                   />
                   {/* TV Noise Effect for non-active slides */}
-                  {activeSlide !== index && (
+                  {shouldShowTvEffect && activeSlide !== index && (
                     <TVNoiseEffect isActive={false} isTuning={false} />
                   )}
                   {/* TV Tuning Effect when slide becomes active */}
-                  {activeSlide === index && tuningSlides.has(index) && (
-                    <TVNoiseEffect
-                      isActive={true}
-                      isTuning={true}
-                      onTransitionComplete={() => {
-                        setTuningSlides((prev) => {
-                          const newSet = new Set(prev);
-                          newSet.delete(index);
-                          return newSet;
-                        });
-                      }}
-                    />
-                  )}
+                  {shouldShowTvEffect &&
+                    activeSlide === index &&
+                    tuningSlides.has(index) && (
+                      <TVNoiseEffect
+                        isActive={true}
+                        isTuning={true}
+                        onTransitionComplete={() => {
+                          setTuningSlides((prev) => {
+                            const newSet = new Set(prev);
+                            newSet.delete(index);
+                            return newSet;
+                          });
+                        }}
+                      />
+                    )}
                   <div className="image-overlay">
                     <motion.div
                       initial={{ opacity: 0 }}
@@ -334,7 +366,10 @@ const Work = () => {
                       transition={{ duration: 0.3 }}
                       className="overlay-content"
                     >
-                      <FaExternalLinkAlt className="overlay-icon" />
+                      <FaExternalLinkAlt
+                        className="overlay-icon"
+                        aria-hidden="true"
+                      />
                     </motion.div>
                   </div>
                 </div>
@@ -342,8 +377,12 @@ const Work = () => {
                   <div className="work-header">
                     <motion.h3
                       className="work-title"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                      initial={
+                        shouldReduceMotion ? undefined : { opacity: 0, x: -20 }
+                      }
+                      whileInView={
+                        shouldReduceMotion ? undefined : { opacity: 1, x: 0 }
+                      }
                       transition={{ delay: 0.2 }}
                     >
                       {project.title}
@@ -352,7 +391,7 @@ const Work = () => {
                   </div>
                   <p className="work-description">{project.description}</p>
                   <div className="work-tech">
-                    <FaCode className="tech-icon" />
+                    <FaCode className="tech-icon" aria-hidden="true" />
                     <span className="tech-text">{project.technologies}</span>
                   </div>
                   <div className="work-buttons">
@@ -363,10 +402,17 @@ const Work = () => {
                         rel="noopener noreferrer"
                         className="work-btn work-btn-primary"
                         aria-label={`Visitar projeto ${project.title}`}
-                        whileHover={{ scale: 1.05, x: 5 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileHover={
+                          shouldReduceMotion ? undefined : { scale: 1.05, x: 5 }
+                        }
+                        whileTap={
+                          shouldReduceMotion ? undefined : { scale: 0.95 }
+                        }
                       >
-                        <FaExternalLinkAlt className="btn-icon" />
+                        <FaExternalLinkAlt
+                          className="btn-icon"
+                          aria-hidden="true"
+                        />
                         {t("portfolio.viewProject", "Ver Projeto")}
                       </motion.a>
                     )}
@@ -383,14 +429,14 @@ const Work = () => {
           className="swiper-nav-btn swiper-prev"
           aria-label="Projeto anterior"
         >
-          <FaChevronLeft />
+          <FaChevronLeft aria-hidden="true" />
         </button>
         <button
           ref={nextRef}
           className="swiper-nav-btn swiper-next"
           aria-label="Próximo projeto"
         >
-          <FaChevronRight />
+          <FaChevronRight aria-hidden="true" />
         </button>
       </motion.div>
     </section>

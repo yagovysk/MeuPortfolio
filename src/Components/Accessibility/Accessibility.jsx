@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FaUniversalAccess,
   FaTextHeight,
@@ -17,6 +17,9 @@ export default function Accessibility() {
   const [fontSize, setFontSize] = useState(100);
   const [contrast, setContrast] = useState("normal");
   const [theme, setTheme] = useState("light");
+  const triggerButtonRef = useRef(null);
+  const menuRef = useRef(null);
+  const closeButtonRef = useRef(null);
 
   useEffect(() => {
     // Carregar configurações salvas
@@ -80,27 +83,65 @@ export default function Accessibility() {
     localStorage.removeItem("theme");
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      requestAnimationFrame(() => {
+        (closeButtonRef.current || menuRef.current)?.focus();
+      });
+    } else {
+      triggerButtonRef.current?.focus();
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
+  const accessibilityMenuId = "painel-acessibilidade";
+
   return (
     <>
       {/* Botão Flutuante */}
       <button
+        ref={triggerButtonRef}
         className="accessibility-toggle"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Menu de Acessibilidade"
         title="Abrir menu de acessibilidade"
+        aria-expanded={isOpen}
+        aria-controls={accessibilityMenuId}
       >
         <FaUniversalAccess />
       </button>
 
       {/* Menu de Acessibilidade */}
       {isOpen && (
-        <div className="accessibility-menu">
+        <div
+          ref={menuRef}
+          className="accessibility-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="acessibilidade-titulo"
+          aria-describedby="acessibilidade-descricao"
+          id={accessibilityMenuId}
+          tabIndex={-1}
+        >
           <div className="accessibility-header">
-            <h3 className="accessibility-title">
+            <h3 className="accessibility-title" id="acessibilidade-titulo">
               <FaUniversalAccess />
               Acessibilidade
             </h3>
             <button
+              ref={closeButtonRef}
               className="accessibility-close"
               onClick={() => setIsOpen(false)}
               aria-label="Fechar menu"
@@ -110,7 +151,7 @@ export default function Accessibility() {
             </button>
           </div>
 
-          <div className="accessibility-content">
+          <div className="accessibility-content" id="acessibilidade-descricao">
             {/* Controle de Tamanho da Fonte */}
             <div className="accessibility-section">
               <label className="accessibility-label">
@@ -208,6 +249,7 @@ export default function Accessibility() {
         <div
           className="accessibility-overlay"
           onClick={() => setIsOpen(false)}
+          aria-hidden="true"
         />
       )}
     </>

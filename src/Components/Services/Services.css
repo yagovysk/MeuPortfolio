@@ -157,6 +157,25 @@
   border: 2px solid transparent;
 }
 
+body.theme-dark .services-modal {
+  background: rgba(9, 16, 31, 0.92) !important;
+}
+
+body.theme-dark .services-modal-content {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  filter: drop-shadow(0 12px 40px rgba(15, 23, 42, 0.3));
+}
+
+body.theme-dark .modal-title,
+body.theme-dark .modal-item {
+  color: #0f172a !important;
+}
+
+body.theme-dark .modal-item::marker {
+  color: #1d4ed8 !important;
+}
+
 .modal-close:hover {
   background: linear-gradient(135deg, #ff6348 0%, #ff4757 100%);
   transform: rotate(90deg) scale(1.1);

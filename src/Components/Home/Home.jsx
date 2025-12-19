@@ -8,16 +8,24 @@ import { Services } from "../Services/Services";
 import Dashboard from "../Dashboard/Dashboard";
 import Work from "../Work-section/Work";
 import { Testimonials } from "../Testimonials/Testimonials";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Footer } from "../Footer/Footer";
 import backgroundVideo from "../../assets/background-video.mp4";
 import { AnimatedSection } from "../AnimatedSection/AnimatedSection";
 import PWAInstall from "../PWAInstall/PWAInstall";
 import { useTranslation } from "../../hooks/useTranslation";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useReducedMotion } from "framer-motion";
 
 export function Home() {
   const [showButton, setShowButton] = useState(false);
   const { t } = useTranslation();
+  const prefersReducedMotion = useReducedMotion();
+  const isMobileViewport = useMediaQuery("(max-width: 768px)");
+  const shouldShowVideo = useMemo(
+    () => !prefersReducedMotion && !isMobileViewport,
+    [prefersReducedMotion, isMobileViewport]
+  );
 
   const handleScroll = () => {
     const middleOfPage = window.innerHeight / 2;
@@ -66,10 +74,26 @@ export function Home() {
   return (
     <main className="main">
       <section className="home-section">
-        <div className="home-rectangle">
-          <video autoPlay loop muted playsInline className="background-video">
-            <source src={backgroundVideo} type="video/mp4" />
-          </video>
+        <div
+          className={`home-rectangle ${
+            shouldShowVideo ? "" : "home-rectangle--static"
+          }`}
+        >
+          {shouldShowVideo && (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              disablePictureInPicture
+              className="background-video"
+              aria-hidden="true"
+              tabIndex={-1}
+            >
+              <source src={backgroundVideo} type="video/mp4" />
+            </video>
+          )}
         </div>
         <div className="home-container">
           {showButton && (
@@ -78,7 +102,7 @@ export function Home() {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               aria-label="Voltar ao topo"
             >
-              <FaArrowUp className="scrolltotop-icon" />
+              <FaArrowUp className="scrolltotop-icon" aria-hidden="true" />
             </button>
           )}
           <AnimatedSection className="home-perfil" variant="fadeLeft">
@@ -87,6 +111,8 @@ export function Home() {
                 className="perfil-img"
                 src={foto}
                 alt="Foto de perfil de Yago Cerqueira Regis"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </AnimatedSection>
@@ -112,7 +138,7 @@ export function Home() {
                   className="home-social-link"
                   aria-label="GitHub de Yago Cerqueira"
                 >
-                  <FaGithub className="git-icon" />
+                  <FaGithub className="git-icon" aria-hidden="true" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/yago-cerqueira-regis/"
@@ -121,7 +147,7 @@ export function Home() {
                   className="home-social-link"
                   aria-label="LinkedIn de Yago Cerqueira"
                 >
-                  <FaLinkedin className="linkedin-icon" />
+                  <FaLinkedin className="linkedin-icon" aria-hidden="true" />
                 </a>
                 <a
                   href="https://togyrogroupvictory.com/"
@@ -130,7 +156,7 @@ export function Home() {
                   className="home-social-link"
                   aria-label="Website Togyro Group"
                 >
-                  <IoMdGlobe className="home-social-globe" />
+                  <IoMdGlobe className="home-social-globe" aria-hidden="true" />
                 </a>
               </AnimatedSection>
               <AnimatedSection
@@ -147,7 +173,7 @@ export function Home() {
                   className="home-button-whatsapp"
                   onClick={handleWhatsAppClick}
                 >
-                  <FaWhatsapp className="whatsapp-icon" />
+                  <FaWhatsapp className="whatsapp-icon" aria-hidden="true" />
                   WhatsApp
                 </button>
               </AnimatedSection>

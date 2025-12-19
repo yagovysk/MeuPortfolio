@@ -1,10 +1,21 @@
 import React, { useRef } from "react";
-import { motion, useInView, useSpring, useTransform } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useSpring,
+  useTransform,
+  useReducedMotion,
+} from "framer-motion";
 import { useTranslation } from "../../hooks/useTranslation";
 import "./Dashboard.css";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 // Hook para contador animado avançado
-const useCounter = (target, isInView) => {
+const useCounter = (target, isInView, shouldReduceMotion) => {
+  if (shouldReduceMotion) {
+    return target;
+  }
+
   const spring = useSpring(0, {
     bounce: 0.25,
     duration: 2500,
@@ -25,12 +36,15 @@ const Dashboard = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const { t } = useTranslation();
+  const prefersReducedMotion = useReducedMotion();
+  const isMobileViewport = useMediaQuery("(max-width: 768px)");
+  const shouldReduceMotion = prefersReducedMotion || isMobileViewport;
 
   // Contadores animados
-  const projectsCount = useCounter(13, isInView);
-  const clientsCount = useCounter(8, isInView);
-  const yearsCount = useCounter(3, isInView);
-  const techCount = useCounter(10, isInView);
+  const projectsCount = useCounter(13, isInView, shouldReduceMotion);
+  const clientsCount = useCounter(8, isInView, shouldReduceMotion);
+  const yearsCount = useCounter(3, isInView, shouldReduceMotion);
+  const techCount = useCounter(10, isInView, shouldReduceMotion);
 
   const stats = [
     {
@@ -107,8 +121,10 @@ const Dashboard = () => {
       <motion.div
         className="dashboard-container"
         variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        initial={shouldReduceMotion ? undefined : "hidden"}
+        animate={
+          shouldReduceMotion ? undefined : isInView ? "visible" : "hidden"
+        }
       >
         <motion.div className="dashboard-header" variants={cardVariants}>
           <h2 className="dashboard-title">
@@ -167,9 +183,18 @@ const Dashboard = () => {
                   <motion.div
                     className="progress-fill"
                     style={{ backgroundColor: stat.color }}
-                    initial={{ width: 0 }}
-                    animate={isInView ? { width: "100%" } : { width: 0 }}
-                    transition={{ delay: index * 0.2 + 0.5, duration: 1.5 }}
+                    initial={shouldReduceMotion ? undefined : { width: 0 }}
+                    animate={
+                      shouldReduceMotion
+                        ? { width: "100%" }
+                        : isInView
+                        ? { width: "100%" }
+                        : { width: 0 }
+                    }
+                    transition={{
+                      delay: shouldReduceMotion ? 0 : index * 0.2 + 0.5,
+                      duration: shouldReduceMotion ? 0.2 : 1.5,
+                    }}
                   />
                 </div>
               </div>
