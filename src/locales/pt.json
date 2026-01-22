@@ -147,6 +147,10 @@
       "vivacqua": {
         "title": "Vivacqua Odontologia",
         "description": "Site institucional para clínica odontológica"
+      },
+      "togyrostore": {
+        "title": "TogyroStore",
+        "description": "SaaS em Ruby on Rails para criar lojas e páginas de venda"
       }
     }
   },
@@ -174,9 +178,17 @@
     "title": "Sobre Mim",
     "subtitle": "Desenvolvedor apaixonado por tecnologia e inovação",
     "description": "Sou desenvolvedor Full Stack com mais de 3 anos de experiência criando soluções web modernas e eficientes. Especializado em React, Node.js e tecnologias emergentes.",
+    "profession": "Desenvolvedor",
     "skills": "Habilidades Técnicas",
     "experience": "Experiência Profissional",
-    "skillsButton": "Veja minhas Habilidades"
+    "skillsButton": "Veja minhas Habilidades",
+    "bio": {
+      "prefix": "Desenvolvo ",
+      "web": "Páginas da Web",
+      "middle": " com ênfase em ",
+      "uiux": "UI/UX (User Interface/ User Experience)",
+      "suffix": ". Possuo anos de experiência não apenas em design, mas também em programação, utilizando tecnologias como React, entre outras, nos meus projetos."
+    }
   },
   "accessibility": {
     "title": "Acessibilidade",
@@ -260,6 +272,12 @@
       "title": "Vivacqua Odontologia",
       "subtitle": "Website Corporativo",
       "description": "Desenvolvi um website corporativo moderno para clínica odontológica. Implementei HTML semântico para melhor SEO, design responsivo com Tailwind CSS e funcionalidades interativas com JavaScript, priorizando acessibilidade e performance."
+    },
+    "togyrostore": {
+      "alt": "SaaS TogyroStore",
+      "title": "TogyroStore",
+      "subtitle": "Plataforma SaaS",
+      "description": "Plataforma SaaS em Ruby on Rails para criar lojas, landing pages ou sistemas de delivery com painel de administração e deploy rápido."
     },
     "upcoming": {
       "alt": "Novos projetos em breve",

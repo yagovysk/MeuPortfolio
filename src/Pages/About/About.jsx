@@ -54,14 +54,27 @@ export function About() {
                   <h1 className="about-name">Yago Cerqueira Regis</h1>
                 </AnimatedSection>
                 <AnimatedSection delay={0.4}>
-                  <h2 className="about-profession">Desenvolvedor</h2>
+                  <h2 className="about-profession">
+                    {t("about.profession", "Desenvolvedor")}
+                  </h2>
                 </AnimatedSection>
                 <p className="about-description">
-                  Desenvolvo <b>Páginas da Web</b> com ênfase em
-                  <b>UI/UX (User Interface/ User Experience)</b>. Possuo anos de
-                  experiência não apenas em design, mas também em programação,
-                  utilizando tecnologias como React, entre outras, nos meus
-                  projetos.
+                  {t("about.bio.prefix", "Desenvolvo ")}
+                  <b>{t("about.bio.web", "Páginas da Web")}</b>
+                  {t(
+                    "about.bio.middle",
+                    " com ênfase em "
+                  )}
+                  <b>
+                    {t(
+                      "about.bio.uiux",
+                      "UI/UX (User Interface/ User Experience)"
+                    )}
+                  </b>
+                  {t(
+                    "about.bio.suffix",
+                    ". Possuo anos de experiência não apenas em design, mas também em programação, utilizando tecnologias como React, entre outras, nos meus projetos."
+                  )}
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={0.5}>

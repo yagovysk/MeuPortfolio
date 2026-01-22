@@ -34,6 +34,7 @@ import print from "../../assets/print-list.png";
 import lacos from "../../assets/lacos-site.png";
 import raha from "../../assets/raha-project.png";
 import vivacqua from "../../assets/print-vivacqua.png";
+import togyrostore from "../../assets/print-togyrostore.png";
 
 const Work = () => {
   const prevRef = useRef(null);
@@ -84,6 +85,18 @@ const Work = () => {
       ),
       technologies: "React, AOS, CSS3",
       link: "https://togyrogroupvictory.com/",
+    },
+    {
+      imgSrc: togyrostore,
+      altText: t("projects.togyrostore.alt", "SaaS TogyroStore"),
+      title: t("projects.togyrostore.title", "TogyroStore"),
+      subtitle: t("projects.togyrostore.subtitle", "Plataforma SaaS"),
+      description: t(
+        "projects.togyrostore.description",
+        "Plataforma SaaS em Ruby on Rails que permite criar lojas, landing pages ou sistemas de delivery com gerenciamento completo e deploy rápido."
+      ),
+      technologies: "Ruby on Rails, PostgreSQL, Stimulus, Tailwind",
+      link: "https://togyrostore.com.br/venda.html",
     },
     {
       imgSrc: kypy,

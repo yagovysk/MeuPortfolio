@@ -147,6 +147,10 @@
       "vivacqua": {
         "title": "Vivacqua Dentistry",
         "description": "Institutional website for dental clinic"
+      },
+      "togyrostore": {
+        "title": "TogyroStore",
+        "description": "Ruby on Rails SaaS to create stores and sales pages"
       }
     }
   },
@@ -174,9 +178,17 @@
     "title": "About Me",
     "subtitle": "Developer passionate about technology and innovation",
     "description": "I'm a Full Stack developer with over 3 years of experience creating modern and efficient web solutions. Specialized in React, Node.js and emerging technologies.",
+    "profession": "Developer",
     "skills": "Technical Skills",
     "experience": "Professional Experience",
-    "skillsButton": "See my Skills"
+    "skillsButton": "See my Skills",
+    "bio": {
+      "prefix": "I build ",
+      "web": "web pages",
+      "middle": " with a focus on ",
+      "uiux": "UI/UX (User Interface/ User Experience)",
+      "suffix": ". I have years of experience not only in design but also in programming, using technologies like React and more across my projects."
+    }
   },
   "accessibility": {
     "title": "Accessibility",
@@ -260,6 +272,12 @@
       "title": "Vivacqua Dentistry",
       "subtitle": "Corporate Website",
       "description": "I developed a modern corporate website for a dental clinic. I implemented semantic HTML for better SEO, responsive design with Tailwind CSS and interactive functionalities with JavaScript, prioritizing accessibility and performance."
+    },
+    "togyrostore": {
+      "alt": "TogyroStore SaaS",
+      "title": "TogyroStore",
+      "subtitle": "SaaS Platform",
+      "description": "Ruby on Rails SaaS that lets businesses create online stores, landing pages or delivery hubs with a full admin panel and fast deployment."
     },
     "upcoming": {
       "alt": "New projects coming soon",
