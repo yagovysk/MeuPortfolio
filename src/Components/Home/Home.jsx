@@ -1,8 +1,8 @@
 import "./Home.css";
 import { FaGithub, FaLinkedin, FaArrowUp, FaWhatsapp } from "react-icons/fa";
 import { IoMdGlobe } from "react-icons/io";
-// Import do PDF para obter URL gerada pelo bundler (fallback desktop)
-import pdfFile from "../../assets/Curriculo.pdf";
+import cvPtBr from "../../assets/meu-curriculo-definitivo.pdf";
+import cvEn from "../../assets/meu-curriculo-ingles.pdf";
 import { Services } from "../Services/Services";
 import Dashboard from "../Dashboard/Dashboard";
 import Work from "../Work-section/Work";
@@ -14,7 +14,7 @@ import { AnimatedSection } from "../AnimatedSection/AnimatedSection";
 import PWAInstall from "../PWAInstall/PWAInstall";
 import { useTranslation } from "../../hooks/useTranslation";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
-import { useReducedMotion } from "framer-motion";
+import { useReducedMotion, motion } from "framer-motion";
 
 const profilePhoto = "/foto-melhor.jpeg";
 
@@ -43,24 +43,27 @@ export function Home() {
 
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-  const handleDownload = () => {
-    // iOS Safari não respeita atributo download para blobs/arquivos locais;
-    // abrir em nova aba permite ao usuário compartilhar/salvar via UI do sistema.
-    const publicPath = "/Curriculo.pdf"; // caso movido para public/ para acesso direto
+  const downloadCv = (fileUrl, fileName) => {
+    // iOS Safari não honra atributo download, abrir em nova aba funciona como salvar/compartilhar.
     if (isIOS) {
-      // Tenta usar caminho público; se 404 cai para versão importada.
-      const testImg = new Image();
-      testImg.onload = () => window.open(publicPath, "_blank");
-      testImg.onerror = () => window.open(pdfFile, "_blank");
-      testImg.src = publicPath + "?cache=" + Date.now();
+      window.open(fileUrl, "_blank");
       return;
     }
+
     const link = document.createElement("a");
-    link.href = pdfFile;
-    link.download = "Curriculo_Yago_Cerqueira_Regis.pdf";
+    link.href = fileUrl;
+    link.download = fileName;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const handleDownloadPt = () => {
+    downloadCv(cvPtBr, "Curriculo_Yago_Cerqueira_Regis_PTBR.pdf");
+  };
+
+  const handleDownloadEn = () => {
+    downloadCv(cvEn, "Resume_Yago_Cerqueira_Regis_EN.pdf");
   };
 
   const handleWhatsAppClick = () => {
@@ -96,6 +99,10 @@ export function Home() {
             </video>
           )}
         </div>
+        <div className="home-glows" aria-hidden="true">
+          <span className="home-glow home-glow--cyan" />
+          <span className="home-glow home-glow--magenta" />
+        </div>
         <div className="home-container">
           {showButton && (
             <button
@@ -106,80 +113,106 @@ export function Home() {
               <FaArrowUp className="scrolltotop-icon" aria-hidden="true" />
             </button>
           )}
-          <AnimatedSection className="home-perfil" variant="fadeLeft">
-            <div className="perfil-content">
-              <img
-                className="perfil-img"
-                src={profilePhoto}
-                alt="Foto de perfil de Yago Cerqueira Regis"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </AnimatedSection>
-          <AnimatedSection className="home-content" variant="fadeRight">
-            <div className="home-data">
-              <AnimatedSection delay={0.2}>
-                <h1 className="home-name">Yago Cerqueira Regis</h1>
-              </AnimatedSection>
-              <AnimatedSection delay={0.3}>
-                <h2 className="home-profession">
-                  {t("hero.profession", "Desenvolvedor Full Stack")}
-                </h2>
-              </AnimatedSection>
-              <AnimatedSection
-                className="home-social"
-                variant="scale"
-                delay={0.4}
-              >
-                <a
-                  href="https://github.com/yagovysk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="home-social-link"
-                  aria-label="GitHub de Yago Cerqueira"
+          <div className="home-hero-card">
+            <AnimatedSection className="home-perfil" variant="fadeLeft">
+              <div className="perfil-content">
+                <motion.div
+                  className="perfil-frame"
+                  initial={
+                    prefersReducedMotion
+                      ? false
+                      : { opacity: 0, scale: 0.85, y: 24 }
+                  }
+                  animate={
+                    prefersReducedMotion
+                      ? { opacity: 1 }
+                      : { opacity: 1, scale: 1, y: 0 }
+                  }
+                  transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  <FaGithub className="git-icon" aria-hidden="true" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/yago-cerqueira-regis/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="home-social-link"
-                  aria-label="LinkedIn de Yago Cerqueira"
+                  <span className="perfil-glow" aria-hidden="true" />
+                  <img
+                    className="perfil-img"
+                    src={profilePhoto}
+                    alt="Foto de perfil de Yago Cerqueira Regis"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </motion.div>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection className="home-content" variant="fadeRight">
+              <div className="home-data">
+                <AnimatedSection delay={0.2}>
+                  <h1 className="home-name">Yago Cerqueira Regis</h1>
+                </AnimatedSection>
+                <AnimatedSection delay={0.3}>
+                  <h2 className="home-profession">
+                    {t("hero.profession", "Desenvolvedor Full Stack")}
+                  </h2>
+                </AnimatedSection>
+                <AnimatedSection
+                  className="home-social"
+                  variant="scale"
+                  delay={0.4}
                 >
-                  <FaLinkedin className="linkedin-icon" aria-hidden="true" />
-                </a>
-                <a
-                  href="https://togyrogroupvictory.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="home-social-link"
-                  aria-label="Website Togyro Group"
+                  <a
+                    href="https://github.com/yagovysk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="home-social-link"
+                    aria-label="GitHub de Yago Cerqueira"
+                  >
+                    <FaGithub className="git-icon" aria-hidden="true" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/yago-cerqueira-regis/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="home-social-link"
+                    aria-label="LinkedIn de Yago Cerqueira"
+                  >
+                    <FaLinkedin className="linkedin-icon" aria-hidden="true" />
+                  </a>
+                  <a
+                    href="https://togyrogroupvictory.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="home-social-link"
+                    aria-label="Website Togyro Group"
+                  >
+                    <IoMdGlobe
+                      className="home-social-globe"
+                      aria-hidden="true"
+                    />
+                  </a>
+                </AnimatedSection>
+                <AnimatedSection
+                  className="home-buttons"
+                  variant="blur"
+                  delay={0.5}
                 >
-                  <IoMdGlobe className="home-social-globe" aria-hidden="true" />
-                </a>
-              </AnimatedSection>
-              <AnimatedSection
-                className="home-buttons"
-                variant="blur"
-                delay={0.5}
-              >
-                <button className="home-button" onClick={handleDownload}>
-                  {isIOS
-                    ? t("hero.openCV", "Abrir Currículo")
-                    : t("hero.downloadCV", "Baixar Currículo")}
-                </button>
-                <button
-                  className="home-button-whatsapp"
-                  onClick={handleWhatsAppClick}
-                >
-                  <FaWhatsapp className="whatsapp-icon" aria-hidden="true" />
-                  WhatsApp
-                </button>
-              </AnimatedSection>
-            </div>
-          </AnimatedSection>
+                  <button className="home-button" onClick={handleDownloadPt}>
+                    {isIOS
+                      ? t("hero.openCVBR", "Abrir Currículo (BR)")
+                      : t("hero.downloadCVBR", "Baixar Currículo (BR)")}
+                  </button>
+                  <button className="home-button" onClick={handleDownloadEn}>
+                    {isIOS
+                      ? t("hero.openCVEN", "Abrir Currículo (EN)")
+                      : t("hero.downloadCVEN", "Baixar Currículo (EN)")}
+                  </button>
+                  <button
+                    className="home-button-whatsapp"
+                    onClick={handleWhatsAppClick}
+                  >
+                    <FaWhatsapp className="whatsapp-icon" aria-hidden="true" />
+                    WhatsApp
+                  </button>
+                </AnimatedSection>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
       {/* Dashboard Section */}

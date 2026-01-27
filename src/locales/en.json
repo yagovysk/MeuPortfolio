@@ -11,6 +11,10 @@
     "profession": "Full Stack Developer",
     "downloadCV": "Download Resume",
     "openCV": "Open Resume (iOS)",
+    "downloadCVBR": "Resume (PT-BR)",
+    "downloadCVEN": "Resume (EN)",
+    "openCVBR": "Open Resume (PT-BR)",
+    "openCVEN": "Open Resume (EN)",
     "whatsapp": "WhatsApp"
   },
   "dashboard": {

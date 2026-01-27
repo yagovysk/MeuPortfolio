@@ -11,6 +11,10 @@
     "profession": "Desenvolvedor Full Stack",
     "downloadCV": "Baixar Currículo",
     "openCV": "Abrir Currículo (iOS)",
+    "downloadCVBR": "Baixar Currículo (BR)",
+    "downloadCVEN": "Baixar Currículo (EN)",
+    "openCVBR": "Abrir Currículo (BR)",
+    "openCVEN": "Abrir Currículo (EN)",
     "whatsapp": "WhatsApp"
   },
   "dashboard": {
