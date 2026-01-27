@@ -1,5 +1,4 @@
 import "./About.css";
-import foto from "../../assets/minha-foto.png";
 import { Menu } from "../../Components/Menu/Menu";
 import { useState } from "react";
 import { Footer } from "../../Components/Footer/Footer";
@@ -8,6 +7,8 @@ import { AnimatedSection } from "../../Components/AnimatedSection/AnimatedSectio
 import { SkillsChart } from "../../Components/SkillsChart/SkillsChart";
 import { useTranslation } from "../../hooks/useTranslation";
 import { motion } from "framer-motion";
+
+const profilePhoto = "/foto-melhor.jpeg";
 
 export function About() {
   const { t } = useTranslation();
@@ -44,7 +45,11 @@ export function About() {
         >
           <AnimatedSection className="about-perfil" variant="fadeLeft">
             <div className="perfil-content">
-              <img src={foto} alt="imagem de perfil" className="perfil-img" />
+              <img
+                src={profilePhoto}
+                alt="imagem de perfil"
+                className="perfil-img"
+              />
             </div>
           </AnimatedSection>
           <AnimatedSection className="about-content" variant="fadeRight">
@@ -61,19 +66,16 @@ export function About() {
                 <p className="about-description">
                   {t("about.bio.prefix", "Desenvolvo ")}
                   <b>{t("about.bio.web", "Páginas da Web")}</b>
-                  {t(
-                    "about.bio.middle",
-                    " com ênfase em "
-                  )}
+                  {t("about.bio.middle", " com ênfase em ")}
                   <b>
                     {t(
                       "about.bio.uiux",
-                      "UI/UX (User Interface/ User Experience)"
+                      "UI/UX (User Interface/ User Experience)",
                     )}
                   </b>
                   {t(
                     "about.bio.suffix",
-                    ". Possuo anos de experiência não apenas em design, mas também em programação, utilizando tecnologias como React, entre outras, nos meus projetos."
+                    ". Possuo anos de experiência não apenas em design, mas também em programação, utilizando tecnologias como React, entre outras, nos meus projetos.",
                   )}
                 </p>
               </AnimatedSection>

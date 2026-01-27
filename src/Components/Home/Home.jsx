@@ -3,7 +3,6 @@ import { FaGithub, FaLinkedin, FaArrowUp, FaWhatsapp } from "react-icons/fa";
 import { IoMdGlobe } from "react-icons/io";
 // Import do PDF para obter URL gerada pelo bundler (fallback desktop)
 import pdfFile from "../../assets/Curriculo.pdf";
-import foto from "../../assets/minha-foto.png";
 import { Services } from "../Services/Services";
 import Dashboard from "../Dashboard/Dashboard";
 import Work from "../Work-section/Work";
@@ -17,6 +16,8 @@ import { useTranslation } from "../../hooks/useTranslation";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { useReducedMotion } from "framer-motion";
 
+const profilePhoto = "/foto-melhor.jpeg";
+
 export function Home() {
   const [showButton, setShowButton] = useState(false);
   const { t } = useTranslation();
@@ -24,7 +25,7 @@ export function Home() {
   const isMobileViewport = useMediaQuery("(max-width: 768px)");
   const shouldShowVideo = useMemo(
     () => !prefersReducedMotion && !isMobileViewport,
-    [prefersReducedMotion, isMobileViewport]
+    [prefersReducedMotion, isMobileViewport],
   );
 
   const handleScroll = () => {
@@ -66,7 +67,7 @@ export function Home() {
     const phoneNumber = "5561981774548"; // Número com DDI (55) + DDD (61) + número
     const message = "Olá! Gostaria de conversar sobre um projeto.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      message
+      message,
     )}`;
     window.open(url, "_blank");
   };
@@ -109,7 +110,7 @@ export function Home() {
             <div className="perfil-content">
               <img
                 className="perfil-img"
-                src={foto}
+                src={profilePhoto}
                 alt="Foto de perfil de Yago Cerqueira Regis"
                 loading="lazy"
                 decoding="async"
