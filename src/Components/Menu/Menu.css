@@ -163,10 +163,10 @@
   right: 1.5rem;
   background: transparent;
   border: none;
-  color: inherit;
+  color: #fff;
 }
 .close-icon {
-  color: inherit;
+  color: #fff;
 }
 .show-menu {
   top: 0;

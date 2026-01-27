@@ -9,7 +9,9 @@ import "./Menu.css";
 export function Menu() {
   const [showMenu, setShowMenu] = useState(false);
   const { t } = useTranslation();
-  const isCompactNavigation = useMediaQuery("(max-width: 1150px)");
+  const isNarrowNavigation = useMediaQuery("(max-width: 1150px)");
+  const isCoarsePointer = useMediaQuery("(pointer: coarse)");
+  const isCompactNavigation = isNarrowNavigation || isCoarsePointer;
   const toggleButtonRef = useRef(null);
   const firstLinkRef = useRef(null);
   const wasMenuOpen = useRef(false);

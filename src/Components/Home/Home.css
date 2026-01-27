@@ -398,19 +398,19 @@
   }
 
   .home-perfil {
-    width: 260px;
-    height: 300px;
+    width: 220px;
+    height: 260px;
   }
 
   .perfil-content {
-    width: 210px;
-    height: 260px;
+    width: 170px;
+    height: 210px;
     border-radius: 20px;
   }
 
   .perfil-img {
-    width: 170px;
-    height: 220px;
+    width: 135px;
+    height: 180px;
     border-radius: 16px;
   }
 
@@ -465,18 +465,18 @@
   }
 
   .home-perfil {
-    width: 230px;
-    height: 260px;
+    width: 200px;
+    height: 230px;
   }
 
   .perfil-content {
-    width: 180px;
-    height: 210px;
+    width: 155px;
+    height: 190px;
   }
 
   .perfil-img {
-    width: 150px;
-    height: 180px;
+    width: 120px;
+    height: 160px;
   }
 
   .home-name {
