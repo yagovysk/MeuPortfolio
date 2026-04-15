@@ -41,11 +41,6 @@ const FloatingLanguageButton = () => {
   const currentLanguageObj =
     languages.find((lang) => lang.code === currentLanguage) || languages[0];
 
-  // Se não houver currentLanguage definido, não renderizar ainda
-  if (!currentLanguage) {
-    return null;
-  }
-
   // Componente para renderizar bandeira com fallback
   const FlagIcon = ({ flag, fallback, icon, variant }) => {
     const wrapperClass = variant === "option" ? "option-flag" : "language-flag";
