@@ -271,11 +271,38 @@
 
 /* ===== TEMAS E CONTRASTES ===== */
 
-/* Alto Contraste - Aplicado exceto no menu de acessibilidade e botões fixos */
+/* Alto Contraste sem afetar o contexto de elementos fixed */
 body.contrast-high
-  *:not(.accessibility-toggle):not(.accessibility-menu):not(
+  :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    small,
+    strong,
+    em,
+    li,
+    a,
+    img,
+    picture,
+    video,
+    svg,
+    button,
+    input,
+    textarea,
+    select,
+    label
+  ):not(.accessibility-toggle):not(.accessibility-menu):not(
     .accessibility-menu *
-  ):not(.accessibility-overlay):not(.scroll-button):not(.scroll-button *) {
+  ):not(.accessibility-overlay):not(.scroll-button):not(.scroll-button *):not(
+    .assistant-floating-button
+  ):not(.assistant-floating-button *):not(.floating-language-btn):not(
+    .floating-language-btn *
+  ):not(.pwa-btn):not(.pwa-mobile-btn) {
   filter: contrast(1.2);
 }
 
@@ -288,7 +315,13 @@ body.contrast-high .accessibility-toggle,
 body.contrast-high .accessibility-menu,
 body.contrast-high .accessibility-menu *,
 body.contrast-high .scroll-button,
-body.contrast-high .scroll-button * {
+body.contrast-high .scroll-button *,
+body.contrast-high .virtual-assistant,
+body.contrast-high .virtual-assistant *,
+body.contrast-high .floating-language-container,
+body.contrast-high .floating-language-container *,
+body.contrast-high .pwa-install-banner,
+body.contrast-high .pwa-mobile-banner {
   filter: none !important;
 }
 
@@ -322,6 +355,20 @@ body.contrast-high .scroll-button {
   opacity: 1 !important;
   visibility: visible !important;
   z-index: 9996 !important;
+}
+
+body.contrast-high .virtual-assistant {
+  position: fixed !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1200 !important;
+}
+
+body.contrast-high .floating-language-container {
+  position: fixed !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1000 !important;
 }
 
 /* Tema Escuro */
