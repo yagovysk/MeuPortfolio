@@ -7,12 +7,19 @@ import { AnimatedSection } from "../../Components/AnimatedSection/AnimatedSectio
 import { SkillsChart } from "../../Components/SkillsChart/SkillsChart";
 import { useTranslation } from "../../hooks/useTranslation";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const profilePhoto = "/foto-melhor.jpeg";
 
 export function About() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [showSkills, setShowSkills] = useState(false);
+  const highlights = t("about.highlights", [
+    "Foco em resultados de negócio e conversão.",
+    "Arquitetura escalável com código limpo.",
+    "Experiência responsiva com atenção a performance e acessibilidade.",
+  ]);
 
   const toggleSkills = () => {
     setShowSkills(!showSkills);
@@ -34,9 +41,15 @@ export function About() {
   return (
     <div>
       <Menu />
-      <section className="section-about">
+      <section className="section-about" id="about-section">
         <AnimatedSection variant="fadeDown">
           <h2>{t("about.title", "Minha Informação Pessoal")}</h2>
+          <p className="about-subtitle">
+            {t(
+              "about.subtitle",
+              "Transformo ideias em produtos digitais que geram resultado.",
+            )}
+          </p>
         </AnimatedSection>
         <AnimatedSection
           className="container-about"
@@ -78,6 +91,11 @@ export function About() {
                     ". Possuo anos de experiência não apenas em design, mas também em programação, utilizando tecnologias como React, entre outras, nos meus projetos.",
                   )}
                 </p>
+                <ul className="about-highlights">
+                  {highlights.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
               </AnimatedSection>
               <AnimatedSection delay={0.5}>
                 <motion.button
@@ -94,6 +112,16 @@ export function About() {
                   >
                     ↓
                   </motion.span>
+                </motion.button>
+              </AnimatedSection>
+              <AnimatedSection delay={0.6}>
+                <motion.button
+                  onClick={() => navigate("/contato")}
+                  className="about-cta-button"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {t("about.ctaButton", "Vamos conversar sobre seu projeto")}
                 </motion.button>
               </AnimatedSection>
             </div>

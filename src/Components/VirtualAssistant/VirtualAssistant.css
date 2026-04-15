@@ -1,0 +1,234 @@
+.virtual-assistant {
+  position: fixed;
+  right: 1rem;
+  bottom: 6rem;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.assistant-floating-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0a84ff, #0d3b66);
+  color: #ffffff;
+  padding: 0.85rem 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(0, 26, 69, 0.35);
+}
+
+.assistant-floating-button svg {
+  font-size: 1.1rem;
+}
+
+.assistant-chat {
+  width: min(360px, calc(100vw - 2rem));
+  max-height: min(580px, calc(100vh - 10rem));
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: #f4fbff;
+  border: 1px solid rgba(13, 59, 102, 0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 25px 45px rgba(10, 24, 68, 0.3);
+}
+
+.assistant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  background: linear-gradient(125deg, #0b2545, #1b4965);
+  color: #ffffff;
+}
+
+.assistant-header h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.assistant-header p {
+  margin: 0.2rem 0 0;
+  opacity: 0.85;
+  font-size: 0.75rem;
+}
+
+.assistant-header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.assistant-clear {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.assistant-close {
+  border: none;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.assistant-messages {
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.assistant-message {
+  max-width: 95%;
+  border-radius: 14px;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  white-space: pre-line;
+  font-family: "Roboto", sans-serif;
+}
+
+.assistant-message p {
+  margin: 0;
+}
+
+.assistant-message--bot {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  align-self: flex-start;
+}
+
+.assistant-message--user {
+  background: #174a7c;
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+.assistant-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.6rem;
+  gap: 0.3rem;
+}
+
+.assistant-links a {
+  color: #0a63b6;
+  font-weight: 700;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.assistant-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.assistant-actions button {
+  border: none;
+  background: #d9ecff;
+  color: #073b72;
+  border-radius: 999px;
+  padding: 0.45rem 0.65rem;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.assistant-input-wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem;
+  padding: 0.85rem;
+  background: #eef6ff;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.assistant-input-wrapper input {
+  border: 1px solid rgba(13, 59, 102, 0.25);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.88rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.assistant-input-wrapper button {
+  border: none;
+  border-radius: 10px;
+  width: 2.5rem;
+  background: #0c5ca8;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.assistant-whatsapp-wrapper {
+  padding: 0 0.85rem 0.85rem;
+  background: #eef6ff;
+}
+
+.assistant-whatsapp {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: #18a84f;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.68rem 0.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .virtual-assistant {
+    right: 0.75rem;
+    bottom: calc(5rem + var(--mobile-floating-offset, 0px));
+  }
+
+  .assistant-floating-button span {
+    display: none;
+  }
+
+  .assistant-floating-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .assistant-chat {
+    width: min(100vw - 1.5rem, 360px);
+    max-height: min(72vh, 560px);
+  }
+
+  .assistant-clear {
+    font-size: 0.68rem;
+    padding: 0.28rem 0.55rem;
+  }
+}

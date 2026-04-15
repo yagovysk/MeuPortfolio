@@ -88,11 +88,17 @@ export function Services() {
   }, [modalOpen]);
 
   return (
-    <section className="services-section">
+    <section className="services-section" id="services-section">
       <AnimatedSection variant="fadeDown">
         <h2 className="section-title">
           {t("services.title", "Os Serviços que eu ofereço")}
         </h2>
+        <p className="services-subtitle">
+          {t(
+            "services.subtitle",
+            "Soluções digitais para escalar presença online, gerar leads e fortalecer sua marca.",
+          )}
+        </p>
       </AnimatedSection>
       <div className="services-container">
         <AnimatedSection className="services-card" variant="scale" delay={0.2}>
@@ -103,7 +109,7 @@ export function Services() {
           <p className="services-description">
             {t(
               "services.frontend.description",
-              "Designs bonitos e responsivos com uma interface intuitiva, eficiente e prazerosa ao usuário."
+              "Designs bonitos e responsivos com uma interface intuitiva, eficiente e prazerosa ao usuário.",
             )}
           </p>
           <button
@@ -166,7 +172,7 @@ export function Services() {
           <p className="services-description">
             {t(
               "services.backend.description",
-              "Criação de softwares profissionais, com qualidade e foco nas necessidades dos clientes."
+              "Criação de softwares profissionais, com qualidade e foco nas necessidades dos clientes.",
             )}
           </p>
           <button
@@ -229,7 +235,7 @@ export function Services() {
           <p className="services-description">
             {t(
               "services.fullstack.description",
-              "Soluções completas de ponta a ponta, desde o front-end até o back-end."
+              "Soluções completas de ponta a ponta, desde o front-end até o back-end.",
             )}
           </p>
           <button

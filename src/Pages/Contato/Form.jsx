@@ -2,8 +2,10 @@ import { Menu } from "../../Components/Menu/Menu";
 import React, { useMemo, useState } from "react";
 import "./Form.css";
 import { AnimatedSection } from "../../Components/AnimatedSection/AnimatedSection";
+import { useTranslation } from "../../hooks/useTranslation";
 
 export function Form() {
+  const { t } = useTranslation();
   const MessageModal = ({ message, onClose }) => (
     <div
       className="message-modal"
@@ -13,7 +15,7 @@ export function Form() {
     >
       <p className="paragraph-message">{message}</p>
       <button type="button" onClick={onClose} className="form-close-alert">
-        Fechar mensagem
+        {t("contact.closeMessage", "Fechar mensagem")}
       </button>
     </div>
   );
@@ -32,7 +34,7 @@ export function Form() {
       tel: "contato-telefone",
       message: "contato-mensagem",
     }),
-    []
+    [],
   );
 
   function sendToWhatsApp(e) {
@@ -42,14 +44,19 @@ export function Form() {
     const telRegex = /^[0-9]*$/;
     if (tel && !telRegex.test(tel)) {
       setShowMessage(true);
-      setMessageContent("Telefone deve conter apenas números");
+      setMessageContent(
+        t("contact.phoneValidationMessage", "Telefone deve conter apenas números."),
+      );
       return;
     }
 
     if (name === "" || email === "" || message === "") {
       setShowMessage(true);
       setMessageContent(
-        "Por favor, preencha todos os campos obrigatórios (Nome, Email e Mensagem)."
+        t(
+          "contact.requiredFieldsMessage",
+          "Por favor, preencha os campos obrigatórios: Nome, E-mail e Mensagem.",
+        ),
       );
       return;
     }
@@ -71,7 +78,7 @@ ${message}
 
     // Criar URL do WhatsApp
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      whatsappMessage
+      whatsappMessage,
     )}`;
 
     // Abrir WhatsApp
@@ -83,7 +90,9 @@ ${message}
     setTel("");
     setMessage("");
     setShowMessage(true);
-    setMessageContent("Redirecionando para o WhatsApp...");
+    setMessageContent(
+      t("contact.redirectMessage", "Perfeito! Redirecionando para o WhatsApp..."),
+    );
 
     // Fechar modal automaticamente após 2 segundos
     setTimeout(() => {
@@ -98,15 +107,20 @@ ${message}
   return (
     <>
       <Menu />
-      <AnimatedSection className="container-form" variant="fadeUp">
+      <AnimatedSection
+        className="container-form"
+        variant="fadeUp"
+        id="contact-section"
+      >
         <AnimatedSection
           className="container-article-form"
           variant="fadeDown"
           delay={0.2}
         >
           <h1 id="contato-titulo">
-            Vamos Conversar <br /> Sobre seu Projeto
+            {t("contact.title", "Vamos Construir Seu Próximo Projeto")}
           </h1>
+          <p>{t("contact.subtitle", "Vamos conversar sobre seu próximo projeto")}</p>
         </AnimatedSection>
         <AnimatedSection
           as="form"
@@ -121,61 +135,68 @@ ${message}
           <div className="container-inputs">
             <div className="input-1">
               <label className="sr-only" htmlFor={ids.name}>
-                Nome completo
+                {t("contact.name", "Nome")}
               </label>
               <input
                 type="text"
                 name="nome"
                 id={ids.name}
-                placeholder="Digite seu Nome"
-                onChange={(e) =>
-                  setName(e.target.value.replace(/[^a-zA-Z\s]/gi, ""))
-                }
+                placeholder={t("contact.namePlaceholder", "Digite seu nome")}
+                onChange={(e) => setName(e.target.value)}
                 value={name}
+                autoComplete="name"
                 aria-required="true"
                 required
               />
 
               <label className="sr-only" htmlFor={ids.email}>
-                Endereço de e-mail
+                {t("contact.email", "E-mail")}
               </label>
               <input
                 type="email"
                 name="email"
                 id={ids.email}
-                placeholder="Digite seu Email"
+                placeholder={t("contact.emailPlaceholder", "Digite seu e-mail")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                autoComplete="email"
                 aria-required="true"
                 required
               />
             </div>
             <div className="input-2">
               <label className="sr-only" htmlFor={ids.tel}>
-                Telefone com DDD (opcional)
+                {t("contact.phone", "Telefone")} ({t("common.optional", "opcional")})
               </label>
               <input
                 className="input-tel"
                 type="tel"
                 name="telefone"
                 id={ids.tel}
-                placeholder="Digite seu Telefone"
+                placeholder={t(
+                  "contact.phonePlaceholder",
+                  "Digite seu telefone (opcional)",
+                )}
                 value={tel}
                 onChange={(e) => setTel(e.target.value.replace(/\D/g, ""))}
                 inputMode="tel"
+                autoComplete="tel"
                 aria-describedby="contato-telefone-ajuda"
               />
               <span id="contato-telefone-ajuda" className="sr-only">
-                Informe apenas números.
+                {t("contact.phoneHint", "Informe apenas números com DDD.")}
               </span>
             </div>
           </div>
           <label className="sr-only" htmlFor={ids.message}>
-            Escreva sua mensagem
+            {t("contact.message", "Mensagem")}
           </label>
           <textarea
             name="mensagem"
-            placeholder="Digite sua Mensagem"
+            placeholder={t(
+              "contact.messagePlaceholder",
+              "Descreva seu projeto, objetivo ou desafio",
+            )}
             id={ids.message}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -184,7 +205,7 @@ ${message}
           ></textarea>
           <div id="contacts" className="container-form-button">
             <button className="form-button" type="submit">
-              Enviar via WhatsApp
+              {t("contact.button", "Enviar via WhatsApp")}
             </button>
           </div>
         </AnimatedSection>

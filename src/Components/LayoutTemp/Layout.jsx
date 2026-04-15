@@ -1,4 +1,5 @@
 ﻿import FloatingLanguageButton from "../FloatingLanguageButton/FloatingLanguageButton";
+import VirtualAssistant from "../VirtualAssistant/VirtualAssistant";
 
 const Layout = ({ children }) => {
   return (
@@ -15,6 +16,7 @@ const Layout = ({ children }) => {
         {children}
       </div>
       <FloatingLanguageButton />
+      <VirtualAssistant />
     </>
   );
 };

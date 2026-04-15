@@ -13,6 +13,16 @@
   color: #fff;
   text-align: center;
 }
+.services-subtitle {
+  max-width: 760px;
+  margin: 0.5rem auto 0;
+  padding: 0 1rem;
+  font-family: "Roboto", sans-serif;
+  color: rgba(255, 255, 255, 0.92);
+  text-align: center;
+  letter-spacing: 0.04rem;
+  line-height: 1.5;
+}
 .services-title {
   font-family: "Montserrat", serif;
   font-size: 1.5rem;
@@ -24,8 +34,9 @@
 }
 .services-description {
   font-family: "Roboto", sans-serif;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.06rem;
   text-align: left;
+  line-height: 1.55;
 }
 .services-container {
   display: grid;
@@ -96,7 +107,9 @@
   place-items: center;
   padding: 2rem 1.5rem;
   z-index: 0;
-  transition: opacity 0.4s, visibility 0.4s;
+  transition:
+    opacity 0.4s,
+    visibility 0.4s;
   backdrop-filter: blur(24px);
   z-index: 999;
 }
@@ -201,6 +214,11 @@ body.theme-dark .modal-item::marker {
 
   .section-title {
     font-size: 1.75rem;
+    padding: 0 1rem;
+  }
+
+  .services-subtitle {
+    font-size: 0.95rem;
     padding: 0 1rem;
   }
 

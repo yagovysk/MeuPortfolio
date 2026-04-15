@@ -21,6 +21,11 @@ const profilePhoto = "/foto-melhor.jpeg";
 export function Home() {
   const [showButton, setShowButton] = useState(false);
   const { t } = useTranslation();
+  const heroHighlights = t("hero.highlights", [
+    "Interfaces modernas com foco em conversão.",
+    "Código limpo, escalável e orientado a performance.",
+    "Comunicação clara e entrega com visão de negócio.",
+  ]);
   const prefersReducedMotion = useReducedMotion();
   const isMobileViewport = useMediaQuery("(max-width: 768px)");
   const shouldShowVideo = useMemo(
@@ -151,6 +156,21 @@ export function Home() {
                     {t("hero.profession", "Desenvolvedor Full Stack")}
                   </h2>
                 </AnimatedSection>
+                <AnimatedSection delay={0.35}>
+                  <p className="home-tagline">
+                    {t(
+                      "hero.tagline",
+                      "Eu desenvolvo experiências digitais que fortalecem sua marca e geram oportunidades reais de negócio.",
+                    )}
+                  </p>
+                </AnimatedSection>
+                <AnimatedSection delay={0.38}>
+                  <ul className="home-highlights">
+                    {heroHighlights.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </AnimatedSection>
                 <AnimatedSection
                   className="home-social"
                   variant="scale"
@@ -207,7 +227,7 @@ export function Home() {
                     onClick={handleWhatsAppClick}
                   >
                     <FaWhatsapp className="whatsapp-icon" aria-hidden="true" />
-                    WhatsApp
+                    {t("hero.whatsapp", "WhatsApp")}
                   </button>
                 </AnimatedSection>
               </div>

@@ -9,6 +9,12 @@
   "hero": {
     "name": "Yago Cerqueira Regis",
     "profession": "Desenvolvedor Full Stack",
+    "tagline": "Eu desenvolvo experiências digitais que fortalecem sua marca e geram oportunidades reais de negócio.",
+    "highlights": [
+      "Interfaces modernas com foco em conversão.",
+      "Código limpo, escalável e orientado a performance.",
+      "Comunicação clara e entrega com visão de negócio."
+    ],
     "downloadCV": "Baixar Currículo",
     "openCV": "Abrir Currículo (iOS)",
     "downloadCVBR": "Baixar Currículo (BR)",
@@ -28,38 +34,38 @@
   },
   "services": {
     "title": "Os Serviços que eu ofereço",
-    "subtitle": "Soluções completas para suas necessidades digitais",
+    "subtitle": "Soluções digitais pensadas para gerar autoridade, conversão e crescimento de negócio",
     "frontend": {
       "title": "Desenvolvedor Front-end",
-      "description": "Designs bonitos e responsivos com uma interface intuitiva, eficiente e prazerosa ao usuário.",
+      "description": "Interfaces modernas e responsivas, com foco em experiência do usuário, performance e conversão.",
       "modalTitle": "Desenvolvedor web",
       "modalItems": [
-        "Criação de websites profissionais, com qualidade e foco nas necessidades dos clientes.",
-        "Design Responsivo para mobile.",
-        "Eu posiciono seu website com SEO avançado, ajuda os mecanismos de busca a encontrar sua página, sem a necessidade do tráfego pago.",
-        "Eu resolvo problemas em páginas da web."
+        "Desenvolvimento de interfaces profissionais alinhadas aos objetivos do seu negócio.",
+        "Design responsivo para desktop, tablet e mobile com usabilidade consistente.",
+        "Estrutura otimizada para SEO técnico, melhorando alcance orgânico e descoberta da sua marca.",
+        "Refatoração e melhoria de páginas existentes para elevar performance e taxa de conversão."
       ]
     },
     "backend": {
       "title": "Desenvolvimento Back-end",
-      "description": "Criação de softwares profissionais, com qualidade e foco nas necessidades dos clientes.",
+      "description": "Back-end robusto para dar segurança, escalabilidade e confiabilidade às suas aplicações.",
       "modalTitle": "Back-end",
       "modalItems": [
-        "Desenvolvimento de APIs RESTful robustas e escaláveis.",
-        "Integração com bancos de dados relacionais e não relacionais.",
-        "Implementação de autenticação e autorização seguras.",
-        "Otimização de performance e escalabilidade."
+        "Criação de APIs RESTful estáveis, documentadas e preparadas para evolução contínua.",
+        "Modelagem e integração com bancos relacionais e não relacionais conforme o cenário do projeto.",
+        "Implementação de autenticação, autorização e proteção de rotas com boas práticas de segurança.",
+        "Otimização de performance para reduzir custos de infraestrutura e aumentar confiabilidade."
       ]
     },
     "fullstack": {
       "title": "Desenvolvedor Full Stack",
-      "description": "Soluções completas de ponta a ponta, desde o front-end até o back-end.",
+      "description": "Execução completa de ponta a ponta para acelerar entregas e transformar ideias em produto real.",
       "modalTitle": "Full Stack",
       "modalItems": [
-        "Desenvolvimento completo de aplicações web.",
-        "Arquitetura de sistemas e planejamento técnico.",
-        "Integração de front-end e back-end.",
-        "Deploy e manutenção de aplicações."
+        "Planejamento e desenvolvimento completo de aplicações web orientadas a resultado.",
+        "Arquitetura técnica com foco em manutenção simples, escalabilidade e velocidade de entrega.",
+        "Integração fluida entre front-end e back-end para garantir experiência consistente ao usuário.",
+        "Deploy, monitoramento e manutenção contínua para manter o produto estável e competitivo."
       ]
     },
     "web": {
@@ -77,7 +83,8 @@
   },
   "common": {
     "learnMore": "Saiba mais",
-    "close": "Fechar"
+    "close": "Fechar",
+    "optional": "opcional"
   },
   "footer": {
     "copyright": "© Todos os Direitos Reservados a Yago C. Regis"
@@ -102,96 +109,115 @@
     "projects": {
       "telegas": {
         "title": "TeleGás",
-        "description": "Sistema completo de delivery de gás com painel administrativo"
+        "description": "Landing page de alta conversão para delivery de gás, com SEO local e contato rápido"
       },
       "togyro": {
         "title": "Togyro Group",
-        "description": "Site institucional moderno com animações e design responsivo"
+        "description": "Site institucional premium com animações e narrativa visual para fortalecer autoridade da marca"
       },
       "bodegueira": {
         "title": "Bodegueira",
-        "description": "E-commerce completo com sistema de pagamentos integrado"
+        "description": "E-commerce de delivery com jornada de compra simplificada e foco em conversão"
       },
       "kypy": {
         "title": "Kypy",
-        "description": "Aplicação web para gestão de tarefas e produtividade"
+        "description": "Plataforma web da clínica com experiência clara para serviços, agendamento e confiança do paciente"
       },
       "ecosempre": {
         "title": "EcoSempre",
-        "description": "Plataforma de sustentabilidade e economia circular"
+        "description": "Plataforma educacional de sustentabilidade com conteúdo interativo e foco em conscientização"
       },
       "black": {
         "title": "Black Tattoo",
-        "description": "Site para estúdio de tatuagem com galeria e agendamento"
+        "description": "Site comercial para estúdio com portfólio visual e fluxo direto para agendamento"
       },
       "pagedev": {
         "title": "PageDev",
-        "description": "Plataforma de desenvolvimento e criação de páginas web"
+        "description": "Landing page de serviços digitais com proposta clara e captação de leads"
       },
       "guto": {
         "title": "Projeto Guto",
-        "description": "Sistema personalizado de gestão empresarial"
+        "description": "Sistema web personalizado para apoiar operação e organização de processos"
       },
       "paulo": {
         "title": "Projeto Paulo",
-        "description": "Aplicação web para controle de processos internos"
+        "description": "Aplicação para padronizar processos internos e melhorar a eficiência do time"
       },
       "tasklist": {
         "title": "Task List",
-        "description": "Aplicativo de lista de tarefas com interface intuitiva"
+        "description": "Aplicativo de produtividade com CRUD completo, interface intuitiva e foco em usabilidade"
       },
       "lacos": {
         "title": "Laços Eternos",
-        "description": "Site para eventos e cerimonias especiais"
+        "description": "Website para confeitaria artesanal com vitrine elegante e solicitação de orçamento"
       },
       "raha": {
         "title": "Clínica Raha",
-        "description": "Sistema de agendamento e gestão para clínica médica"
+        "description": "Site para clínica com apresentação estratégica dos serviços e geração de contatos"
       },
       "vivacqua": {
         "title": "Vivacqua Odontologia",
-        "description": "Site institucional para clínica odontológica"
+        "description": "Website corporativo para clínica odontológica com SEO técnico, performance e acessibilidade"
       },
       "togyrostore": {
         "title": "TogyroStore",
-        "description": "SaaS em Ruby on Rails para criar lojas e páginas de venda"
+        "description": "SaaS em Ruby on Rails para criação de lojas e páginas de venda com gestão centralizada"
       }
     }
   },
   "testimonials": {
     "title": "O que dizem",
     "subtitle": "Sobre mim?",
-    "description": "Depoimentos reais de clientes satisfeitos com meus serviços",
+    "description": "Resultados reais de clientes que confiaram no meu trabalho",
+    "prev": "Depoimento anterior",
+    "next": "Próximo depoimento",
     "role1": "Empresária",
-    "text1": "Eu solicitei uma landing page para minha empresa, o serviço foi rápido e bem feito, gostaria de parabenizar o Yago por um excelente trabalho.",
+    "text1": "Contratei o Yago para criar a landing page da minha empresa e fiquei impressionada com a agilidade, organização e qualidade da entrega. O projeto elevou nossa presença digital e trouxe mais confiança para vender.",
     "role2": "Empreendedor",
-    "text2": "Super recomendo, preços acessíveis, atendimento e esclarecimento de dúvidas ótimos. Só Sucesso!",
+    "text2": "Atendimento excelente do início ao fim. O Yago traduziu minhas necessidades em uma solução prática e profissional, sempre com comunicação clara. Recomendo para quem busca resultado de verdade.",
     "role3": "Diretor de Marketing",
-    "text3": "Contrato respeitando todos os critérios, soube extrair bem a necessidade que eu tinha para melhorar a prospecção do meu negócio, recomendo demais."
+    "text3": "Yago entendeu rapidamente os objetivos do negócio e entregou uma solução técnica com visão estratégica. O trabalho melhorou nossa prospecção e reforçou o posicionamento da marca."
   },
   "contact": {
-    "title": "Entre em Contato",
-    "subtitle": "Vamos conversar sobre seu próximo projeto",
+    "title": "Vamos Construir Seu Próximo Projeto",
+    "subtitle": "Me conte seu objetivo e eu te retorno com um plano claro para tirar sua ideia do papel",
     "name": "Nome",
     "email": "E-mail",
+    "phone": "Telefone",
     "message": "Mensagem",
+    "namePlaceholder": "Digite seu nome",
+    "emailPlaceholder": "Digite seu e-mail",
+    "phonePlaceholder": "Digite seu telefone (opcional)",
+    "messagePlaceholder": "Descreva seu projeto, objetivo ou desafio",
+    "button": "Enviar via WhatsApp",
+    "closeMessage": "Fechar mensagem",
+    "phoneHint": "Informe apenas números com DDD.",
+    "requiredFieldsMessage": "Por favor, preencha os campos obrigatórios: Nome, E-mail e Mensagem.",
+    "phoneValidationMessage": "Telefone deve conter apenas números.",
+    "redirectMessage": "Perfeito! Redirecionando para o WhatsApp...",
     "send": "Enviar Mensagem",
     "whatsappMessage": "Olá! Gostaria de conversar sobre um projeto."
   },
   "about": {
     "title": "Sobre Mim",
-    "subtitle": "Desenvolvedor apaixonado por tecnologia e inovação",
-    "description": "Sou desenvolvedor Full Stack com mais de 5 anos de experiência criando soluções web modernas e eficientes. Especializado em React, Node.js e tecnologias emergentes.",
-    "profession": "Desenvolvedor",
+    "subtitle": "Transformo ideias em produtos digitais que geram resultado real",
+    "description": "Sou desenvolvedor Full Stack e ajudo empresas e profissionais a criarem experiências digitais modernas, escaláveis e orientadas a conversão.",
+    "profession": "Desenvolvedor Full Stack",
     "skills": "Habilidades Técnicas",
     "experience": "Experiência Profissional",
     "skillsButton": "Veja minhas Habilidades",
+    "ctaButton": "Vamos conversar sobre seu projeto",
+    "highlights": [
+      "Foco em performance, conversão e experiência do usuário.",
+      "Arquitetura limpa e escalável para projetos de longo prazo.",
+      "Comunicação clara e entrega com visão de negócio."
+    ],
     "bio": {
       "prefix": "Desenvolvo ",
       "web": "Páginas da Web",
       "middle": " com ênfase em ",
       "uiux": "UI/UX (User Interface/ User Experience)",
-      "suffix": ". Possuo mais de 5 anos de experiência não apenas em design, mas também em programação, utilizando tecnologias como React, entre outras, nos meus projetos."
+      "suffix": ". Uno estratégia, design e código para entregar soluções com impacto prático: mais autoridade digital, melhor experiência para o usuário e mais oportunidades de negócio."
     }
   },
   "accessibility": {
@@ -209,85 +235,85 @@
       "alt": "Website TeleGás Monte Verde",
       "title": "TeleGás Monte Verde",
       "subtitle": "Landing Page Comercial",
-      "description": "Desenvolvi uma landing page moderna e responsiva para uma distribuidora de gás em Betim-MG. Implementei formulário de contato integrado, seções de serviços e otimização SEO para aumentar a visibilidade online da empresa."
+      "description": "Desenvolvi uma landing page estratégica para distribuidora de gás em Betim-MG, com foco em conversão. Estruturei SEO local, CTAs claros e contato rápido para fortalecer presença digital e geração de leads."
     },
     "togyro": {
       "alt": "Website Togyro Group Victory",
       "title": "Togyro Group Victory",
       "subtitle": "Portfolio Corporativo",
-      "description": "Criei um site institucional com design futurista para uma empresa de tecnologia. Utilizei animações suaves, design responsivo e uma arquitetura de código limpa e escalável."
+      "description": "Criei um site institucional com identidade visual futurista para uma empresa de tecnologia. O projeto combina animações suaves, responsividade e arquitetura escalável para reforçar autoridade de marca."
     },
     "kypy": {
       "alt": "Website Kypy-Saúde",
       "title": "Kypy Saúde",
       "subtitle": "Landing Page para a Clínica",
-      "description": "Desenvolvi uma plataforma focada em saúde e bem-estar para a clínica Kypy. O site inclui agendamento online, informações sobre tratamentos e uma seção de blog para dicas de saúde."
+      "description": "Desenvolvi a presença digital da clínica Kypy com foco em clareza de serviços e confiança do público. Estruturei conteúdo, jornada de navegação e pontos de contato para facilitar conversão de pacientes."
     },
     "ecosempre": {
       "alt": "Website EcoSempre",
       "title": "Projeto EcoSempre",
       "subtitle": "Plataforma Ambiental",
-      "description": "Criei um site educacional sobre descarte correto de lixo eletrônico. Implementei seções interativas, informações sobre reciclagem e pontos de coleta, com foco em conscientização ambiental."
+      "description": "Criei uma plataforma educacional sobre descarte correto de lixo eletrônico com experiência didática. O projeto reúne conteúdo interativo, orientações práticas e foco em impacto social."
     },
     "teamblack": {
       "alt": "Website TeamBlack",
       "title": "TeamBlack",
       "subtitle": "Site Educacional",
-      "description": "Desenvolvi um site institucional para um professor, com design profissional, galeria de cursos, depoimentos de alunos e integração com redes sociais."
+      "description": "Desenvolvi um site institucional para professor com posicionamento profissional e comunicação clara. Inclui vitrine de cursos, prova social e integração com canais de contato e redes sociais."
     },
     "todolist": {
       "alt": "Aplicativo Lista de Tarefas",
       "title": "Lista de Tarefas",
       "subtitle": "Aplicação Web",
-      "description": "Desenvolvi uma aplicação completa de gerenciamento de tarefas com funcionalidades de adicionar, editar, marcar como concluída e deletar tarefas. Design espacial único com persistência de dados no localStorage."
+      "description": "Construí uma aplicação de produtividade com CRUD completo de tarefas e persistência no localStorage. O foco foi usabilidade, performance e uma interface que incentiva organização no dia a dia."
     },
     "gt": {
       "alt": "Website GT Personal Trainer",
       "title": "GT Personal Trainer",
       "subtitle": "Site Fitness",
-      "description": "Criei um site profissional para personal trainer com seções de treinos, depoimentos, planos de treinamento e formulário de contato. Design motivacional focado em conversão de leads."
+      "description": "Criei um site comercial para personal trainer com proposta de valor clara, prova social e CTAs estratégicos. O design foi orientado à geração de leads e fortalecimento da marca pessoal."
     },
     "phbytes": {
       "alt": "Website Ph Bytes",
       "title": "Ph Bytes",
       "subtitle": "Portfolio Tecnologia",
-      "description": "Desenvolvi um site institucional para empresa de tecnologia com design moderno, seções de serviços, portfólio de projetos e formulário de contato integrado."
+      "description": "Desenvolvi um site institucional para empresa de tecnologia com foco em posicionamento e credibilidade. Estruturei serviços, projetos e contato para aumentar a conversão de oportunidades."
     },
     "bodegueira": {
       "alt": "Bodegueira Charcutaria & Cia",
       "title": "Bodegueira Charcutaria & Cia",
       "subtitle": "E-commerce Alimentação",
-      "description": "Criei um site completo para delivery para a bodegueira promovendo a vendas de seus produtos em Brasília. Implementei carrinho de compras, sistema de pedidos, integração com WhatsApp e design focado em conversão."
+      "description": "Desenvolvi um e-commerce de delivery para a Bodegueira em Brasília, orientado à venda. Implementei catálogo, fluxo de pedido e integração com WhatsApp para reduzir fricção e aumentar conversão."
     },
     "lacos": {
       "alt": "Website Laços e Confeitos",
       "title": "Laços e Confeitos",
       "subtitle": "Site Confeitaria",
-      "description": "Desenvolvi um site elegante para ateliê culinário especializado em doces finos. Galeria de produtos, formulário de orçamento e design sofisticado que transmite a qualidade dos produtos."
+      "description": "Desenvolvi um site para ateliê de confeitaria com estética premium e foco comercial. A solução destaca produtos, facilita pedidos de orçamento e reforça percepção de qualidade da marca."
     },
     "raha": {
       "alt": "Website Raha Saúde e Estética",
       "title": "Raha Saúde e Estética",
       "subtitle": "Site Clínica",
-      "description": "Criei um site profissional para clínica de saúde e estética. Seções de serviços, galeria de tratamentos, agendamento online e design clean que transmite confiança e profissionalismo."
+      "description": "Criei um site para clínica de saúde e estética com comunicação clara e estrutura estratégica de serviços. O projeto fortalece confiança, posicionamento e geração de contatos qualificados."
     },
     "vivacqua": {
       "alt": "Website Vivacqua Odontologia",
       "title": "Vivacqua Odontologia",
       "subtitle": "Website Corporativo",
-      "description": "Desenvolvi um website corporativo moderno para clínica odontológica. Implementei HTML semântico para melhor SEO, design responsivo com Tailwind CSS e funcionalidades interativas com JavaScript, priorizando acessibilidade e performance."
+      "description": "Desenvolvi um website corporativo para clínica odontológica com base técnica sólida. A solução combina HTML semântico, responsividade, acessibilidade e performance para ampliar visibilidade e credibilidade online."
     },
     "togyrostore": {
       "alt": "SaaS TogyroStore",
       "title": "TogyroStore",
       "subtitle": "Plataforma SaaS",
-      "description": "Plataforma SaaS em Ruby on Rails para criar lojas, landing pages ou sistemas de delivery com painel de administração e deploy rápido."
+      "description": "Plataforma SaaS em Ruby on Rails para criação de lojas, landing pages e operações de delivery. Estruturei a solução para escalar com gestão centralizada e publicação rápida."
     },
     "upcoming": {
       "alt": "Novos projetos em breve",
       "title": "Novos Projetos",
       "subtitle": "Em Desenvolvimento",
-      "description": "Estou constantemente desenvolvendo novos projetos e aprendendo novas tecnologias. Em breve, mais trabalhos incríveis estarão disponíveis aqui!"
+      "description": "Novos cases estão em desenvolvimento com foco em performance, experiência do usuário e resultados de negócio. Em breve, mais projetos estratégicos serão publicados aqui."
     }
   }
 }

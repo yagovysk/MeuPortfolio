@@ -107,7 +107,11 @@ export function Testimonials() {
   };
 
   return (
-    <section className="testimonials-section">
+    <section
+      className="testimonials-section"
+      aria-labelledby="testimonials-title"
+      id="testimonials-section"
+    >
       <motion.div
         className="testimonials-container"
         variants={containerVariants}
@@ -117,7 +121,7 @@ export function Testimonials() {
       >
         {/* Header */}
         <motion.div className="testimonials-header" variants={titleVariants}>
-          <h2 className="testimonials-title">
+          <h2 className="testimonials-title" id="testimonials-title">
             <span className="title-highlight">
               {t("testimonials.title", "O que dizem")}
             </span>
@@ -171,6 +175,7 @@ export function Testimonials() {
               {/* Mobile Navigation */}
               <div className="testimonials-navigation mobile-nav">
                 <motion.button
+                  type="button"
                   className="nav-button nav-prev"
                   onClick={() => {
                     if (swiperInstance) {
@@ -183,10 +188,12 @@ export function Testimonials() {
                   }}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
+                  aria-label={t("testimonials.prev", "Depoimento anterior")}
                 >
-                  <FaChevronLeft />
+                  <FaChevronLeft aria-hidden="true" />
                 </motion.button>
                 <motion.button
+                  type="button"
                   className="nav-button nav-next"
                   onClick={() => {
                     if (swiperInstance) {
@@ -199,8 +206,9 @@ export function Testimonials() {
                   }}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
+                  aria-label={t("testimonials.next", "Próximo depoimento")}
                 >
-                  <FaChevronRight />
+                  <FaChevronRight aria-hidden="true" />
                 </motion.button>
               </div>
             </>
@@ -245,7 +253,7 @@ const TestimonialCard = ({ testimonial, index, isStatic = false }) => {
     >
       {/* Quote Icon */}
       <div className="quote-icon">
-        <FaQuoteLeft />
+        <FaQuoteLeft aria-hidden="true" />
       </div>
 
       {/* Stars Rating */}
@@ -257,7 +265,7 @@ const TestimonialCard = ({ testimonial, index, isStatic = false }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: (isStatic ? index * 0.2 : 0) + 0.5 + i * 0.1 }}
           >
-            <FaStar className="star" />
+            <FaStar className="star" aria-hidden="true" />
           </motion.div>
         ))}
       </div>
@@ -270,7 +278,7 @@ const TestimonialCard = ({ testimonial, index, isStatic = false }) => {
         <div className="client-image-container">
           <img
             src={testimonial.image}
-            alt={testimonial.name}
+            alt={`Foto de ${testimonial.name}`}
             className="client-image"
           />
           <div className="image-glow"></div>

@@ -83,6 +83,40 @@ export default function Accessibility() {
     localStorage.removeItem("theme");
   };
 
+  const applyAccessibilityCommand = (command) => {
+    switch (command) {
+      case "open":
+        setIsOpen(true);
+        break;
+      case "close":
+        setIsOpen(false);
+        break;
+      case "increase-font":
+        increaseFontSize();
+        break;
+      case "decrease-font":
+        decreaseFontSize();
+        break;
+      case "reset-font":
+        resetFontSize();
+        break;
+      case "toggle-contrast":
+        toggleContrast();
+        break;
+      case "set-theme-dark":
+        setTheme("dark");
+        break;
+      case "set-theme-light":
+        setTheme("light");
+        break;
+      case "reset-all":
+        resetAll();
+        break;
+      default:
+        break;
+    }
+  };
+
   useEffect(() => {
     if (isOpen) {
       requestAnimationFrame(() => {
@@ -105,6 +139,26 @@ export default function Accessibility() {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen]);
+
+  useEffect(() => {
+    const handleExternalCommand = (event) => {
+      const command = event?.detail?.command;
+      if (typeof command === "string") {
+        applyAccessibilityCommand(command);
+      }
+    };
+
+    window.addEventListener(
+      "portfolio-accessibility-command",
+      handleExternalCommand,
+    );
+    return () => {
+      window.removeEventListener(
+        "portfolio-accessibility-command",
+        handleExternalCommand,
+      );
+    };
+  }, [fontSize, contrast, theme]);
 
   const accessibilityMenuId = "painel-acessibilidade";
 

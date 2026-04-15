@@ -8,6 +8,7 @@
   padding: 4rem 1rem;
   padding-bottom: 12rem;
   gap: 2rem;
+  position: relative;
 }
 .container-article-form {
   display: flex;
@@ -19,14 +20,16 @@
   border-radius: 10px;
   display: flex;
   justify-content: center;
-  justify-self: center;
   padding: 1rem;
-  position: absolute;
-  margin-top: 18rem;
-  margin-left: -1rem;
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
   align-items: center;
   gap: 1rem;
   background: #580808;
+  width: min(92vw, 560px);
+  z-index: 1201;
 }
 .paragraph-message {
   font-family: "Monteserrat", sans-serif;
@@ -116,4 +119,43 @@ input {
 .form-close-alert:focus-visible {
   background: #f5d5d5;
   color: #3d0505;
+}
+
+@media (max-width: 768px) {
+  .container-inputs {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input-1,
+  .input-2 {
+    width: 100%;
+  }
+
+  .input-2 {
+    padding-top: 0.5rem;
+  }
+
+  form {
+    width: min(100%, 680px);
+  }
+
+  .message-modal {
+    width: calc(100vw - 1.5rem);
+    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    padding: 0.85rem;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .paragraph-message {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .form-close-alert {
+    padding: 0.3rem 0.65rem;
+    font-size: 0.8rem;
+  }
 }

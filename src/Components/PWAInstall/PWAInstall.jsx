@@ -59,6 +59,14 @@ const PWAInstall = () => {
     };
   }, [isInstalled]);
 
+  useEffect(() => {
+    document.body.classList.toggle("has-mobile-pwa-banner", showMobileBanner);
+
+    return () => {
+      document.body.classList.remove("has-mobile-pwa-banner");
+    };
+  }, [showMobileBanner]);
+
   const handleInstallClick = async () => {
     if (!deferredPrompt) return;
 

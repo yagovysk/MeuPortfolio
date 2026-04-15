@@ -2,7 +2,7 @@
 
 .accessibility-toggle {
   position: fixed;
-  bottom: 5rem;
+  bottom: 10.25rem;
   right: 1.25rem;
   width: 3.5rem;
   height: 3.5rem;
@@ -37,7 +37,7 @@
 .accessibility-menu {
   position: fixed;
   right: 1.25rem;
-  bottom: 9rem;
+  bottom: 14.25rem;
   width: 320px;
   background: #fff !important;
   border-radius: 16px;
@@ -295,7 +295,7 @@ body.contrast-high .scroll-button * {
 /* Forçar que apenas os containers principais mantenham posição fixa */
 body.contrast-high .accessibility-toggle {
   position: fixed !important;
-  bottom: 5rem !important;
+  bottom: 10.25rem !important;
   right: 1.25rem !important;
   z-index: 9998 !important;
   opacity: 1 !important;
@@ -305,7 +305,7 @@ body.contrast-high .accessibility-toggle {
 body.contrast-high .accessibility-menu {
   position: fixed !important;
   right: 1.25rem !important;
-  bottom: 9rem !important;
+  bottom: 14.25rem !important;
   z-index: 9999 !important;
   opacity: 1 !important;
   visibility: visible !important;
@@ -464,14 +464,14 @@ body.theme-dark .accessibility-overlay {
     width: 3.25rem;
     height: 3.25rem;
     font-size: 1.4rem;
-    bottom: 4.5rem;
+    bottom: calc(9.5rem + var(--mobile-floating-offset, 0px));
     right: 1rem;
   }
 
   .accessibility-menu {
     width: calc(100% - 2rem);
     right: 1rem;
-    bottom: 8.5rem;
+    bottom: calc(13.25rem + var(--mobile-floating-offset, 0px));
   }
 }
 
@@ -480,14 +480,14 @@ body.theme-dark .accessibility-overlay {
     width: 3rem;
     height: 3rem;
     font-size: 1.3rem;
-    bottom: 4rem;
+    bottom: calc(8.75rem + var(--mobile-floating-offset, 0px));
     right: 0.75rem;
   }
 
   .accessibility-menu {
     width: calc(100% - 1.5rem);
     right: 0.75rem;
-    bottom: 7.5rem;
+    bottom: calc(12rem + var(--mobile-floating-offset, 0px));
   }
 
   .accessibility-header {
@@ -520,13 +520,13 @@ body.theme-dark .accessibility-overlay {
     width: 2.75rem;
     height: 2.75rem;
     font-size: 1.2rem;
-    bottom: 3.75rem;
+    bottom: calc(8.25rem + var(--mobile-floating-offset, 0px));
   }
 
   .accessibility-menu {
     width: calc(100% - 1rem);
     right: 0.5rem;
-    bottom: 7rem;
+    bottom: calc(11.25rem + var(--mobile-floating-offset, 0px));
   }
 
   .accessibility-content {
