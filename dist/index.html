@@ -3,12 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta
+      name="googlebot"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#667eea" />
     <meta
       name="description"
       content="Me chamo Yago Cerqueira Regis, sou desenvolvedor FullStack, estudo programação há mais de 5 anos, sempre me especializando."
     />
     <meta name="author" content="Yago Cerqueira Regis" />
     <meta property="og:title" content="Portfolio Yago" />
+    <meta property="og:site_name" content="Portfolio Yago Cerqueira Regis" />
+    <meta property="og:locale" content="pt_BR" />
     <meta
       property="og:description"
       content="Me chamo Yago Cerqueira Regis, sou desenvolvedor FullStack, estudo programação há mais de 5 anos, sempre me especializando."
@@ -32,14 +40,29 @@
       content="https://yagocerqueiraregis.netlify.app/foto-melhor.jpeg?v=4"
     />
     <link rel="canonical" href="https://yagocerqueiraregis.netlify.app/" />
+    <link rel="manifest" href="/manifest.json" />
     <link rel="preload" as="image" href="/foto-melhor.jpeg?v=4" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Portfolio Yago" />
+    <meta name="twitter:image:alt" content="Foto de Yago Cerqueira Regis" />
     <meta
       name="twitter:description"
       content="Me chamo Yago Cerqueira Regis, sou desenvolvedor FullStack, estudo programação há mais de 5 anos, sempre me especializando."
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Yago Cerqueira Regis",
+        "jobTitle": "Desenvolvedor Full Stack",
+        "url": "https://yagocerqueiraregis.netlify.app/",
+        "image": "https://yagocerqueiraregis.netlify.app/foto-melhor.jpeg?v=4",
+        "sameAs": ["https://github.com/yagovysk", "https://www.linkedin.com/in/yago-cerqueira-regis/"],
+        "knowsAbout": ["React", "Node.js", "JavaScript", "TypeScript", "Frontend", "Backend"],
+        "inLanguage": "pt-BR"
+      }
+    </script>
     <meta
       name="google-site-verification"
       content="google845e1c4eb436cb76.html"
