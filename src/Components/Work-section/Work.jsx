@@ -156,7 +156,7 @@ const Work = () => {
         "Criei um site profissional para personal trainer com seções de treinos, depoimentos, planos de treinamento e formulário de contato. Design motivacional focado em conversão de leads.",
       ),
       technologies: "React, CSS3, JavaScript",
-      link: "https://garotinhasfitness.com.br/",
+      link: "https://github.com/yagovysk/Projeto-Guto",
     },
     {
       imgSrc: paulo,
@@ -180,7 +180,7 @@ const Work = () => {
         "Criei um site completo para delivery para a bodegueira promovendo a vendas de seus produtos em Brasília. Implementei carrinho de compras, sistema de pedidos, integração com WhatsApp e design focado em conversão.",
       ),
       technologies: "HTML, WhatsApp API, CSS3 e Javascript",
-      link: "https://bodegueirabsb.com.br/",
+      link: "https://github.com/yagovysk/Bodegueira-Charcutaria",
     },
     {
       imgSrc: lacos,
