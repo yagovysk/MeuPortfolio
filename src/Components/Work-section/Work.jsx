@@ -35,6 +35,7 @@ import lacos from "../../assets/lacos-site.png";
 import raha from "../../assets/raha-project.png";
 import vivacqua from "../../assets/print-vivacqua.png";
 import togyrostore from "../../assets/print-togyrostore.png";
+import togyroDeliveryIa from "../../assets/togyro-delivery-ia.png";
 
 const Work = () => {
   const prevRef = useRef(null);
@@ -85,6 +86,18 @@ const Work = () => {
       ),
       technologies: "React, AOS, CSS3",
       link: "https://togyrogroupvictory.com/",
+    },
+    {
+      imgSrc: togyroDeliveryIa,
+      altText: t("projects.togyrodelivery.alt", "Togyro Delivery AI platform"),
+      title: t("projects.togyrodelivery.title", "Togyro Delivery IA"),
+      subtitle: t("projects.togyrodelivery.subtitle", "Delivery com IA"),
+      description: t(
+        "projects.togyrodelivery.description",
+        "Plataforma de delivery com agente de IA para auxiliar restaurantes no atendimento, automacao de vendas e disparos no WhatsApp.",
+      ),
+      technologies: "Next.js, NestJS, Fastify, PostgreSQL, IA, WhatsApp API",
+      link: "https://togyro-web.onrender.com/",
     },
     {
       imgSrc: togyrostore,

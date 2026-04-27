@@ -115,6 +115,10 @@
         "title": "Togyro Group",
         "description": "Site institucional premium com animações e narrativa visual para fortalecer autoridade da marca"
       },
+      "togyrodelivery": {
+        "title": "Togyro Delivery IA",
+        "description": "Plataforma de delivery com agente de IA para auxiliar restaurantes e potencializar vendas no WhatsApp"
+      },
       "bodegueira": {
         "title": "Bodegueira",
         "description": "E-commerce de delivery com jornada de compra simplificada e foco em conversão"
@@ -242,6 +246,12 @@
       "title": "Togyro Group Victory",
       "subtitle": "Portfolio Corporativo",
       "description": "Criei um site institucional com identidade visual futurista para uma empresa de tecnologia. O projeto combina animações suaves, responsividade e arquitetura escalável para reforçar autoridade de marca."
+    },
+    "togyrodelivery": {
+      "alt": "Plataforma Togyro Delivery com IA",
+      "title": "Togyro Delivery IA",
+      "subtitle": "Delivery com IA",
+      "description": "Desenvolvi uma plataforma de delivery com agente de IA para apoiar restaurantes no atendimento e automacao de vendas. O sistema integra disparos no WhatsApp para aumentar conversao e acelerar pedidos."
     },
     "kypy": {
       "alt": "Website Kypy-Saúde",

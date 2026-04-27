@@ -115,6 +115,10 @@
         "title": "Togyro Group",
         "description": "Premium institutional website with animation-driven storytelling to strengthen brand authority"
       },
+      "togyrodelivery": {
+        "title": "Togyro Delivery AI",
+        "description": "AI-powered delivery platform to support restaurants and boost WhatsApp sales flow"
+      },
       "bodegueira": {
         "title": "Bodegueira",
         "description": "Delivery e-commerce with a simplified purchase journey and conversion-first UX"
@@ -242,6 +246,12 @@
       "title": "Togyro Group Victory",
       "subtitle": "Corporate Portfolio",
       "description": "I created an institutional website with a futuristic visual identity for a technology company. It blends smooth motion, responsive UX, and scalable architecture to reinforce digital brand authority."
+    },
+    "togyrodelivery": {
+      "alt": "Togyro Delivery AI platform",
+      "title": "Togyro Delivery AI",
+      "subtitle": "AI Delivery Platform",
+      "description": "I built a delivery platform with an AI agent to support restaurant operations and automate sales interactions. The product includes WhatsApp broadcast flows to increase conversion and speed up ordering."
     },
     "kypy": {
       "alt": "Kypy-Health Website",
