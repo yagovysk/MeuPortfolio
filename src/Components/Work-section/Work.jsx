@@ -109,7 +109,7 @@ const Work = () => {
         "Plataforma SaaS em Ruby on Rails que permite criar lojas, landing pages ou sistemas de delivery com gerenciamento completo e deploy rápido.",
       ),
       technologies: "Ruby on Rails, PostgreSQL, Stimulus, Tailwind",
-      link: "https://togyrostore.com.br/venda.html",
+      link: "https://github.com/yagovysk/Togyro_store",
     },
     {
       imgSrc: kypy,
