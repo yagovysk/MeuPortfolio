@@ -795,6 +795,7 @@
     "problemSolved": "Problem solved",
     "status": "Status",
     "viewMore": "View more",
+    "assistantPrompt": "Hi! I am the portfolio virtual assistant. How can I help you today and what do you need right now?",
     "items": {
       "togyro-delivery-ai": {
         "name": "Togyro Delivery AI",
@@ -806,25 +807,25 @@
       },
       "togyro-store": {
         "name": "Togyro Store",
-        "description": "SaaS for creating stores and sales pages.",
+        "description": "SaaS for creating stores and sales pages. The production environment is currently offline, so access is available through the repository only.",
         "stack": "Ruby on Rails, PostgreSQL",
-        "problemSolved": "Reduces launch time for digital operations.",
+        "problemSolved": "Reduces launch time for digital operations with reusable foundations.",
         "status": "Experimental",
         "url": "https://github.com/yagovysk/Togyro_store"
       },
       "togyro-space": {
         "name": "Togyro Space",
-        "description": "Experiment hub for product ideas and integrations.",
-        "stack": "React, Node.js",
-        "problemSolved": "Validates ideas quickly with low setup overhead.",
+        "description": "Space shooter built with Phaser and TypeScript featuring accounts, coins, ship purchases, upgrades, skins, and an in-game social layer with rankings and profile levels.",
+        "stack": "Phaser, TypeScript, Node.js",
+        "problemSolved": "Combines game progression and social systems to increase engagement and retention.",
         "status": "In development",
         "url": "#"
       },
       "portfolio-virtual-agent": {
         "name": "Portfolio Virtual Agent",
-        "description": "Assistant that guides visitors based on intent.",
+        "description": "Assistant that guides visitors by intent and starts the conversation with a direct support prompt.",
         "stack": "React, AI, Context API",
-        "problemSolved": "Improves relevant content discovery.",
+        "problemSolved": "Reduces navigation friction and speeds up discovery of what each visitor needs.",
         "status": "Done",
         "url": "#"
       },

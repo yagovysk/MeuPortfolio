@@ -1012,6 +1012,48 @@ const VirtualAssistant = () => {
   }, [messages, isOpen]);
 
   useEffect(() => {
+    const handleOpenRequest = (event) => {
+      const requestedMessage =
+        typeof event?.detail?.message === "string"
+          ? event.detail.message.trim()
+          : "";
+      const fallbackMessage =
+        languageCode === "en"
+          ? "Hi! I am the portfolio virtual assistant. How can I help you today and what do you need right now?"
+          : "Oi! Sou o agente virtual do portfolio. Como posso te ajudar hoje e do que voce precisa neste momento?";
+      const introMessage = requestedMessage || fallbackMessage;
+
+      setIsOpen(true);
+      const botMessageId = messageCounterRef.current;
+      messageCounterRef.current += 1;
+
+      setMessages((prev) => [
+        ...prev,
+        createBotMessage(botMessageId, introMessage, {
+          actions: [
+            botActions.projects,
+            botActions.services,
+            botActions.devLab,
+            botActions.contact,
+          ],
+        }),
+      ]);
+    };
+
+    window.addEventListener(
+      "portfolio-virtual-assistant-open",
+      handleOpenRequest,
+    );
+
+    return () => {
+      window.removeEventListener(
+        "portfolio-virtual-assistant-open",
+        handleOpenRequest,
+      );
+    };
+  }, [languageCode, botActions]);
+
+  useEffect(() => {
     if (!pendingScrollRef.current) return;
 
     const attemptScroll = () => {

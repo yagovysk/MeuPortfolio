@@ -167,6 +167,22 @@
   box-shadow: 0 12px 24px rgba(0, 255, 179, 0.2);
 }
 
+.own-product-link--disabled {
+  opacity: 0.56;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.own-product-link--disabled:hover {
+  transform: none;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 170, 151, 0.28),
+    rgba(0, 255, 179, 0.15)
+  );
+  box-shadow: none;
+}
+
 @media (max-width: 768px) {
   .own-products-section {
     padding: 3.5rem 1rem;

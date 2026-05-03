@@ -795,6 +795,7 @@
     "problemSolved": "Problema resolvido",
     "status": "Status",
     "viewMore": "Ver mais",
+    "assistantPrompt": "Oi! Sou o agente virtual do portfolio. Como posso te ajudar hoje e do que voce precisa neste momento?",
     "items": {
       "togyro-delivery-ai": {
         "name": "Togyro Delivery com IA",
@@ -806,25 +807,25 @@
       },
       "togyro-store": {
         "name": "Togyro Store",
-        "description": "SaaS para criação de lojas e páginas de venda.",
+        "description": "SaaS para criação de lojas e páginas de venda. No momento o ambiente saiu do ar e o acesso segue apenas pelo repositório.",
         "stack": "Ruby on Rails, PostgreSQL",
-        "problemSolved": "Reduz tempo de lançamento de operações digitais.",
+        "problemSolved": "Reduz tempo de lançamento de operações digitais com estrutura reaproveitável.",
         "status": "Experimental",
         "url": "https://github.com/yagovysk/Togyro_store"
       },
       "togyro-space": {
         "name": "Togyro Space",
-        "description": "Ambiente de experimentação para produtos e integrações.",
-        "stack": "React, Node.js",
-        "problemSolved": "Valida ideias com prototipação rápida.",
+        "description": "Jogo de nave espacial feito com Phaser e TypeScript com conta de usuario, moedas, compra de naves, upgrades, skins e sistema social com rankings e niveis.",
+        "stack": "Phaser, TypeScript, Node.js",
+        "problemSolved": "Une progressao de jogo com recursos sociais para aumentar engajamento e recorrencia.",
         "status": "Em desenvolvimento",
         "url": "#"
       },
       "portfolio-virtual-agent": {
         "name": "Agente Virtual do Portfólio",
-        "description": "Assistente para orientar visitantes conforme interesse.",
+        "description": "Assistente para orientar visitantes conforme interesse e iniciar a conversa com direcionamento rapido.",
         "stack": "React, IA, Context API",
-        "problemSolved": "Melhora descoberta de conteúdo relevante.",
+        "problemSolved": "Reduz friccao na navegacao e acelera descoberta do que o visitante precisa.",
         "status": "Finalizado",
         "url": "#"
       },
