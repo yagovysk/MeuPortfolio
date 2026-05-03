@@ -1,0 +1,246 @@
+﻿.devlab-section {
+  position: relative;
+  padding: 5rem 1.5rem;
+  background: linear-gradient(180deg, #02060f 0%, #061a2c 50%, #081120 100%);
+  color: #f3f8ff;
+}
+
+.devlab-hero {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.devlab-eyebrow {
+  font-family: "Sora", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #7be7ff;
+  font-weight: 800;
+  font-size: 0.76rem;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.38);
+  margin-bottom: 0.5rem;
+}
+
+.devlab-hero h2 {
+  font-size: clamp(2.15rem, 4.6vw, 3.6rem);
+  margin-bottom: 0.6rem;
+  font-family: "Sora", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.devlab-hero p {
+  max-width: 760px;
+  margin-inline: auto;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.06rem, 1.25vw, 1.32rem);
+  font-weight: 500;
+  color: rgba(233, 244, 255, 0.94);
+  line-height: 1.62;
+  letter-spacing: 0.01em;
+}
+
+.devlab-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 1150px;
+  margin: 0 auto 1.75rem;
+}
+
+.devlab-tab {
+  min-height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 212, 255, 0.32);
+  background: rgba(6, 21, 36, 0.78);
+  color: #d8f4ff;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.devlab-tab:hover {
+  transform: translateY(-1px);
+}
+
+.devlab-tab.is-active {
+  background: linear-gradient(120deg, #00d4ff 0%, #00ffb3 100%);
+  color: #06233a;
+  box-shadow: 0 12px 28px rgba(0, 212, 255, 0.32);
+}
+
+.devlab-panel {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.devlab-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.devlab-card {
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  border-radius: 18px;
+  padding: 1rem;
+  background: linear-gradient(
+    145deg,
+    rgba(7, 22, 39, 0.9),
+    rgba(4, 14, 30, 0.9)
+  );
+  display: grid;
+  gap: 0.75rem;
+  font-family: "Manrope", sans-serif;
+}
+
+.devlab-card h4 {
+  font-family: "Sora", sans-serif;
+  font-size: 1.14rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+}
+
+.devlab-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Manrope", sans-serif;
+  font-size: 0.97rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.devlab-card strong {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.devlab-preview {
+  border-radius: 12px;
+  min-height: 58px;
+  border: 1px dashed rgba(0, 212, 255, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.devlab-code-block {
+  max-height: 220px;
+  overflow: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  background: #010b17;
+  color: #d1f7ff;
+  padding: 0.75rem;
+  font-family: "Consolas", "Cascadia Mono", "Fira Code", monospace;
+  line-height: 1.55;
+  font-size: 0.84rem;
+}
+
+.copy-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.copy-button {
+  min-height: 40px;
+  border-radius: 10px;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid rgba(0, 255, 179, 0.5);
+  background: rgba(0, 255, 179, 0.14);
+  color: #e8fff7;
+  font-family: "Sora", sans-serif;
+  font-size: 0.83rem;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+.copy-button:hover {
+  background: rgba(0, 255, 179, 0.24);
+}
+
+.devlab-chip {
+  justify-self: flex-start;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0.25rem 0.55rem;
+  font-family: "Sora", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.devlab-meta-row {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.devlab-diagram {
+  white-space: pre-wrap;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.32);
+  background: rgba(1, 11, 23, 0.9);
+  padding: 0.75rem;
+}
+
+.devlab-card label {
+  font-family: "Sora", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.devlab-card input,
+.devlab-card select {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(4, 15, 30, 0.9);
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.94rem;
+  font-weight: 500;
+  min-height: 40px;
+  padding: 0.5rem 0.7rem;
+}
+
+.devlab-inline-preview {
+  word-break: break-word;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.devlab-footer-note {
+  max-width: 1100px;
+  margin: 1.35rem auto 0;
+  color: rgba(226, 241, 255, 0.86);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(0.96rem, 1.05vw, 1.08rem);
+  font-weight: 500;
+  line-height: 1.64;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .devlab-section {
+    padding: 4rem 1rem;
+  }
+
+  .devlab-tabs {
+    justify-content: flex-start;
+  }
+
+  .devlab-tab {
+    font-size: 0.88rem;
+  }
+}

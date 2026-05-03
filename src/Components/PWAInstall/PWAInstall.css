@@ -1,4 +1,4 @@
-/* PWA INSTALL COMPONENT STYLES */
+﻿/* PWA INSTALL COMPONENT STYLES */
 
 :root {
   --mobile-floating-offset: 0px;
@@ -21,7 +21,7 @@ body.has-mobile-pwa-banner {
   backdrop-filter: blur(15px);
   z-index: 9999;
   max-width: 350px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
 }
 
 .pwa-banner-content {
@@ -72,7 +72,7 @@ body.has-mobile-pwa-banner {
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 8px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -122,7 +122,7 @@ body.has-mobile-pwa-banner {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   z-index: 9999;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
 }
 
 .pwa-mobile-content {
@@ -164,7 +164,7 @@ body.has-mobile-pwa-banner {
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 8px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -238,7 +238,7 @@ body.has-mobile-pwa-banner {
   }
 }
 
-/* Animação de pulse para chamar atenção */
+/* AnimaÃ§Ã£o de pulse para chamar atenÃ§Ã£o */
 .pwa-icon {
   animation: pulse 2s ease-in-out infinite;
 }
@@ -295,3 +295,4 @@ body.has-mobile-pwa-banner {
     font-size: 0.85rem;
   }
 }
+

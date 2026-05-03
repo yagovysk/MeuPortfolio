@@ -12,6 +12,8 @@ import {
   FaCode,
   FaChevronLeft,
   FaChevronRight,
+  FaBookOpen,
+  FaTimes,
 } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -42,6 +44,7 @@ const Work = () => {
   const nextRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [tuningSlides, setTuningSlides] = useState(new Set());
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
   const { t } = useTranslation();
   const prefersReducedMotion = useReducedMotion();
   const isMobileViewport = useMediaQuery("(max-width: 768px)");
@@ -54,6 +57,19 @@ const Work = () => {
     }
   }, [shouldShowTvEffect]);
 
+  useEffect(() => {
+    if (!selectedCaseStudy) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setSelectedCaseStudy(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [selectedCaseStudy]);
+
   const swiperModules = useMemo(() => {
     const baseModules = [Navigation, Pagination];
     if (!shouldReduceMotion) {
@@ -64,6 +80,7 @@ const Work = () => {
 
   const projects = [
     {
+      id: "telegas",
       imgSrc: site1,
       altText: t("projects.telegas.alt", "Website TeleGás Monte Verde"),
       title: t("projects.telegas.title", "TeleGás Monte Verde"),
@@ -76,6 +93,7 @@ const Work = () => {
       link: "https://telegasmonteverde.com.br/",
     },
     {
+      id: "togyro",
       imgSrc: togyro,
       altText: t("projects.togyro.alt", "Website Togyro Group Victory"),
       title: t("projects.togyro.title", "Togyro Group Victory"),
@@ -86,8 +104,10 @@ const Work = () => {
       ),
       technologies: "React, AOS, CSS3",
       link: "https://togyrogroupvictory.com/",
+      caseStudyId: "togyro-group-victory",
     },
     {
+      id: "togyrodelivery",
       imgSrc: togyroDeliveryIa,
       altText: t("projects.togyrodelivery.alt", "Togyro Delivery AI platform"),
       title: t("projects.togyrodelivery.title", "Togyro Delivery IA"),
@@ -98,8 +118,10 @@ const Work = () => {
       ),
       technologies: "Next.js, NestJS, Fastify, PostgreSQL, IA, WhatsApp API",
       link: "https://togyro-web.onrender.com/",
+      caseStudyId: "togyro-delivery",
     },
     {
+      id: "togyrostore",
       imgSrc: togyrostore,
       altText: t("projects.togyrostore.alt", "SaaS TogyroStore"),
       title: t("projects.togyrostore.title", "TogyroStore"),
@@ -112,6 +134,7 @@ const Work = () => {
       link: "https://github.com/yagovysk/Togyro_store",
     },
     {
+      id: "kypy",
       imgSrc: kypy,
       altText: t("projects.kypy.alt", "Website Kypy-Saúde"),
       title: t("projects.kypy.title", "Kypy Saúde"),
@@ -124,6 +147,7 @@ const Work = () => {
       link: "https://kypysaude.com.br/",
     },
     {
+      id: "ecosempre",
       imgSrc: eco,
       altText: t("projects.ecosempre.alt", "Website EcoSempre"),
       title: t("projects.ecosempre.title", "Projeto EcoSempre"),
@@ -136,6 +160,7 @@ const Work = () => {
       link: "https://ecosempre.netlify.app/#home",
     },
     {
+      id: "teamblack",
       imgSrc: black,
       altText: t("projects.teamblack.alt", "Website TeamBlack"),
       title: t("projects.teamblack.title", "TeamBlack"),
@@ -148,6 +173,7 @@ const Work = () => {
       link: "https://teamblack.netlify.app/",
     },
     {
+      id: "todolist",
       imgSrc: print,
       altText: t("projects.todolist.alt", "Aplicativo Lista de Tarefas"),
       title: t("projects.todolist.title", "Lista de Tarefas"),
@@ -160,6 +186,7 @@ const Work = () => {
       link: "https://yagolist.netlify.app/",
     },
     {
+      id: "gt",
       imgSrc: guto,
       altText: t("projects.gt.alt", "Website GT Personal Trainer"),
       title: t("projects.gt.title", "GT Personal Trainer"),
@@ -172,6 +199,7 @@ const Work = () => {
       link: "https://github.com/yagovysk/Projeto-Guto",
     },
     {
+      id: "phbytes",
       imgSrc: paulo,
       altText: t("projects.phbytes.alt", "Website Ph Bytes"),
       title: t("projects.phbytes.title", "Ph Bytes"),
@@ -184,6 +212,7 @@ const Work = () => {
       link: "https://phso.com.br/",
     },
     {
+      id: "bodegueira",
       imgSrc: bodegueira,
       altText: t("projects.bodegueira.alt", "Bodegueira Charcutaria & Cia"),
       title: t("projects.bodegueira.title", "Bodegueira Charcutaria & Cia"),
@@ -194,8 +223,10 @@ const Work = () => {
       ),
       technologies: "HTML, WhatsApp API, CSS3 e Javascript",
       link: "https://github.com/yagovysk/Bodegueira-Charcutaria",
+      caseStudyId: "bodegueira",
     },
     {
+      id: "lacos",
       imgSrc: lacos,
       altText: t("projects.lacos.alt", "Website Laços e Confeitos"),
       title: t("projects.lacos.title", "Laços e Confeitos"),
@@ -206,8 +237,10 @@ const Work = () => {
       ),
       technologies: "React, CSS3, JavaScript",
       link: "https://lacoseconfeitos.netlify.app/",
+      caseStudyId: "lacos-e-confeitos",
     },
     {
+      id: "raha",
       imgSrc: raha,
       altText: t("projects.raha.alt", "Website Raha Saúde e Estética"),
       title: t("projects.raha.title", "Raha Saúde e Estética"),
@@ -220,6 +253,7 @@ const Work = () => {
       link: "https://www.rahaclin.com.br/",
     },
     {
+      id: "vivacqua",
       imgSrc: vivacqua,
       altText: t("projects.vivacqua.alt", "Website Vivacqua Odontologia"),
       title: t("projects.vivacqua.title", "Vivacqua Odontologia"),
@@ -230,8 +264,10 @@ const Work = () => {
       ),
       technologies: "HTML5, Tailwind CSS, JavaScript",
       link: "https://vivacquaondontologiadf.com.br/",
+      caseStudyId: "vivacqua",
     },
     {
+      id: "upcoming",
       imgSrc: pagedev,
       altText: t("projects.upcoming.alt", "Novos projetos em breve"),
       title: t("projects.upcoming.title", "Novos Projetos"),
@@ -244,6 +280,25 @@ const Work = () => {
       link: "#",
     },
   ];
+
+  const caseStudy = selectedCaseStudy
+    ? {
+        title: t(`caseStudies.items.${selectedCaseStudy}.title`, "Case Study"),
+        problem: t(`caseStudies.items.${selectedCaseStudy}.problem`, ""),
+        solution: t(`caseStudies.items.${selectedCaseStudy}.solution`, ""),
+        decisions: t(`caseStudies.items.${selectedCaseStudy}.decisions`, ""),
+        differentials: t(
+          `caseStudies.items.${selectedCaseStudy}.differentials`,
+          "",
+        ),
+        technologies: t(
+          `caseStudies.items.${selectedCaseStudy}.technologies`,
+          "",
+        ),
+        learnings: t(`caseStudies.items.${selectedCaseStudy}.learnings`, ""),
+        nextSteps: t(`caseStudies.items.${selectedCaseStudy}.nextSteps`, ""),
+      }
+    : null;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -442,6 +497,20 @@ const Work = () => {
                         {t("portfolio.viewProject", "Ver Projeto")}
                       </motion.a>
                     )}
+                    {project.caseStudyId && (
+                      <button
+                        type="button"
+                        className="work-btn work-btn-secondary"
+                        onClick={() =>
+                          setSelectedCaseStudy(project.caseStudyId)
+                        }
+                        aria-haspopup="dialog"
+                        aria-controls="case-study-dialog"
+                      >
+                        <FaBookOpen className="btn-icon" aria-hidden="true" />
+                        {t("portfolio.viewCaseStudy", "Ver estudo de caso")}
+                      </button>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -465,6 +534,65 @@ const Work = () => {
           <FaChevronRight aria-hidden="true" />
         </button>
       </motion.div>
+
+      {caseStudy && (
+        <div
+          className="work-modal-overlay"
+          role="presentation"
+          onClick={() => setSelectedCaseStudy(null)}
+        >
+          <article
+            className="work-modal"
+            id="case-study-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="case-study-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="work-modal-close"
+              onClick={() => setSelectedCaseStudy(null)}
+              aria-label={t("common.close", "Fechar")}
+            >
+              <FaTimes aria-hidden="true" />
+            </button>
+            <h3 id="case-study-title">{caseStudy.title}</h3>
+            <p>
+              <strong>{t("caseStudies.problem", "Problema")}: </strong>
+              {caseStudy.problem}
+            </p>
+            <p>
+              <strong>{t("caseStudies.solution", "Solucao")}: </strong>
+              {caseStudy.solution}
+            </p>
+            <p>
+              <strong>
+                {t("caseStudies.decisions", "Decisoes tecnicas")}:{" "}
+              </strong>
+              {caseStudy.decisions}
+            </p>
+            <p>
+              <strong>
+                {t("caseStudies.differentials", "Diferenciais")}:{" "}
+              </strong>
+              {caseStudy.differentials}
+            </p>
+            <p>
+              <strong>{t("caseStudies.technologies", "Tecnologias")}: </strong>
+              {caseStudy.technologies}
+            </p>
+            <p>
+              <strong>{t("caseStudies.learnings", "Aprendizados")}: </strong>
+              {caseStudy.learnings}
+            </p>
+            <p>
+              <strong>{t("caseStudies.nextSteps", "Proximos passos")}: </strong>
+              {caseStudy.nextSteps}
+            </p>
+          </article>
+        </div>
+      )}
     </section>
   );
 };

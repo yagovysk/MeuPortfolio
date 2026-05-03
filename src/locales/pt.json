@@ -4,12 +4,15 @@
     "about": "Sobre",
     "services": "Serviços",
     "portfolio": "Portfólio",
-    "contact": "Contato"
+    "contact": "Contato",
+    "devLab": "Dev Lab",
+    "openMenu": "Abrir menu de navegação",
+    "closeMenu": "Fechar menu de navegação"
   },
   "hero": {
     "name": "Yago Cerqueira Regis",
-    "profession": "Desenvolvedor Full Stack",
-    "tagline": "Eu desenvolvo experiências digitais que fortalecem sua marca e geram oportunidades reais de negócio.",
+    "profession": "Full Stack Developer | IA, SaaS, SEO e Acessibilidade",
+    "tagline": "Desenvolvo landing pages, sistemas web e produtos digitais com foco em performance, acessibilidade, automação com IA e resultado de negócio.",
     "highlights": [
       "Interfaces modernas com foco em conversão.",
       "Código limpo, escalável e orientado a performance.",
@@ -21,7 +24,9 @@
     "downloadCVEN": "Baixar Currículo (EN)",
     "openCVBR": "Abrir Currículo (BR)",
     "openCVEN": "Abrir Currículo (EN)",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "viewProjects": "Ver projetos",
+    "viewDevLab": "Ver Dev Lab"
   },
   "dashboard": {
     "title": "Meu Progresso",
@@ -105,6 +110,7 @@
     "titleSuffix": "Recentes",
     "subtitle": "Projetos que transformam ideias em experiências digitais incríveis",
     "viewProject": "Ver Projeto",
+    "viewCaseStudy": "Ver estudo de caso",
     "technologies": "Tecnologias:",
     "projects": {
       "telegas": {
@@ -324,6 +330,580 @@
       "title": "Novos Projetos",
       "subtitle": "Em Desenvolvimento",
       "description": "Novos cases estão em desenvolvimento com foco em performance, experiência do usuário e resultados de negócio. Em breve, mais projetos estratégicos serão publicados aqui."
+    }
+  },
+  "profileMode": {
+    "title": "Como você quer conhecer meu trabalho?",
+    "subtitle": "Selecione um perfil para destacar os conteúdos mais relevantes.",
+    "options": {
+      "recruiter": "Recrutador",
+      "client": "Cliente",
+      "technical": "Técnico/Dev"
+    },
+    "focus": {
+      "recruiter": [
+        "Projetos técnicos com contexto de negócio",
+        "Arquiteturas e decisões técnicas",
+        "Testes e qualidade de código",
+        "Stack e evolução profissional"
+      ],
+      "client": [
+        "Serviços e benefícios para crescimento",
+        "Landing pages e sistemas com IA",
+        "Prova social com depoimentos",
+        "Contato rápido por WhatsApp"
+      ],
+      "technical": [
+        "Dev Lab com componentes reutilizáveis",
+        "Design patterns aplicados",
+        "Snippets úteis e playgrounds",
+        "Acessibilidade e arquitetura"
+      ]
+    },
+    "quickLinks": {
+      "recruiter": [
+        {
+          "label": "Projetos",
+          "section": "projects-section"
+        },
+        {
+          "label": "Dev Lab",
+          "section": "dev-lab"
+        },
+        {
+          "label": "Produtos autorais",
+          "section": "own-products"
+        }
+      ],
+      "client": [
+        {
+          "label": "Serviços",
+          "section": "services-section"
+        },
+        {
+          "label": "Projetos",
+          "section": "projects-section"
+        },
+        {
+          "label": "Contato",
+          "section": "final-cta"
+        }
+      ],
+      "technical": [
+        {
+          "label": "Dev Lab",
+          "section": "dev-lab"
+        },
+        {
+          "label": "IA no desenvolvimento",
+          "section": "ai-workflow"
+        },
+        {
+          "label": "Arquiteturas",
+          "section": "own-products"
+        }
+      ]
+    }
+  },
+  "devlab": {
+    "eyebrow": "Laboratório Dev",
+    "title": "Yago Dev Lab",
+    "subtitle": "Experimentos, componentes, padrões e decisões técnicas criadas por mim.",
+    "tabsAria": "Categorias do Dev Lab",
+    "tabs": {
+      "playground": "Playground",
+      "components": "Componentes",
+      "patterns": "Design Patterns",
+      "tests": "Testes",
+      "accessibility": "Acessibilidade",
+      "architecture": "Arquitetura",
+      "snippets": "Snippets"
+    },
+    "copyCode": "Copiar código",
+    "copyCodeAria": "Copiar código do exemplo",
+    "copied": "Copiado",
+    "copiedMessage": "Código copiado com sucesso",
+    "preview": "Preview",
+    "technologies": "Tecnologias",
+    "accessibilityNote": "Observação de acessibilidade",
+    "whenToUse": "Quando usar",
+    "before": "Antes",
+    "after": "Depois",
+    "diagram": "Diagrama",
+    "technicalDecisions": "Decisões técnicas",
+    "problemsSolved": "Problemas resolvidos",
+    "footerNote": "Todos os exemplos são educacionais e focados em reuso, negócio e acessibilidade.",
+    "components": {
+      "items": {
+        "futuristic-button": {
+          "name": "Botão futurista com hover/focus",
+          "description": "Componente reutilizável com foco visível, boa área de clique e estados visuais claros.",
+          "a11y": "Mantém foco visível e tamanho mínimo de clique de 44px."
+        },
+        "project-card": {
+          "name": "Card de projeto",
+          "description": "Estrutura de card com problema, solução, tecnologias e CTA para estudo de caso.",
+          "a11y": "Usa heading semântico e link descritivo."
+        },
+        "pricing-card": {
+          "name": "Card de preço/SaaS",
+          "description": "Card para planos com destaque de valor e recursos.",
+          "a11y": "Mantém hierarquia clara e botão acionável via teclado."
+        },
+        "whatsapp-cta": {
+          "name": "CTA para WhatsApp",
+          "description": "Helper para gerar links de contato com mensagem pré-preenchida.",
+          "a11y": "Evita ambiguidades de ação no botão final."
+        },
+        "tech-badge": {
+          "name": "Badge de tecnologia",
+          "description": "Badge simples para destacar stack e categorias.",
+          "a11y": "Contraste adequado e texto legível em tamanhos menores."
+        },
+        "accessible-modal": {
+          "name": "Modal acessível",
+          "description": "Exemplo de modal com aria-modal, título e escape para fechar.",
+          "a11y": "Controle de foco e fechamento por teclado."
+        },
+        "toast-notification": {
+          "name": "Toast/notificação",
+          "description": "Feedback breve para cópia de código e ações de interface.",
+          "a11y": "Usa aria-live para anunciar mudanças sem interromper navegação."
+        },
+        "input-accessible-error": {
+          "name": "Input com erro acessível",
+          "description": "Campo com erro ligado ao texto de apoio por aria-describedby.",
+          "a11y": "Relaciona erro ao campo com aria-invalid e id único."
+        }
+      }
+    },
+    "patterns": {
+      "items": {
+        "strategy": {
+          "name": "Strategy Pattern",
+          "problem": "Resolve variações de regra de negócio sem criar if/else excessivo.",
+          "where": "Aplico em cupons, descontos, frete e meios de pagamento.",
+          "summary": "Uso esse padrão quando quero expandir regras com segurança e baixo acoplamento."
+        },
+        "factory": {
+          "name": "Factory Pattern",
+          "problem": "Evita criação manual repetida de objetos com comportamentos diferentes.",
+          "where": "Aplico em geração de layouts, agentes de IA e fluxos de checkout.",
+          "summary": "Centraliza criação e facilita testes e manutenção."
+        },
+        "adapter": {
+          "name": "Adapter Pattern",
+          "problem": "Padroniza integrações quando APIs externas têm formatos diferentes.",
+          "where": "Aplico em Mercado Pago, Uber Delivery, WhatsApp e provedores externos.",
+          "summary": "Isola mudanças externas sem quebrar domínio interno."
+        },
+        "observer": {
+          "name": "Observer Pattern",
+          "problem": "Sincroniza múltiplos consumidores quando o estado muda.",
+          "where": "Aplico em carrinho, notificações e eventos em tempo real.",
+          "summary": "Mantém desacoplamento entre origem do evento e consumidores."
+        },
+        "repository": {
+          "name": "Repository Pattern",
+          "problem": "Separa regras de domínio da tecnologia de persistência.",
+          "where": "Aplico em acesso a dados de produtos, pedidos, usuários e tenants.",
+          "summary": "Facilita testes e troca de infraestrutura de dados."
+        },
+        "command": {
+          "name": "Command Pattern",
+          "problem": "Encapsula ações complexas e facilita auditoria e reexecução.",
+          "where": "Aplico em criar pedido, cancelar, aplicar cupom e notificar.",
+          "summary": "Padroniza execução de ações e simplifica pipelines."
+        }
+      }
+    },
+    "tests": {
+      "categories": {
+        "front-end": "Front-end",
+        "back-end": "Back-end",
+        "regra": "Regra de negócio",
+        "seguranca": "Segurança"
+      },
+      "items": {
+        "react-component": {
+          "name": "Teste de componente React",
+          "validation": "Valida renderização com nome acessível e comportamento esperado.",
+          "technicalExplanation": "Garante que UI crítica continue funcional após refatorações."
+        },
+        "accessible-form": {
+          "name": "Teste de formulário com erro acessível",
+          "validation": "Verifica aria-invalid e aria-describedby nos campos com erro.",
+          "technicalExplanation": "Confirma conformidade de UX e acessibilidade no fluxo de envio."
+        },
+        "api-create-product": {
+          "name": "Teste de API criando produto",
+          "validation": "Valida criação de recurso com tenant correto.",
+          "technicalExplanation": "Previne inconsistências de dados em ambientes multi-tenant."
+        },
+        "tenant-isolation": {
+          "name": "Teste impedindo acesso entre tenants",
+          "validation": "Garante que tenant A não leia dados do tenant B.",
+          "technicalExplanation": "Demonstra maturidade de segurança e isolamento de dados."
+        },
+        "currency-format": {
+          "name": "Teste de formatação de moeda",
+          "validation": "Valida padrão BRL com separadores corretos.",
+          "technicalExplanation": "Evita regressões em cálculos e exibição de preços."
+        },
+        "cart-rule": {
+          "name": "Teste de carrinho",
+          "validation": "Valida regra de frete grátis acima de valor mínimo.",
+          "technicalExplanation": "Protege regras comerciais de alto impacto no faturamento."
+        }
+      }
+    },
+    "snippets": {
+      "items": {
+        "format-currency": {
+          "name": "formatCurrency para BRL",
+          "description": "Formata valores numéricos no padrão monetário brasileiro.",
+          "whenToUse": "Use em cards, checkout e dashboards financeiros."
+        },
+        "create-whatsapp-link": {
+          "name": "createWhatsAppLink",
+          "description": "Monta URL do WhatsApp com número normalizado e texto.",
+          "whenToUse": "Use em formulários de contato e CTAs rápidos."
+        },
+        "use-local-storage": {
+          "name": "useLocalStorage",
+          "description": "Hook para persistir preferências no navegador.",
+          "whenToUse": "Use para tema, idioma e perfil de visualização."
+        },
+        "zod-validation": {
+          "name": "Validação com Zod",
+          "description": "Schema de validação tipado para entradas de formulário.",
+          "whenToUse": "Use para padronizar validações no front e no back."
+        },
+        "debounce": {
+          "name": "debounce",
+          "description": "Atrasa execução para reduzir chamadas repetidas.",
+          "whenToUse": "Use em busca, autocomplete e filtros."
+        },
+        "slugify": {
+          "name": "Função para gerar slug",
+          "description": "Converte texto em slug amigável para URL.",
+          "whenToUse": "Use em CMS, blogs e páginas dinâmicas."
+        },
+        "class-helper": {
+          "name": "Helper de classes CSS",
+          "description": "Concatena classes condicionais de forma limpa.",
+          "whenToUse": "Use em componentes com múltiplos estados visuais."
+        },
+        "api-error-handler": {
+          "name": "Tratamento básico de erro em API",
+          "description": "Normaliza mensagens de erro para UX consistente.",
+          "whenToUse": "Use em integrações HTTP com fallback amigável."
+        }
+      }
+    },
+    "accessibilityLab": {
+      "items": {
+        "focus-visible": {
+          "title": "Foco visível",
+          "before": "Navegação sem indicação clara de foco.",
+          "after": "Anel de foco com contraste alto e offset.",
+          "explanation": "Foco visível facilita navegação por teclado e leitores de tela.",
+          "code": ":focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }",
+          "wcag": "2.4.7 Focus Visible"
+        },
+        "heading-structure": {
+          "title": "Estrutura correta de headings",
+          "before": "Uso visual de títulos sem hierarquia semântica.",
+          "after": "Hierarquia h1-h2-h3 consistente.",
+          "explanation": "Melhora navegação assistiva e SEO técnico.",
+          "code": "<h1>Hero</h1> <h2>Dev Lab</h2> <h3>Patterns</h3>",
+          "wcag": "1.3.1 Info and Relationships"
+        },
+        "modal-accessible": {
+          "title": "Modal acessível",
+          "before": "Modal sem controle de foco e sem Escape.",
+          "after": "Dialog com aria-modal e fechamento por teclado.",
+          "explanation": "Evita perda de contexto para usuários de teclado.",
+          "code": "<div role='dialog' aria-modal='true' aria-labelledby='title' />",
+          "wcag": "2.1.1 Keyboard"
+        },
+        "aria-describedby": {
+          "title": "Campo com erro usando aria-describedby",
+          "before": "Mensagem de erro não associada ao input.",
+          "after": "Input aponta para descrição de erro com id único.",
+          "explanation": "Leitores de tela anunciam erro junto ao campo.",
+          "code": "<input aria-invalid='true' aria-describedby='email-error' />",
+          "wcag": "3.3.1 Error Identification"
+        },
+        "button-accessible-name": {
+          "title": "Botão com nome acessível",
+          "before": "Ícone sem texto alternativo.",
+          "after": "Botão com aria-label descritivo.",
+          "explanation": "Nome acessível melhora compreensão da ação.",
+          "code": "<button aria-label='Copiar código'><Icon /></button>",
+          "wcag": "4.1.2 Name, Role, Value"
+        },
+        "color-contrast": {
+          "title": "Contraste adequado",
+          "before": "Texto claro em fundo claro.",
+          "after": "Relação mínima de contraste aplicada no tema.",
+          "explanation": "Garante legibilidade em diferentes telas.",
+          "code": ".text { color: #f3f8ff; background: #041326; }",
+          "wcag": "1.4.3 Contrast (Minimum)"
+        },
+        "keyboard-navigation": {
+          "title": "Navegação por teclado",
+          "before": "Interações dependentes de mouse.",
+          "after": "Todos os controles com tab, enter e escape.",
+          "explanation": "Permite operação completa sem ponteiro.",
+          "code": "button, a e inputs focáveis com ordem lógica",
+          "wcag": "2.1.1 Keyboard"
+        },
+        "image-alt": {
+          "title": "Texto alternativo em imagens",
+          "before": "Imagem relevante com alt vazio.",
+          "after": "Alt descritivo e contextual.",
+          "explanation": "Ajuda leitores de tela e indexação.",
+          "code": "<img alt='Preview do projeto Togyro Delivery IA' />",
+          "wcag": "1.1.1 Non-text Content"
+        },
+        "reduced-motion": {
+          "title": "Respeito a prefers-reduced-motion",
+          "before": "Animações pesadas em todos os cenários.",
+          "after": "Redução de animações quando usuário preferir.",
+          "explanation": "Diminui desconforto vestibular e melhora performance.",
+          "code": "@media (prefers-reduced-motion: reduce) { * { animation: none; } }",
+          "wcag": "2.3.3 Animation from Interactions"
+        }
+      }
+    },
+    "architectures": {
+      "items": {
+        "landing-ai-agent": {
+          "name": "Landing page com agente de IA",
+          "diagram": "Cliente -> Landing -> Agente IA -> WhatsApp CRM",
+          "technologies": "React, Node.js, WhatsApp API",
+          "decisions": "Fluxo simples de entrada para reduzir fricção na conversão.",
+          "problemsSolved": "Atendimento inicial rápido e qualificação automática."
+        },
+        "saas-multitenant": {
+          "name": "SaaS multi-tenant",
+          "diagram": "Tenant -> Frontend -> API -> DB com isolamento por tenantId",
+          "technologies": "Next.js, NestJS, PostgreSQL",
+          "decisions": "Isolamento por tenant e autorização por contexto.",
+          "problemsSolved": "Segurança e escalabilidade para múltiplos clientes."
+        },
+        "delivery-ai": {
+          "name": "Delivery com IA",
+          "diagram": "Cliente -> PWA -> Agente IA -> Carrinho -> Checkout -> Restaurante",
+          "technologies": "PWA, IA, WebSocket",
+          "decisions": "Eventos em tempo real para status de pedido.",
+          "problemsSolved": "Redução de falhas no atendimento e aumento de conversão."
+        },
+        "ecommerce-admin": {
+          "name": "E-commerce com painel administrativo",
+          "diagram": "Cliente -> Loja -> API -> Painel Admin -> Relatórios",
+          "technologies": "React, Node, Postgres",
+          "decisions": "Separação entre experiência de compra e gestão.",
+          "problemsSolved": "Operação diária com visão de métricas e estoque."
+        },
+        "web-game-reward-ads": {
+          "name": "Jogo web com anúncios recompensados",
+          "diagram": "Jogador -> Sessão de jogo -> Ad Reward -> Inventário",
+          "technologies": "JavaScript, Canvas, Ads SDK",
+          "decisions": "Recompensa opcional para manter experiência equilibrada.",
+          "problemsSolved": "Monetização sem quebrar engajamento."
+        },
+        "portfolio-virtual-agent": {
+          "name": "Portfolio com agente virtual",
+          "diagram": "Visitante -> Portfólio -> Assistente -> Recomendações de seção",
+          "technologies": "React, IA, Context API",
+          "decisions": "Orientação de navegação baseada em intenção do visitante.",
+          "problemsSolved": "Aumenta retenção e descoberta de conteúdo relevante."
+        }
+      }
+    },
+    "playground": {
+      "phone": "Telefone",
+      "message": "Mensagem",
+      "label": "Texto",
+      "product": "Produto",
+      "price": "Preço",
+      "tag": "Tag",
+      "base": "Valor base",
+      "discount": "Desconto (%)",
+      "finalTotal": "Total final",
+      "layout": "Layout",
+      "context": "Contexto",
+      "layoutDescriptions": {
+        "landing": "Layout focado em conversão rápida com CTA principal.",
+        "dashboard": "Layout orientado a dados e produtividade da operação.",
+        "catalog": "Layout focado em navegação por produtos e descoberta."
+      },
+      "items": {
+        "whatsapp-generator": {
+          "name": "Gerador de link para WhatsApp"
+        },
+        "cta-generator": {
+          "name": "Gerador de botão CTA"
+        },
+        "product-card-preview": {
+          "name": "Preview de card de produto"
+        },
+        "discount-simulator": {
+          "name": "Simulador de cálculo de desconto"
+        },
+        "layout-choice": {
+          "name": "Simulador de escolha de layout"
+        },
+        "agent-message": {
+          "name": "Simulador de mensagem de agente IA"
+        }
+      }
+    }
+  },
+  "aiWorkflow": {
+    "title": "IA como ferramenta, não como muleta",
+    "description": "Uso IA para acelerar desenvolvimento, gerar alternativas e validar ideias, mas cada solução passa por análise de regra de negócio, revisão de segurança, testes, acessibilidade e decisão técnica humana.",
+    "steps": {
+      "problem-understanding": {
+        "title": "Entendimento do problema",
+        "description": "Defino contexto, regras e restrições antes de gerar qualquer solução."
+      },
+      "ai-support": {
+        "title": "Apoio da IA",
+        "description": "Uso IA para explorar alternativas, cenários e drafts de implementação."
+      },
+      "technical-review": {
+        "title": "Revisão técnica",
+        "description": "Valido arquitetura, segurança, acessibilidade e impacto de manutenção."
+      },
+      "tests-validation": {
+        "title": "Testes e validação",
+        "description": "Crio testes para garantir regra de negócio, estabilidade e regressão mínima."
+      },
+      "real-delivery": {
+        "title": "Entrega real",
+        "description": "Entrego solução orientada a resultado, com documentação e próximos passos."
+      }
+    }
+  },
+  "ownProducts": {
+    "title": "Produtos autorais",
+    "subtitle": "Projetos próprios que conectam tecnologia, produto e visão de negócio.",
+    "stack": "Stack",
+    "problemSolved": "Problema resolvido",
+    "status": "Status",
+    "viewMore": "Ver mais",
+    "items": {
+      "togyro-delivery-ai": {
+        "name": "Togyro Delivery com IA",
+        "description": "Plataforma para delivery com automação inteligente no atendimento.",
+        "stack": "Next.js, NestJS, PostgreSQL, IA",
+        "problemSolved": "Escala atendimento e acelera conversão via WhatsApp.",
+        "status": "Em desenvolvimento",
+        "url": "https://togyro-web.onrender.com/"
+      },
+      "togyro-store": {
+        "name": "Togyro Store",
+        "description": "SaaS para criação de lojas e páginas de venda.",
+        "stack": "Ruby on Rails, PostgreSQL",
+        "problemSolved": "Reduz tempo de lançamento de operações digitais.",
+        "status": "Experimental",
+        "url": "https://github.com/yagovysk/Togyro_store"
+      },
+      "togyro-space": {
+        "name": "Togyro Space",
+        "description": "Ambiente de experimentação para produtos e integrações.",
+        "stack": "React, Node.js",
+        "problemSolved": "Valida ideias com prototipação rápida.",
+        "status": "Em desenvolvimento",
+        "url": "#"
+      },
+      "portfolio-virtual-agent": {
+        "name": "Agente Virtual do Portfólio",
+        "description": "Assistente para orientar visitantes conforme interesse.",
+        "stack": "React, IA, Context API",
+        "problemSolved": "Melhora descoberta de conteúdo relevante.",
+        "status": "Finalizado",
+        "url": "#"
+      },
+      "togyro-dev-lab": {
+        "name": "Yago Dev Lab",
+        "description": "Hub técnico com padrões, testes e componentes reutilizáveis.",
+        "stack": "React, JavaScript, A11y",
+        "problemSolved": "Evidencia capacidade técnica de forma prática.",
+        "status": "Em evolução",
+        "url": "#dev-lab"
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Quer transformar sua ideia em um site, sistema ou agente de IA?",
+    "subtitle": "Posso te ajudar a criar uma presença digital mais profissional com landing pages, sistemas web, lojas online, automações e agentes virtuais.",
+    "requestQuote": "Solicitar orçamento",
+    "contactWhatsapp": "Falar no WhatsApp",
+    "viewDevLab": "Ver Dev Lab"
+  },
+  "caseStudies": {
+    "problem": "Problema",
+    "solution": "Solução",
+    "decisions": "Decisões técnicas",
+    "differentials": "Diferenciais",
+    "technologies": "Tecnologias",
+    "learnings": "Aprendizados",
+    "nextSteps": "Próximos passos",
+    "items": {
+      "togyro-delivery": {
+        "title": "Case Study: Togyro Delivery IA",
+        "problem": "Restaurantes com baixa velocidade de atendimento e perda de pedidos em canais múltiplos.",
+        "solution": "Plataforma com fluxo centralizado, automação de mensagens e apoio de IA no atendimento.",
+        "decisions": "Arquitetura orientada a eventos e serviços isolados por domínio.",
+        "differentials": "Integração com WhatsApp e foco em conversão mobile.",
+        "technologies": "Next.js, NestJS, Fastify, PostgreSQL, IA",
+        "learnings": "Validação contínua de regras comerciais aumenta previsibilidade da operação.",
+        "nextSteps": "Expandir observabilidade e testes de carga para horário de pico."
+      },
+      "vivacqua": {
+        "title": "Case Study: Vivacqua Odontologia",
+        "problem": "Presença digital sem clareza de serviços e baixo desempenho orgânico.",
+        "solution": "Website técnico com SEO, acessibilidade e jornada de contato simplificada.",
+        "decisions": "HTML semântico, otimização de assets e estrutura orientada a conversão local.",
+        "differentials": "Alto foco em performance e credibilidade da marca.",
+        "technologies": "HTML5, Tailwind CSS, JavaScript",
+        "learnings": "SEO técnico bem aplicado melhora aquisição com baixo custo de mídia.",
+        "nextSteps": "Evoluir conteúdo e integrar métricas de funil por serviço."
+      },
+      "bodegueira": {
+        "title": "Case Study: Bodegueira",
+        "problem": "Processo de venda digital fragmentado e pouca escala no atendimento.",
+        "solution": "E-commerce com fluxo enxuto de pedido e integração direta com WhatsApp.",
+        "decisions": "Checkout reduzido para diminuir abandono em dispositivos móveis.",
+        "differentials": "Experiência de compra prática e orientada à conversão.",
+        "technologies": "HTML, CSS, JavaScript, WhatsApp API",
+        "learnings": "Clareza na oferta e CTAs diretos aumentam a taxa de fechamento.",
+        "nextSteps": "Implementar painel de métricas e recuperação de carrinho."
+      },
+      "lacos-e-confeitos": {
+        "title": "Case Study: Laços e Confeitos",
+        "problem": "Marca artesanal com vitrine digital limitada e baixa previsibilidade de pedidos.",
+        "solution": "Site visual com foco em catálogo, orçamento e prova de qualidade.",
+        "decisions": "Priorizar storytelling visual e CTA objetivo para orçamento.",
+        "differentials": "Identidade premium com experiência responsiva.",
+        "technologies": "React, CSS3, JavaScript",
+        "learnings": "Design com intenção comercial aumenta confiança e recorrência.",
+        "nextSteps": "Adicionar módulo de pedido online e automação de follow-up."
+      },
+      "togyro-group-victory": {
+        "title": "Case Study: Togyro Group Victory",
+        "problem": "Necessidade de posicionamento digital premium para empresa de tecnologia.",
+        "solution": "Site institucional com identidade futurista e narrativa de autoridade.",
+        "decisions": "Animações com controle de performance e arquitetura escalável.",
+        "differentials": "Visual marcante com foco em credibilidade e branding.",
+        "technologies": "React, CSS3, JavaScript",
+        "learnings": "Consistência visual acelera percepção de valor da marca.",
+        "nextSteps": "Evoluir para páginas segmentadas por serviço e lead scoring."
+      }
     }
   }
 }

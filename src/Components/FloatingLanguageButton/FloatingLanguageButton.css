@@ -1,10 +1,10 @@
-.floating-language-container {
+﻿.floating-language-container {
   position: fixed;
   top: 50%;
   left: 2rem;
   transform: translateY(-50%);
   z-index: 1000;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
 }
 
 .floating-language-btn {
@@ -65,7 +65,7 @@
   font-family: "Inter", sans-serif;
 }
 
-/* Fallback para quando emojis não são suportados */
+/* Fallback para quando emojis nÃ£o sÃ£o suportados */
 @supports not (font-family: "Apple Color Emoji") {
   .emoji-flag {
     display: none;
@@ -107,7 +107,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   color: #fff;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
   margin-bottom: 0.25rem;
@@ -160,7 +160,7 @@
   font-family: "Inter", sans-serif;
 }
 
-/* Fallback para quando emojis não são suportados nas opções */
+/* Fallback para quando emojis nÃ£o sÃ£o suportados nas opÃ§Ãµes */
 @supports not (font-family: "Apple Color Emoji") {
   .option-flag .emoji-flag {
     display: none;
@@ -308,3 +308,4 @@
     min-width: 130px;
   }
 }
+

@@ -14,12 +14,60 @@ const ENABLE_SESSION_MEMORY = true;
 const SESSION_STORAGE_KEY = "portfolio-virtual-assistant-session-v1";
 const VISIT_STORAGE_KEY = "portfolio-virtual-assistant-visited-v1";
 
+const QUALIFICATION_ORDER = ["projectType", "timeline", "budget"];
+
+const QUALIFICATION_MATCHERS = {
+  projectType: {
+    landing: /(landing|lp|pagina|page)/,
+    webSystem: /(sistema|system|plataforma|platform|dashboard|painel)/,
+    ecommerce: /(e-?commerce|loja|store|shop)/,
+    aiAgent: /(agente|agent|ia|ai|chatbot|assistente)/,
+  },
+  timeline: {
+    fast: /(7|15|rapido|urgent|urgente|quick)/,
+    month: /(1\s*mes|1\s*month|um mes|one month|30 dias)/,
+    quarter: /(2|3|dois|tres|two|three|meses|months)/,
+    flexible: /(analise|flexivel|flexible|conversar|discuss)/,
+  },
+  budget: {
+    low: /(ate|ate\s*3|3k|3000|baixo|low)/,
+    medium: /(3\s*a\s*8|3k\s*-\s*8k|medio|medium|8000|8k)/,
+    high: /(8k\+|acima|high|alto|premium|enterprise)/,
+    discuss: /(conversar|discuss|nao sei|not sure|indefinido)/,
+  },
+};
+
+const detectProfileIntent = (text) => {
+  if (/(recruiter|recrutador|vaga|hiring)/.test(text)) return "recruiter";
+  if (/(cliente|client|orcamento|quote|contratar|hire|projeto)/.test(text))
+    return "client";
+  if (
+    /(dev|developer|tecnico|technical|codigo|code|arquitetura|architecture)/.test(
+      text,
+    )
+  )
+    return "technical";
+  return null;
+};
+
+const emitAssistantEvent = (name, detail) => {
+  try {
+    window.dispatchEvent(
+      new CustomEvent("portfolio-virtual-assistant-event", {
+        detail: { name, ...detail },
+      }),
+    );
+  } catch {
+    // Ignore telemetry failures.
+  }
+};
+
 const LANGUAGE_CONTENT = {
   pt: {
     firstVisitMessage:
-      "Oi! Eu sou o Agente Virtual do Yago. Posso te ajudar com projetos, servicos, sobre e contato, e também com acessibilidade para melhorar sua usabilidade (fonte, contraste, tema e painel de acessibilidade).",
+      "Oi! Eu sou o Agente Virtual do Yago. Uma das novidades aqui e o Yago Dev Lab: um laboratorio tecnico para mostrar na pratica componentes, padroes, testes e acessibilidade, ajudando recrutadores, clientes e devs a entender como as solucoes sao construidas. Posso te guiar por ele ou te mostrar projetos, servicos e contato.",
     initialMessages: [
-      "Oi! Sou o assistente virtual do Yago. Quer ver projetos, servicos ou contato?",
+      "Oi! Sou o assistente virtual do Yago. Uma novidade e o Yago Dev Lab para explorar como as solucoes sao pensadas na pratica. Quer que eu te mostre?",
       "Boas-vindas! Posso te guiar pelo portfolio e ajustar acessibilidade rapidamente.",
       "Oi, tudo bem? Posso te ajudar com informacoes do Yago e melhorias de usabilidade.",
     ],
@@ -56,6 +104,8 @@ const LANGUAGE_CONTENT = {
       "No momento eu respondo sobre projetos, servicos, sobre o Yago e contato. Como este portfolio nao possui backend nem banco de dados, nenhuma informacao e salva.",
       "Posso te ajudar com projetos, servicos, sobre e contato. Este chat nao salva dados porque o site nao usa backend/banco de dados.",
     ],
+    fallbackSuggestionIntro:
+      "Se quiser, posso te guiar por um caminho rapido. Escolha uma opcao:",
     accessibilityReplies: [
       "Posso te ajudar com acessibilidade. Consigo abrir o painel, aumentar fonte, ativar alto contraste, alterar tema e resetar configuracoes.",
       "Perfeito. Vou te auxiliar com acessibilidade para deixar a leitura mais confortavel.",
@@ -69,7 +119,64 @@ const LANGUAGE_CONTENT = {
       about: "sobre",
       services: "servicos",
       contact: "contato",
+      devLab: "yago dev lab",
+      recruiterMode: "sou recrutador",
+      clientMode: "sou cliente",
+      technicalMode: "sou dev",
+      startConsultant: "diagnostico rapido",
     },
+    profileGuidance: {
+      recruiter:
+        "Perfeito. Para recrutador, recomendo ver projetos com contexto, Yago Dev Lab e cases tecnicos.",
+      client:
+        "Excelente. Para cliente, recomendo servicos, diagnostico rapido e contato para proposta.",
+      technical:
+        "Otimo. Para perfil tecnico, o melhor caminho e Yago Dev Lab, arquiteturas e snippets.",
+    },
+    qualification: {
+      intro:
+        "Posso fazer um diagnostico rapido em 3 perguntas para te recomendar o melhor formato de projeto.",
+      doneTitle: "Diagnostico concluido.",
+      summaryTemplate:
+        "Resumo: tipo={{projectType}}, prazo={{timeline}}, investimento={{budget}}.",
+      recommendation:
+        "Com base nisso, recomendo iniciar com escopo objetivo e cronograma por fases para acelerar entrega com seguranca.",
+      questions: {
+        projectType: "Qual tipo de projeto voce quer priorizar?",
+        timeline: "Qual prazo voce imagina para iniciar/entregar?",
+        budget: "Faixa de investimento inicial aproximada?",
+      },
+      options: {
+        projectType: {
+          landing: "Landing page",
+          webSystem: "Sistema web",
+          ecommerce: "E-commerce",
+          aiAgent: "Agente de IA",
+        },
+        timeline: {
+          fast: "7 a 15 dias",
+          month: "Ate 1 mes",
+          quarter: "2 a 3 meses",
+          flexible: "Ainda em analise",
+        },
+        budget: {
+          low: "Ate R$ 3k",
+          medium: "R$ 3k a R$ 8k",
+          high: "Acima de R$ 8k",
+          discuss: "Prefiro conversar",
+        },
+      },
+    },
+    devLabReplies: [
+      "O Yago Dev Lab e um laboratorio tecnico com exemplos reais de componentes, design patterns, testes, acessibilidade e arquitetura.",
+      "No Yago Dev Lab voce consegue validar rapidamente como o Yago pensa codigo, qualidade, acessibilidade e tomada de decisao tecnica.",
+    ],
+    devLabTutorialReply:
+      "Tutorial rapido do Yago Dev Lab:\n1) Abra a secao Dev Lab no menu ou pelo botao da home.\n2) Escolha uma aba: Playground, Components, Patterns, Tests, Accessibility, Architecture ou Snippets.\n3) Leia o contexto do card e, quando existir, copie o codigo para acelerar prototipos.\n4) Use Playground para simular cenarios rapidos e validar ideias antes de implementar.",
+    devLabPurposeReply:
+      "Para que serve: o Yago Dev Lab mostra capacidade tecnica na pratica, reduz tempo de descoberta de solucoes e facilita conversa tecnica com recrutadores, clientes e devs.",
+    devLabHelpReply:
+      "Como pode ajudar: recrutadores avaliam profundidade tecnica, clientes entendem qualidade de entrega e devs aproveitam snippets, patterns e referencias de arquitetura.",
     accessibilityActions: {
       openPanel: "abrir painel de acessibilidade",
       increaseFont: "aumentar fonte",
@@ -112,9 +219,9 @@ const LANGUAGE_CONTENT = {
   },
   en: {
     firstVisitMessage:
-      "Hi! I am Yago's Virtual Agent. I can help with projects, services, about, and contact, and also with accessibility to improve usability (font size, contrast, theme, and accessibility panel).",
+      "Hi! I am Yago's Virtual Agent. One of the new highlights here is Yago Dev Lab: a technical lab that shows components, patterns, tests, and accessibility in practice, helping recruiters, clients, and developers understand how solutions are built. I can guide you through it or show projects, services, and contact.",
     initialMessages: [
-      "Hi! I am Yago's virtual assistant. Want to explore projects, services, or contact?",
+      "Hi! I am Yago's virtual assistant. A new highlight is Yago Dev Lab so you can explore how solutions are designed in practice. Want me to show you?",
       "Welcome! I can guide you through the portfolio and apply accessibility adjustments quickly.",
       "Hi there! I can help with Yago's information and usability improvements.",
     ],
@@ -151,6 +258,8 @@ const LANGUAGE_CONTENT = {
       "Right now I can answer about projects, services, about Yago, and contact. This chat does not store data because this portfolio has no backend/database.",
       "I can help with projects, services, about, and contact. No data is saved because this website runs without backend or database.",
     ],
+    fallbackSuggestionIntro:
+      "If you want, I can guide you through a quick path. Choose one option:",
     accessibilityReplies: [
       "I can help with accessibility. I can open the panel, increase font size, enable high contrast, change theme, and reset settings.",
       "Perfect. I will assist you with accessibility so reading is more comfortable.",
@@ -164,7 +273,64 @@ const LANGUAGE_CONTENT = {
       about: "about",
       services: "services",
       contact: "contact",
+      devLab: "yago dev lab",
+      recruiterMode: "i am a recruiter",
+      clientMode: "i am a client",
+      technicalMode: "i am a developer",
+      startConsultant: "quick diagnosis",
     },
+    profileGuidance: {
+      recruiter:
+        "Great. For recruiters, I recommend projects with business context, Yago Dev Lab, and technical case studies.",
+      client:
+        "Excellent. For clients, I recommend services, quick diagnosis, and direct contact for a proposal.",
+      technical:
+        "Nice. For technical visitors, the best path is Yago Dev Lab, architecture, and snippets.",
+    },
+    qualification: {
+      intro:
+        "I can run a quick 3-question diagnosis to recommend the best project format for your goal.",
+      doneTitle: "Diagnosis completed.",
+      summaryTemplate:
+        "Summary: type={{projectType}}, timeline={{timeline}}, investment={{budget}}.",
+      recommendation:
+        "Based on that, I recommend starting with a focused scope and phased roadmap to speed up delivery safely.",
+      questions: {
+        projectType: "Which project type do you want to prioritize?",
+        timeline: "What timeline do you have in mind to start/deliver?",
+        budget: "What is your initial investment range?",
+      },
+      options: {
+        projectType: {
+          landing: "Landing page",
+          webSystem: "Web system",
+          ecommerce: "E-commerce",
+          aiAgent: "AI agent",
+        },
+        timeline: {
+          fast: "7 to 15 days",
+          month: "Up to 1 month",
+          quarter: "2 to 3 months",
+          flexible: "Still evaluating",
+        },
+        budget: {
+          low: "Up to R$ 3k",
+          medium: "R$ 3k to R$ 8k",
+          high: "Above R$ 8k",
+          discuss: "Prefer to discuss",
+        },
+      },
+    },
+    devLabReplies: [
+      "Yago Dev Lab is a technical lab with practical examples of components, design patterns, testing, accessibility and architecture.",
+      "In Yago Dev Lab you can quickly evaluate how Yago approaches code quality, accessibility and technical decision-making.",
+    ],
+    devLabTutorialReply:
+      "Quick Yago Dev Lab tutorial:\n1) Open the Dev Lab section from the menu or the home CTA.\n2) Pick a tab: Playground, Components, Patterns, Tests, Accessibility, Architecture, or Snippets.\n3) Read the card context and copy the code when available to speed up prototypes.\n4) Use Playground to simulate scenarios before implementation.",
+    devLabPurposeReply:
+      "What it is for: Yago Dev Lab demonstrates technical depth in practice, reduces solution discovery time, and improves technical conversations with recruiters, clients and developers.",
+    devLabHelpReply:
+      "How it helps: recruiters assess engineering depth, clients understand delivery quality, and developers reuse snippets, patterns and architecture references.",
     accessibilityActions: {
       openPanel: "open accessibility panel",
       increaseFont: "increase font size",
@@ -212,41 +378,82 @@ const getBotActions = (content) => ({
     label: content.actions.projects,
     path: "/Portfolio",
     sectionId: "projects-section",
+    kind: "navigate",
   },
   about: {
     label: content.actions.about,
     path: "/About",
     sectionId: "about-section",
+    kind: "navigate",
   },
   services: {
     label: content.actions.services,
     path: "/",
     sectionId: "services-section",
+    kind: "navigate",
   },
   contact: {
     label: content.actions.contact,
     path: "/contato",
     sectionId: "contact-section",
+    kind: "navigate",
+  },
+  devLab: {
+    label: content.actions.devLab,
+    path: "/",
+    sectionId: "dev-lab",
+    kind: "navigate",
+  },
+  recruiterMode: {
+    label: content.actions.recruiterMode,
+    path: "/",
+    sectionId: "profile-mode",
+    kind: "profile",
+    profile: "recruiter",
+  },
+  clientMode: {
+    label: content.actions.clientMode,
+    path: "/",
+    sectionId: "profile-mode",
+    kind: "profile",
+    profile: "client",
+  },
+  technicalMode: {
+    label: content.actions.technicalMode,
+    path: "/",
+    sectionId: "dev-lab",
+    kind: "profile",
+    profile: "technical",
+  },
+  startConsultant: {
+    label: content.actions.startConsultant,
+    command: "start-qualification",
+    kind: "flow",
   },
   accessibilityOpen: {
     label: content.accessibilityActions.openPanel,
     command: "open",
+    kind: "accessibility",
   },
   accessibilityFontUp: {
     label: content.accessibilityActions.increaseFont,
     command: "increase-font",
+    kind: "accessibility",
   },
   accessibilityContrast: {
     label: content.accessibilityActions.toggleContrast,
     command: "toggle-contrast",
+    kind: "accessibility",
   },
   accessibilityDarkTheme: {
     label: content.accessibilityActions.darkTheme,
     command: "set-theme-dark",
+    kind: "accessibility",
   },
   accessibilityReset: {
     label: content.accessibilityActions.resetAll,
     command: "reset-all",
+    kind: "accessibility",
   },
 });
 
@@ -269,8 +476,13 @@ const getInitialMessage = (content, visitContext) => {
     return content.firstVisitMessage;
   }
 
-  if (Array.isArray(content.initialMessages) && content.initialMessages.length) {
-    const randomIndex = Math.floor(Math.random() * content.initialMessages.length);
+  if (
+    Array.isArray(content.initialMessages) &&
+    content.initialMessages.length
+  ) {
+    const randomIndex = Math.floor(
+      Math.random() * content.initialMessages.length,
+    );
     return content.initialMessages[randomIndex];
   }
 
@@ -281,7 +493,12 @@ const createInitialMessages = (content, botActions, visitContext) => [
   createBotMessage(0, getInitialMessage(content, visitContext), {
     actions: [
       botActions.projects,
+      botActions.devLab,
       botActions.services,
+      botActions.startConsultant,
+      botActions.recruiterMode,
+      botActions.clientMode,
+      botActions.technicalMode,
       botActions.about,
       botActions.contact,
       botActions.accessibilityOpen,
@@ -329,8 +546,78 @@ const getProjectReply = (content, botActions) => {
   };
 };
 
-const getBotReply = (input, content, botActions) => {
+const getContextualActions = (intent, botActions) => {
+  if (intent === "recruiter") {
+    return [botActions.projects, botActions.devLab, botActions.recruiterMode];
+  }
+
+  if (intent === "client") {
+    return [
+      botActions.services,
+      botActions.startConsultant,
+      botActions.contact,
+    ];
+  }
+
+  if (intent === "technical") {
+    return [botActions.devLab, botActions.technicalMode, botActions.projects];
+  }
+
+  return [
+    botActions.projects,
+    botActions.devLab,
+    botActions.services,
+    botActions.startConsultant,
+    botActions.contact,
+  ];
+};
+
+const buildQualificationQuestion = (content, botActions, stepKey) => {
+  const stepOptions = content.qualification.options[stepKey];
+  const optionActions = Object.keys(stepOptions).map((optionKey) => ({
+    kind: "flow-answer",
+    step: stepKey,
+    value: optionKey,
+    label: stepOptions[optionKey],
+  }));
+
+  return {
+    text: content.qualification.questions[stepKey],
+    actions: [...optionActions, botActions.contact],
+  };
+};
+
+const resolveQualificationValue = (stepKey, rawText) => {
+  const normalizedText = sanitize(rawText);
+  const stepMatchers = QUALIFICATION_MATCHERS[stepKey] || {};
+
+  return (
+    Object.keys(stepMatchers).find((key) =>
+      stepMatchers[key].test(normalizedText),
+    ) || null
+  );
+};
+
+const formatQualificationSummary = (content, answers) =>
+  content.qualification.summaryTemplate
+    .replace(
+      "{{projectType}}",
+      content.qualification.options.projectType[answers.projectType] ||
+        answers.projectType,
+    )
+    .replace(
+      "{{timeline}}",
+      content.qualification.options.timeline[answers.timeline] ||
+        answers.timeline,
+    )
+    .replace(
+      "{{budget}}",
+      content.qualification.options.budget[answers.budget] || answers.budget,
+    );
+
+const getBotReply = (input, content, botActions, previousIntent) => {
   const text = sanitize(input);
+  const detectedProfileIntent = detectProfileIntent(text);
   const isProjectIntent =
     /(projeto|projetos|portfolio|portifolio|trabalho|trabalhos|project|projects)/.test(
       text,
@@ -342,6 +629,23 @@ const getBotReply = (input, content, botActions) => {
     /(contato|contact|whatsapp|falar|talk|orcamento|quote|contratar|hire)/.test(
       text,
     );
+  const isQuoteIntent =
+    /(orcamento|quote|proposta|proposal|contratar|hire)/.test(text);
+  const isDevLabIntent =
+    /(dev lab|yago dev lab|laboratorio|laboratory|playground|snippet|snippets|pattern|patterns|arquitetura|architecture)/.test(
+      text,
+    );
+  const isDevLabTutorialIntent =
+    /(tutorial|passo a passo|como usar|guia|how to use|walkthrough|guide)/.test(
+      text,
+    ) &&
+    /(dev lab|yago dev lab|laboratorio|laboratory|playground|snippet|pattern)/.test(
+      text,
+    );
+  const isDevLabPurposeIntent =
+    /(para que serve|serve para|qual utilidade|como ajuda|what is it for|purpose|benefit|how can it help)/.test(
+      text,
+    ) && /(dev lab|yago dev lab|laboratorio|laboratory|lab)/.test(text);
   const isGreetingIntent =
     /(ola|oi|hello|hi|tudo bem|bom dia|boa tarde|boa noite|good morning|good afternoon|good evening)/.test(
       text,
@@ -363,7 +667,7 @@ const getBotReply = (input, content, botActions) => {
   if (!text) {
     return {
       text: content.emptyInputReply,
-      actions: [botActions.projects, botActions.services, botActions.contact],
+      actions: getContextualActions(previousIntent, botActions),
     };
   }
 
@@ -380,18 +684,63 @@ const getBotReply = (input, content, botActions) => {
           href: matchedProject.link,
         },
       ],
-      actions: [botActions.projects],
+      actions: [botActions.projects, botActions.devLab, botActions.contact],
+      intent: "recruiter",
+    };
+  }
+
+  if (detectedProfileIntent === "recruiter") {
+    return {
+      text: content.profileGuidance.recruiter,
+      actions: [
+        botActions.projects,
+        botActions.devLab,
+        botActions.recruiterMode,
+      ],
+      intent: "recruiter",
+    };
+  }
+
+  if (detectedProfileIntent === "client") {
+    return {
+      text: content.profileGuidance.client,
+      actions: [
+        botActions.services,
+        botActions.startConsultant,
+        botActions.contact,
+      ],
+      intent: "client",
+    };
+  }
+
+  if (detectedProfileIntent === "technical") {
+    return {
+      text: content.profileGuidance.technical,
+      actions: [
+        botActions.devLab,
+        botActions.technicalMode,
+        botActions.projects,
+      ],
+      intent: "technical",
     };
   }
 
   if (isProjectIntent) {
-    return getProjectReply(content, botActions);
+    return {
+      ...getProjectReply(content, botActions),
+      intent: "recruiter",
+    };
   }
 
   if (isServiceIntent) {
     return {
       text: pickRandomReply(content.servicesReplies),
-      actions: [botActions.services, botActions.contact],
+      actions: [
+        botActions.services,
+        botActions.startConsultant,
+        botActions.contact,
+      ],
+      intent: "client",
     };
   }
 
@@ -399,13 +748,52 @@ const getBotReply = (input, content, botActions) => {
     return {
       text: pickRandomReply(content.aboutReplies),
       actions: [botActions.about, botActions.projects],
+      intent: previousIntent || null,
+    };
+  }
+
+  if (isQuoteIntent) {
+    return {
+      text: content.qualification.intro,
+      actions: [
+        botActions.startConsultant,
+        botActions.contact,
+        botActions.services,
+      ],
+      startQualification: true,
+      intent: "client",
     };
   }
 
   if (isContactIntent) {
     return {
       text: pickRandomReply(content.contactReplies),
-      actions: [botActions.contact],
+      actions: [botActions.contact, botActions.startConsultant],
+      intent: "client",
+    };
+  }
+
+  if (isDevLabTutorialIntent) {
+    return {
+      text: `${content.devLabTutorialReply}\n\n${content.devLabHelpReply}`,
+      actions: [botActions.devLab, botActions.projects, botActions.contact],
+      intent: "technical",
+    };
+  }
+
+  if (isDevLabPurposeIntent) {
+    return {
+      text: `${content.devLabPurposeReply}\n${content.devLabHelpReply}`,
+      actions: [botActions.devLab, botActions.projects, botActions.contact],
+      intent: "technical",
+    };
+  }
+
+  if (isDevLabIntent) {
+    return {
+      text: `${pickRandomReply(content.devLabReplies)}\n${content.devLabPurposeReply}`,
+      actions: [botActions.devLab, botActions.projects, botActions.contact],
+      intent: "technical",
     };
   }
 
@@ -417,6 +805,7 @@ const getBotReply = (input, content, botActions) => {
       ),
       actions: [botActions.accessibilityFontUp, botActions.accessibilityOpen],
       accessibilityCommand: "increase-font",
+      intent: previousIntent || null,
     };
   }
 
@@ -428,6 +817,7 @@ const getBotReply = (input, content, botActions) => {
       ),
       actions: [botActions.accessibilityContrast, botActions.accessibilityOpen],
       accessibilityCommand: "toggle-contrast",
+      intent: previousIntent || null,
     };
   }
 
@@ -437,8 +827,12 @@ const getBotReply = (input, content, botActions) => {
         "{{target}}",
         content.accessibilityActions.darkTheme,
       ),
-      actions: [botActions.accessibilityDarkTheme, botActions.accessibilityOpen],
+      actions: [
+        botActions.accessibilityDarkTheme,
+        botActions.accessibilityOpen,
+      ],
       accessibilityCommand: "set-theme-dark",
+      intent: previousIntent || null,
     };
   }
 
@@ -450,6 +844,7 @@ const getBotReply = (input, content, botActions) => {
       ),
       actions: [botActions.accessibilityReset, botActions.accessibilityOpen],
       accessibilityCommand: "reset-all",
+      intent: previousIntent || null,
     };
   }
 
@@ -463,6 +858,7 @@ const getBotReply = (input, content, botActions) => {
         botActions.accessibilityDarkTheme,
         botActions.accessibilityReset,
       ],
+      intent: previousIntent || null,
     };
   }
 
@@ -471,21 +867,17 @@ const getBotReply = (input, content, botActions) => {
       text: pickRandomReply(content.greetingReplies),
       actions: [
         botActions.projects,
+        botActions.devLab,
         botActions.services,
-        botActions.about,
-        botActions.contact,
+        botActions.startConsultant,
       ],
     };
   }
 
   return {
-    text: pickRandomReply(content.unknownReplies),
-    actions: [
-      botActions.projects,
-      botActions.services,
-      botActions.about,
-      botActions.contact,
-    ],
+    text: `${pickRandomReply(content.unknownReplies)}\n${content.fallbackSuggestionIntro}`,
+    actions: getContextualActions(previousIntent, botActions),
+    intent: previousIntent || null,
   };
 };
 
@@ -502,6 +894,12 @@ const VirtualAssistant = () => {
   );
   const chatBodyRef = useRef(null);
   const pendingScrollRef = useRef(null);
+  const userIntentRef = useRef(null);
+  const qualificationRef = useRef({
+    active: false,
+    stepIndex: 0,
+    answers: {},
+  });
   const messageCounterRef = useRef(1);
   const hasLoadedSessionRef = useRef(false);
   const navigate = useNavigate();
@@ -541,6 +939,24 @@ const VirtualAssistant = () => {
       if (Number.isInteger(parsedCounter) && parsedCounter >= 1) {
         messageCounterRef.current = parsedCounter;
       }
+
+      if (typeof parsed?.intent === "string") {
+        userIntentRef.current = parsed.intent;
+      }
+
+      if (parsed?.qualification && typeof parsed.qualification === "object") {
+        qualificationRef.current = {
+          active: Boolean(parsed.qualification.active),
+          stepIndex: Number.isInteger(parsed.qualification.stepIndex)
+            ? parsed.qualification.stepIndex
+            : 0,
+          answers:
+            parsed.qualification.answers &&
+            typeof parsed.qualification.answers === "object"
+              ? parsed.qualification.answers
+              : {},
+        };
+      }
     } catch {
       setMessages(
         createInitialMessages(content, botActions, visitContextRef.current),
@@ -557,7 +973,11 @@ const VirtualAssistant = () => {
         return prev;
       }
 
-      return createInitialMessages(content, botActions, visitContextRef.current);
+      return createInitialMessages(
+        content,
+        botActions,
+        visitContextRef.current,
+      );
     });
   }, [content, botActions]);
 
@@ -571,6 +991,8 @@ const VirtualAssistant = () => {
           messages,
           isOpen,
           messageCounter: messageCounterRef.current,
+          intent: userIntentRef.current,
+          qualification: qualificationRef.current,
         }),
       );
     } catch {
@@ -618,7 +1040,87 @@ const VirtualAssistant = () => {
   };
 
   const appendBotReply = (userText) => {
-    const reply = getBotReply(userText, content, botActions);
+    const handleQualificationStep = (rawAnswer, forcedValue = null) => {
+      const flow = qualificationRef.current;
+      if (!flow.active) return null;
+
+      const currentStep = QUALIFICATION_ORDER[flow.stepIndex];
+      if (!currentStep) {
+        qualificationRef.current = { active: false, stepIndex: 0, answers: {} };
+        return null;
+      }
+
+      const resolvedValue =
+        forcedValue || resolveQualificationValue(currentStep, rawAnswer);
+
+      if (!resolvedValue) {
+        return buildQualificationQuestion(content, botActions, currentStep);
+      }
+
+      const nextAnswers = {
+        ...flow.answers,
+        [currentStep]: resolvedValue,
+      };
+
+      const nextIndex = flow.stepIndex + 1;
+
+      if (nextIndex < QUALIFICATION_ORDER.length) {
+        qualificationRef.current = {
+          active: true,
+          stepIndex: nextIndex,
+          answers: nextAnswers,
+        };
+
+        return buildQualificationQuestion(
+          content,
+          botActions,
+          QUALIFICATION_ORDER[nextIndex],
+        );
+      }
+
+      qualificationRef.current = { active: false, stepIndex: 0, answers: {} };
+
+      return {
+        text: `${content.qualification.doneTitle}\n${formatQualificationSummary(content, nextAnswers)}\n${content.qualification.recommendation}`,
+        actions: [
+          botActions.services,
+          botActions.projects,
+          botActions.devLab,
+          botActions.contact,
+        ],
+        intent: "client",
+      };
+    };
+
+    let reply = null;
+
+    if (qualificationRef.current.active) {
+      reply = handleQualificationStep(userText);
+    }
+
+    if (!reply) {
+      reply = getBotReply(userText, content, botActions, userIntentRef.current);
+    }
+
+    if (reply.startQualification) {
+      qualificationRef.current = { active: true, stepIndex: 0, answers: {} };
+      const firstQuestion = buildQualificationQuestion(
+        content,
+        botActions,
+        QUALIFICATION_ORDER[0],
+      );
+      reply = {
+        ...reply,
+        text: `${reply.text}\n\n${firstQuestion.text}`,
+        actions: firstQuestion.actions,
+      };
+    }
+
+    if (reply.intent) {
+      userIntentRef.current = reply.intent;
+      emitAssistantEvent("intent-detected", { intent: reply.intent });
+    }
+
     const botMessageId = getNextMessageId();
 
     if (reply.accessibilityCommand) {
@@ -660,7 +1162,12 @@ const VirtualAssistant = () => {
   };
 
   const handleActionClick = (action) => {
-    if (action.command) {
+    emitAssistantEvent("action-click", {
+      label: action.label,
+      kind: action.kind || "navigate",
+    });
+
+    if (action.kind === "accessibility") {
       window.dispatchEvent(
         new CustomEvent("portfolio-accessibility-command", {
           detail: { command: action.command },
@@ -671,8 +1178,90 @@ const VirtualAssistant = () => {
         "{{target}}",
         action.label,
       );
-      setMessages((prev) => [...prev, createBotMessage(botMessageId, doneText)]);
+      setMessages((prev) => [
+        ...prev,
+        createBotMessage(botMessageId, doneText),
+      ]);
       return;
+    }
+
+    if (action.kind === "flow") {
+      qualificationRef.current = { active: true, stepIndex: 0, answers: {} };
+      const firstQuestion = buildQualificationQuestion(
+        content,
+        botActions,
+        QUALIFICATION_ORDER[0],
+      );
+      const botMessageId = getNextMessageId();
+      setMessages((prev) => [
+        ...prev,
+        createBotMessage(
+          botMessageId,
+          `${content.qualification.intro}\n\n${firstQuestion.text}`,
+          {
+            actions: firstQuestion.actions,
+          },
+        ),
+      ]);
+      userIntentRef.current = "client";
+      return;
+    }
+
+    if (action.kind === "flow-answer") {
+      if (!qualificationRef.current.active) {
+        qualificationRef.current = { active: true, stepIndex: 0, answers: {} };
+      }
+
+      const currentStep =
+        QUALIFICATION_ORDER[qualificationRef.current.stepIndex];
+      const stepToAnswer = currentStep || action.step;
+      const nextAnswers = {
+        ...qualificationRef.current.answers,
+        [stepToAnswer]: action.value,
+      };
+      const nextIndex = qualificationRef.current.stepIndex + 1;
+
+      if (nextIndex < QUALIFICATION_ORDER.length) {
+        qualificationRef.current = {
+          active: true,
+          stepIndex: nextIndex,
+          answers: nextAnswers,
+        };
+        const nextQuestion = buildQualificationQuestion(
+          content,
+          botActions,
+          QUALIFICATION_ORDER[nextIndex],
+        );
+        const botMessageId = getNextMessageId();
+        setMessages((prev) => [
+          ...prev,
+          createBotMessage(botMessageId, nextQuestion.text, {
+            actions: nextQuestion.actions,
+          }),
+        ]);
+      } else {
+        qualificationRef.current = { active: false, stepIndex: 0, answers: {} };
+        const botMessageId = getNextMessageId();
+        const doneText = `${content.qualification.doneTitle}\n${formatQualificationSummary(content, nextAnswers)}\n${content.qualification.recommendation}`;
+        setMessages((prev) => [
+          ...prev,
+          createBotMessage(botMessageId, doneText, {
+            actions: [
+              botActions.services,
+              botActions.projects,
+              botActions.devLab,
+              botActions.contact,
+            ],
+          }),
+        ]);
+        userIntentRef.current = "client";
+      }
+
+      return;
+    }
+
+    if (action.kind === "profile" && action.profile) {
+      userIntentRef.current = action.profile;
     }
 
     goToSection(action.path, action.sectionId);
@@ -700,6 +1289,8 @@ const VirtualAssistant = () => {
     setInputValue("");
     messageCounterRef.current = 1;
     pendingScrollRef.current = null;
+    userIntentRef.current = null;
+    qualificationRef.current = { active: false, stepIndex: 0, answers: {} };
 
     if (ENABLE_SESSION_MEMORY) {
       try {

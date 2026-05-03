@@ -1,4 +1,4 @@
-/* Dashboard Principal */
+﻿/* Dashboard Principal */
 .dashboard {
   position: relative;
   min-height: 100vh;
@@ -117,7 +117,7 @@
 
 .title-gradient {
   font-size: 4rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 800;
   background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899, #f59e0b);
   -webkit-background-clip: text;
@@ -130,7 +130,7 @@
 
 .dashboard-subtitle {
   font-size: 1.4rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
   letter-spacing: 1px;
@@ -200,7 +200,7 @@
   z-index: 2;
 }
 
-/* Ícones */
+/* Ãcones */
 .dashboard-icon-container {
   margin-bottom: 25px;
 }
@@ -223,7 +223,7 @@
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
-/* Números */
+/* NÃºmeros */
 .dashboard-number {
   display: flex;
   align-items: center;
@@ -234,7 +234,7 @@
 
 .count-number {
   font-size: 4rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 900;
   color: #fff;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -243,7 +243,7 @@
 
 .plus-sign {
   font-size: 2.5rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.8);
   margin-top: -10px;
@@ -252,7 +252,7 @@
 /* Labels */
 .dashboard-label {
   font-size: 1.2rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -310,7 +310,7 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
 }
@@ -397,3 +397,4 @@
     display: none;
   }
 }
+

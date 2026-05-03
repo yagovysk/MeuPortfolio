@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import React, { useEffect, useRef, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { RiApps2Line } from "react-icons/ri";
@@ -9,6 +9,8 @@ import "./Menu.css";
 export function Menu() {
   const [showMenu, setShowMenu] = useState(false);
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
   const isNarrowNavigation = useMediaQuery("(max-width: 1150px)");
   const isCoarsePointer = useMediaQuery("(pointer: coarse)");
   const isCompactNavigation = isNarrowNavigation || isCoarsePointer;
@@ -24,6 +26,26 @@ export function Menu() {
   const closeMenu = () => {
     if (!isCompactNavigation) return;
     setShowMenu(false);
+  };
+
+  const handleDevLabNavigation = (event) => {
+    event.preventDefault();
+    closeMenu();
+
+    if (location.pathname.toLowerCase() !== "/") {
+      navigate("/#dev-lab");
+      return;
+    }
+
+    if (window.location.hash !== "#dev-lab") {
+      window.history.replaceState(null, "", "#dev-lab");
+    }
+
+    window.dispatchEvent(
+      new CustomEvent("portfolio-scroll-to-section", {
+        detail: { sectionId: "dev-lab" },
+      }),
+    );
   };
 
   useEffect(() => {
@@ -119,6 +141,16 @@ export function Menu() {
               tabIndex={linkTabIndex}
             >
               {t("nav.portfolio", "Portfolio")}
+            </Link>
+          </li>
+          <li className="item-list">
+            <Link
+              to="/#dev-lab"
+              className="link"
+              onClick={handleDevLabNavigation}
+              tabIndex={linkTabIndex}
+            >
+              {t("nav.devLab", "Dev Lab")}
             </Link>
           </li>
           <li className="item-list">

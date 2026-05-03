@@ -1,4 +1,4 @@
-/* WORK SECTION - DESIGN PROFISSIONAL */
+﻿/* WORK SECTION - DESIGN PROFISSIONAL */
 
 .work-section {
   position: relative;
@@ -19,7 +19,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at 20% 50%,
       rgba(0, 212, 255, 0.1) 0%,
       transparent 50%
@@ -49,7 +50,7 @@
 }
 
 .work-section-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   text-align: center;
@@ -82,7 +83,7 @@
 }
 
 .work-section-subtitle {
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   color: rgba(255, 255, 255, 0.7);
   text-align: center;
@@ -142,7 +143,8 @@
   backdrop-filter: blur(20px);
   border-radius: 24px;
   border: 1px solid rgba(0, 212, 255, 0.2);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
@@ -238,7 +240,7 @@
 }
 
 .work-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
   font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 700;
   margin: 0;
@@ -251,7 +253,7 @@
 }
 
 .work-subtitle {
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 0.875rem;
   color: #00d4ff;
   text-transform: uppercase;
@@ -270,7 +272,7 @@
 }
 
 .work-description {
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: clamp(0.9rem, 1.5vw, 1rem);
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.85);
@@ -311,7 +313,7 @@
 }
 
 .tech-text {
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.95);
   font-weight: 500;
@@ -331,7 +333,7 @@
   gap: 0.625rem;
   padding: 1rem 2rem;
   border-radius: 12px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -380,6 +382,55 @@
 
 .work-btn-primary:hover .btn-icon {
   transform: translateX(3px);
+}
+
+.work-btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+
+.work-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.work-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(2, 8, 18, 0.78);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.work-modal {
+  width: min(760px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 212, 255, 0.32);
+  background: linear-gradient(145deg, #061a2d, #030e1f);
+  padding: 1.3rem;
+  display: grid;
+  gap: 0.65rem;
+  color: #f3f8ff;
+}
+
+.work-modal h3 {
+  font-family: "Sora", sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.35rem;
+}
+
+.work-modal-close {
+  justify-self: flex-end;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
 }
 
 .swiper-nav-btn {

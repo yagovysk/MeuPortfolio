@@ -7,31 +7,73 @@ import { Services } from "../Services/Services";
 import Dashboard from "../Dashboard/Dashboard";
 import Work from "../Work-section/Work";
 import { Testimonials } from "../Testimonials/Testimonials";
-import React, { useState, useEffect, useMemo } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Footer } from "../Footer/Footer";
-import backgroundVideo from "../../assets/background-video.mp4";
+import newFundoHome from "../../assets/new-fundo-home.png";
 import { AnimatedSection } from "../AnimatedSection/AnimatedSection";
 import PWAInstall from "../PWAInstall/PWAInstall";
 import { useTranslation } from "../../hooks/useTranslation";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
-import { useReducedMotion, motion } from "framer-motion";
+import { motion } from "framer-motion";
+
+const DevLabSection = lazy(() => import("../DevLab/DevLabSection"));
+const ProfileModeSelector = lazy(
+  () => import("../ProfileModeSelector/ProfileModeSelector"),
+);
+const AIWorkflowSection = lazy(() => import("../AIWorkflow/AIWorkflowSection"));
+const OwnProductsSection = lazy(
+  () => import("../OwnProducts/OwnProductsSection"),
+);
+const FinalCTASection = lazy(() => import("../FinalCTA/FinalCTASection"));
 
 const profilePhoto = "/foto-melhor.jpeg";
 
 export function Home() {
   const [showButton, setShowButton] = useState(false);
   const { t } = useTranslation();
+  const location = useLocation();
   const heroHighlights = t("hero.highlights", [
     "Interfaces modernas com foco em conversão.",
     "Código limpo, escalável e orientado a performance.",
     "Comunicação clara e entrega com visão de negócio.",
   ]);
-  const prefersReducedMotion = useReducedMotion();
-  const isMobileViewport = useMediaQuery("(max-width: 768px)");
-  const shouldShowVideo = useMemo(
-    () => !prefersReducedMotion && !isMobileViewport,
-    [prefersReducedMotion, isMobileViewport],
-  );
+
+  useEffect(() => {
+    const scrollToSectionWithRetry = (sectionId, attempt = 0) => {
+      const target = document.getElementById(sectionId);
+      if (target) {
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        return;
+      }
+
+      if (attempt >= 20) return;
+
+      setTimeout(() => {
+        scrollToSectionWithRetry(sectionId, attempt + 1);
+      }, 120);
+    };
+
+    if (location.hash) {
+      scrollToSectionWithRetry(location.hash.replace("#", ""));
+    }
+
+    const handleSectionRequest = (event) => {
+      const sectionId = event?.detail?.sectionId;
+      if (!sectionId) return;
+      scrollToSectionWithRetry(sectionId);
+    };
+
+    window.addEventListener("portfolio-scroll-to-section", handleSectionRequest);
+
+    return () => {
+      window.removeEventListener(
+        "portfolio-scroll-to-section",
+        handleSectionRequest,
+      );
+    };
+  }, [location.hash]);
 
   const handleScroll = () => {
     const middleOfPage = window.innerHeight / 2;
@@ -73,36 +115,36 @@ export function Home() {
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "5561981774548"; // Número com DDI (55) + DDD (61) + número
-    const message = "Olá! Gostaria de conversar sobre um projeto.";
+    const message = t(
+      "contact.whatsappMessage",
+      "Olá! Gostaria de conversar sobre um projeto.",
+    );
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message,
     )}`;
     window.open(url, "_blank");
   };
 
+  const handleNavigateToSection = (sectionId) => () => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <main className="main">
       <section className="home-section">
-        <div
-          className={`home-rectangle ${
-            shouldShowVideo ? "" : "home-rectangle--static"
-          }`}
-        >
-          {shouldShowVideo && (
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              disablePictureInPicture
-              className="background-video"
-              aria-hidden="true"
-              tabIndex={-1}
-            >
-              <source src={backgroundVideo} type="video/mp4" />
-            </video>
-          )}
+        <div className="home-rectangle" aria-hidden="true">
+          <span
+            className="home-space-background"
+            style={{ backgroundImage: `url(${newFundoHome})` }}
+          />
+          <span className="mesh-layer mesh-layer--a" />
+          <span className="mesh-layer mesh-layer--b" />
+          <span className="mesh-layer mesh-layer--c" />
+          <span className="home-grid-overlay" />
+          <span className="home-noise-overlay" />
         </div>
         <div className="home-glows" aria-hidden="true">
           <span className="home-glow home-glow--cyan" />
@@ -123,16 +165,8 @@ export function Home() {
               <div className="perfil-content">
                 <motion.div
                   className="perfil-frame"
-                  initial={
-                    prefersReducedMotion
-                      ? false
-                      : { opacity: 0, scale: 0.85, y: 24 }
-                  }
-                  animate={
-                    prefersReducedMotion
-                      ? { opacity: 1 }
-                      : { opacity: 1, scale: 1, y: 0 }
-                  }
+                  initial={{ opacity: 0, scale: 0.85, y: 24 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                   <span className="perfil-glow" aria-hidden="true" />
@@ -153,14 +187,17 @@ export function Home() {
                 </AnimatedSection>
                 <AnimatedSection delay={0.3}>
                   <h2 className="home-profession">
-                    {t("hero.profession", "Desenvolvedor Full Stack")}
+                    {t(
+                      "hero.profession",
+                      "Full Stack Developer | IA, SaaS, SEO e Acessibilidade",
+                    )}
                   </h2>
                 </AnimatedSection>
                 <AnimatedSection delay={0.35}>
                   <p className="home-tagline">
                     {t(
                       "hero.tagline",
-                      "Eu desenvolvo experiências digitais que fortalecem sua marca e geram oportunidades reais de negócio.",
+                      "Desenvolvo landing pages, sistemas web e produtos digitais com foco em performance, acessibilidade, automação com IA e resultado de negócio.",
                     )}
                   </p>
                 </AnimatedSection>
@@ -212,6 +249,13 @@ export function Home() {
                   variant="blur"
                   delay={0.5}
                 >
+                  <button
+                    type="button"
+                    className="home-button"
+                    onClick={handleNavigateToSection("projects-section")}
+                  >
+                    {t("hero.viewProjects", "Ver projetos")}
+                  </button>
                   <button className="home-button" onClick={handleDownloadPt}>
                     {isIOS
                       ? t("hero.openCVBR", "Abrir Currículo (BR)")
@@ -229,21 +273,43 @@ export function Home() {
                     <FaWhatsapp className="whatsapp-icon" aria-hidden="true" />
                     {t("hero.whatsapp", "WhatsApp")}
                   </button>
+                  <button
+                    type="button"
+                    className="home-button"
+                    onClick={handleNavigateToSection("dev-lab")}
+                  >
+                    {t("hero.viewDevLab", "Ver Dev Lab")}
+                  </button>
                 </AnimatedSection>
               </div>
             </AnimatedSection>
           </div>
         </div>
       </section>
+      <Suspense fallback={null}>
+        <ProfileModeSelector />
+      </Suspense>
       {/* Dashboard Section */}
       <section id="dashboard" className="dashboard-section">
         <Dashboard />
       </section>
       <Services />
       <Work />
+      <Suspense fallback={null}>
+        <DevLabSection />
+      </Suspense>
+      <Suspense fallback={null}>
+        <AIWorkflowSection />
+      </Suspense>
+      <Suspense fallback={null}>
+        <OwnProductsSection />
+      </Suspense>
       {/* PWA Install Component */}
       <PWAInstall />
       <Testimonials />
+      <Suspense fallback={null}>
+        <FinalCTASection />
+      </Suspense>
       <Footer />
     </main>
   );

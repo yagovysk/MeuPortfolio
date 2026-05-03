@@ -1,4 +1,4 @@
-.contact-section {
+﻿.contact-section {
   padding: 3rem 0;
   background: linear-gradient(to top, #000000, #124658, #007bff);
 }
@@ -10,7 +10,7 @@
   align-items: center;
 }
 .contato-button {
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   color: #fff;
   background: #06559f;
   text-decoration: none;
@@ -20,3 +20,4 @@
 .contato-button:hover {
   background: #0d83f1;
 }
+

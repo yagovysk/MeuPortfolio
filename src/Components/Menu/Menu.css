@@ -1,4 +1,4 @@
-.nav-container {
+﻿.nav-container {
   position: sticky;
   top: 0;
   z-index: 20;
@@ -38,7 +38,7 @@
 }
 .logo {
   color: #fff;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 700;
   letter-spacing: 0.04em;
   font-size: 1.1rem;
@@ -131,7 +131,7 @@
   position: relative;
   text-decoration: none;
   color: #c9e7ff;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 600;
   letter-spacing: 0.01em;
   transition:
@@ -183,7 +183,7 @@
   background: linear-gradient(120deg, #00e5ff 0%, #7c6bff 50%, #00ffb3 100%);
   border-radius: 14px;
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 600;
   padding: 0.9rem 1.85rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -348,3 +348,4 @@
     display: flex;
   }
 }
+

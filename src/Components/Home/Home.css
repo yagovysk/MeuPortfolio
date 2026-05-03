@@ -1,4 +1,4 @@
-.main {
+﻿.main {
   background-color: #fff;
 }
 .home-section {
@@ -21,22 +21,104 @@
 }
 .home-rectangle {
   width: 100%;
-  height: 220px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden; /* Para garantir que o vídeo se ajuste ao container */
-}
-.home-rectangle--static {
-  background: linear-gradient(135deg, #000000, #124658, #007bff);
-}
-.background-video {
-  width: 100%;
   height: 100%;
-  object-fit: cover; /* Para garantir que o vídeo cubra todo o espaço */
+  min-height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 14% 28%,
+      rgba(0, 214, 255, 0.2),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 86% 20%,
+      rgba(99, 102, 241, 0.22),
+      transparent 32%
+    ),
+    linear-gradient(120deg, #051122 0%, #0b2440 55%, #092338 100%);
+}
+
+.home-space-background {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.62;
+  mix-blend-mode: screen;
+  filter: saturate(1.08) contrast(1.05);
+  animation: space-drift 28s ease-in-out infinite alternate;
+}
+
+.mesh-layer {
+  position: absolute;
+  inset: -18%;
+  filter: blur(46px);
+  opacity: 0.6;
+  transform-origin: center;
+  animation: mesh-float 18s ease-in-out infinite;
+}
+
+.mesh-layer--a {
+  background: radial-gradient(circle at 25% 35%, rgba(0, 212, 255, 0.52), transparent 52%);
+}
+
+.mesh-layer--b {
+  background: radial-gradient(circle at 74% 22%, rgba(85, 119, 255, 0.42), transparent 50%);
+  animation-delay: -6s;
+}
+
+.mesh-layer--c {
+  background: radial-gradient(circle at 48% 65%, rgba(0, 255, 179, 0.35), transparent 52%);
+  animation-delay: -11s;
+}
+
+.home-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(173, 216, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(173, 216, 255, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.58), transparent 100%);
+  opacity: 0.35;
+}
+
+.home-noise-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 0.65px, transparent 0.65px);
+  background-size: 3px 3px;
+  opacity: 0.14;
+  mix-blend-mode: screen;
+}
+
+@keyframes mesh-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(0, -14px, 0) scale(1.05);
+  }
+}
+
+@keyframes space-drift {
+  0% {
+    background-position: 50% 50%;
+  }
+
+  50% {
+    background-position: 52% 48%;
+  }
+
+  100% {
+    background-position: 49% 51%;
+  }
 }
 .home-container {
   position: relative;
@@ -166,7 +248,7 @@
   z-index: 1;
 }
 .home-name {
-  font-family: "Montserrat", serif;
+  font-family: "Sora", sans-serif;
   color: rgb(246, 246, 246);
   font-style: normal;
   font-weight: 700;
@@ -174,7 +256,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .home-profession {
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -183,7 +265,7 @@
 .home-tagline {
   max-width: 700px;
   margin: 0 auto;
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   color: rgba(255, 255, 255, 0.92);
   font-size: 1rem;
   line-height: 1.5;
@@ -205,7 +287,7 @@
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 10px;
   padding: 0.55rem 0.75rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   color: #ffffff;
   font-size: 0.9rem;
 }
@@ -257,7 +339,7 @@
 
 .home-button,
 .home-button-whatsapp {
-  font-family: "Roboto", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 600;
   padding: 1rem 1.75rem;
   border: none;
@@ -379,6 +461,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .home-rectangle {
+    min-height: 100vh;
+  }
+
   .home-hero-card {
     grid-template-columns: 1fr;
     padding: 1.75rem;
@@ -425,9 +511,19 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .mesh-layer {
+    animation: none;
+  }
+
+  .home-space-background {
+    animation: none;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .home-rectangle {
-    height: 180px;
+    min-height: 100vh;
   }
 
   .home-container {
@@ -508,7 +604,7 @@
 
 @media screen and (max-width: 360px) {
   .home-rectangle {
-    height: 150px;
+    min-height: 100vh;
   }
 
   .home-perfil {
