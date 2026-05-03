@@ -29,6 +29,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link to="/#dev-lab" className="footer-link">
+                {t("nav.devLab", "Dev Lab")}
+              </Link>
+            </li>
+            <li>
               <Link to="/Portfolio" className="footer-link">
                 {t("nav.portfolio", "Portfolio")}
               </Link>

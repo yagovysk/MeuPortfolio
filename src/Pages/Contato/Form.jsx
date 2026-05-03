@@ -124,6 +124,7 @@ ${message}
         </AnimatedSection>
         <AnimatedSection
           as="form"
+          className="contact-form"
           onSubmit={sendToWhatsApp}
           variant="fadeUp"
           delay={0.3}
